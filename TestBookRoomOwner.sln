@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBookRoomOwner", "TestBookRoomOwner\TestBookRoomOwner.csproj", "{7299BC4A-8AF4-49B6-9F72-DBAD234425BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAPMA", "MAPMA\MAPMA.csproj", "{7061AD9E-A3CE-42CB-BECA-08FE7C34EEAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7299BC4A-8AF4-49B6-9F72-DBAD234425BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7299BC4A-8AF4-49B6-9F72-DBAD234425BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7299BC4A-8AF4-49B6-9F72-DBAD234425BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7299BC4A-8AF4-49B6-9F72-DBAD234425BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7061AD9E-A3CE-42CB-BECA-08FE7C34EEAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7061AD9E-A3CE-42CB-BECA-08FE7C34EEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7061AD9E-A3CE-42CB-BECA-08FE7C34EEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7061AD9E-A3CE-42CB-BECA-08FE7C34EEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCD4B830-26D0-4740-98DC-0DA13AD5D62E}
+	EndGlobalSection
+EndGlobal
