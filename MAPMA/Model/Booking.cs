@@ -8,27 +8,19 @@ namespace MAPMA
 {
     class Booking
     {
-        private int amountOfPeople;
-        private string cusName;
-        private DateTime date;
-        private DateTime bookingTime;
-        private EscapeRoom er;
-        private Customer cus;
-        private Employee emp;
+        public int amountOfPeople { get => amountOfPeople; set => amountOfPeople = value; }
+        public string cusName { get => cusName; set => cusName = value; }
+        public DateTime date { get => date; set => date = value; }
+        public DateTime bookingTime { get => bookingTime; set => bookingTime = value; }
+        public EscapeRoom er { get => er; set => er = value; }
+        public Customer cus { get => cus; set => cus = value; }
+        public Employee emp { get => emp; set => emp = value; }
 
         public Booking(int amountOfPeople, DateTime date, DateTime bookingTime)
         {
-            this.AmountOfPeople = amountOfPeople;
-            this.Date = date;
-            this.BookingTime = bookingTime;
+            this.amountOfPeople = amountOfPeople;
+            this.date = date;
+            this.bookingTime = bookingTime;
         }
-
-        public int AmountOfPeople { get => amountOfPeople; set => amountOfPeople = value; }
-        public string CusName { get => cusName; set => cusName = value; }
-        public DateTime Date { get => date; set => date = value; }
-        public DateTime BookingTime { get => bookingTime; set => bookingTime = value; }
-        public EscapeRoom Er { get => er; set => er = value; }
-        public Customer Cus { get => cus; set => cus = value; }
-        public Employee Emp { get => emp; set => emp = value; }
     }
 }
