@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBookRoomOwner", "TestBo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAPMA", "MAPMA\MAPMA.csproj", "{7061AD9E-A3CE-42CB-BECA-08FE7C34EEAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAPMAServiceLayers", "MAPMAServiceLayers\MAPMAServiceLayers.csproj", "{621C28CF-28D9-4CD8-9631-B5272BC0DF0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7061AD9E-A3CE-42CB-BECA-08FE7C34EEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7061AD9E-A3CE-42CB-BECA-08FE7C34EEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7061AD9E-A3CE-42CB-BECA-08FE7C34EEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{621C28CF-28D9-4CD8-9631-B5272BC0DF0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{621C28CF-28D9-4CD8-9631-B5272BC0DF0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{621C28CF-28D9-4CD8-9631-B5272BC0DF0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{621C28CF-28D9-4CD8-9631-B5272BC0DF0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
