@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MAPMAServiceLayers.ServiceReference3 {
+namespace MAPMAServiceLayers.EscRef {
     using System.Runtime.Serialization;
     using System;
     
@@ -32,7 +32,7 @@ namespace MAPMAServiceLayers.ServiceReference3 {
         private string descriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MAPMAServiceLayers.ServiceReference3.Employee empField;
+        private MAPMAServiceLayers.EscRef.Employee empField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int escapeRoomIDField;
@@ -99,7 +99,7 @@ namespace MAPMAServiceLayers.ServiceReference3 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public MAPMAServiceLayers.ServiceReference3.Employee emp {
+        public MAPMAServiceLayers.EscRef.Employee emp {
             get {
                 return this.empField;
             }
@@ -190,7 +190,7 @@ namespace MAPMAServiceLayers.ServiceReference3 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
     [System.SerializableAttribute()]
-    public partial class Employee : MAPMAServiceLayers.ServiceReference3.Person {
+    public partial class Employee : MAPMAServiceLayers.EscRef.Person {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string addressField;
@@ -277,7 +277,7 @@ namespace MAPMAServiceLayers.ServiceReference3 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MAPMAServiceLayers.ServiceReference3.Employee))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MAPMAServiceLayers.EscRef.Employee))]
     public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -368,37 +368,37 @@ namespace MAPMAServiceLayers.ServiceReference3 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://localhost:8735/Design_Time_Addresses/Escaperoom/", ConfigurationName="ServiceReference3.IEscapeRoom_Services")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://localhost:8735/Design_Time_Addresses/Escaperoom/", ConfigurationName="EscRef.IEscapeRoom_Services")]
     public interface IEscapeRoom_Services {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetFo" +
             "rOwner", ReplyAction="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetFo" +
             "rOwnerResponse")]
-        MAPMAServiceLayers.ServiceReference3.EscapeRoom GetForOwner(int ER_ID);
+        MAPMAServiceLayers.EscRef.EscapeRoom GetForOwner(int ER_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetFo" +
             "rOwner", ReplyAction="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetFo" +
             "rOwnerResponse")]
-        System.Threading.Tasks.Task<MAPMAServiceLayers.ServiceReference3.EscapeRoom> GetForOwnerAsync(int ER_ID);
+        System.Threading.Tasks.Task<MAPMAServiceLayers.EscRef.EscapeRoom> GetForOwnerAsync(int ER_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetAl" +
             "lForOwner", ReplyAction="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetAl" +
             "lForOwnerResponse")]
-        MAPMAServiceLayers.ServiceReference3.EscapeRoom[] GetAllForOwner();
+        MAPMAServiceLayers.EscRef.EscapeRoom[] GetAllForOwner();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetAl" +
             "lForOwner", ReplyAction="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetAl" +
             "lForOwnerResponse")]
-        System.Threading.Tasks.Task<MAPMAServiceLayers.ServiceReference3.EscapeRoom[]> GetAllForOwnerAsync();
+        System.Threading.Tasks.Task<MAPMAServiceLayers.EscRef.EscapeRoom[]> GetAllForOwnerAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IEscapeRoom_ServicesChannel : MAPMAServiceLayers.ServiceReference3.IEscapeRoom_Services, System.ServiceModel.IClientChannel {
+    public interface IEscapeRoom_ServicesChannel : MAPMAServiceLayers.EscRef.IEscapeRoom_Services, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class EscapeRoom_ServicesClient : System.ServiceModel.ClientBase<MAPMAServiceLayers.ServiceReference3.IEscapeRoom_Services>, MAPMAServiceLayers.ServiceReference3.IEscapeRoom_Services {
+    public partial class EscapeRoom_ServicesClient : System.ServiceModel.ClientBase<MAPMAServiceLayers.EscRef.IEscapeRoom_Services>, MAPMAServiceLayers.EscRef.IEscapeRoom_Services {
         
         public EscapeRoom_ServicesClient() {
         }
@@ -419,19 +419,19 @@ namespace MAPMAServiceLayers.ServiceReference3 {
                 base(binding, remoteAddress) {
         }
         
-        public MAPMAServiceLayers.ServiceReference3.EscapeRoom GetForOwner(int ER_ID) {
+        public MAPMAServiceLayers.EscRef.EscapeRoom GetForOwner(int ER_ID) {
             return base.Channel.GetForOwner(ER_ID);
         }
         
-        public System.Threading.Tasks.Task<MAPMAServiceLayers.ServiceReference3.EscapeRoom> GetForOwnerAsync(int ER_ID) {
+        public System.Threading.Tasks.Task<MAPMAServiceLayers.EscRef.EscapeRoom> GetForOwnerAsync(int ER_ID) {
             return base.Channel.GetForOwnerAsync(ER_ID);
         }
         
-        public MAPMAServiceLayers.ServiceReference3.EscapeRoom[] GetAllForOwner() {
+        public MAPMAServiceLayers.EscRef.EscapeRoom[] GetAllForOwner() {
             return base.Channel.GetAllForOwner();
         }
         
-        public System.Threading.Tasks.Task<MAPMAServiceLayers.ServiceReference3.EscapeRoom[]> GetAllForOwnerAsync() {
+        public System.Threading.Tasks.Task<MAPMAServiceLayers.EscRef.EscapeRoom[]> GetAllForOwnerAsync() {
             return base.Channel.GetAllForOwnerAsync();
         }
     }

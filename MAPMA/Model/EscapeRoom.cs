@@ -6,28 +6,71 @@ using System.Threading.Tasks;
 
 namespace MAPMA.Model
 {
-    class EscapeRoom
+    public class EscapeRoom
     {
-        public List<string> checkList { get => checkList; set => checkList = value; }
-        public string description { get => description; set => description = value; }
-        public double maxClearTime { get => maxClearTime; set => maxClearTime = value; }
-        public string name { get => name; set => name = value; }
-        public double price { get => price; set => price = value; }
-        public double rating { get => rating; set => rating = value; }
-        public double cleanTime { get => cleanTime; set => cleanTime = value; }
-
-        public EscapeRoom(string description, string name, double price) 
-        {
-            this.description = description;
-            this.name = name;
-            this.price = price;
-
-            checkList = new List<string>();
+        public int EscapeRoomID {
+            get; set;
         }
 
-        public void AddToCheckList(string item)
-        {
-            checkList.Add(item);
+        
+        public string Name {
+            get; set;
         }
+        
+        public decimal Price {
+            get; set;
+        }
+        
+        public decimal Rating {
+            get; set;
+        }
+        
+        public decimal CleanTime {
+            get; set;
+        }
+        
+        public decimal MaxClearTime {
+            get; set;
+        }
+        
+        public List<string> CheckList {
+            get; set;
+        }
+
+
+        public string Description {
+            get; set;
+        }
+        
+        public Employee Emp {
+            get; set;
+        }
+
+        public EscapeRoom(int escapeRoomID, string name, decimal price, decimal cleanTime, decimal maxClearTime, string description) {
+            this.EscapeRoomID = escapeRoomID;
+            this.Name = name;
+            this.Price = price;
+            this.CleanTime = cleanTime;
+            this.MaxClearTime = maxClearTime;
+            this.Description = description;
+            CheckList = new List<string>();
+        }
+        public EscapeRoom(string name, decimal price, decimal cleanTime, decimal maxClearTime, string description) {
+            this.Name = name;
+            this.Price = price;
+            this.CleanTime = cleanTime;
+            this.MaxClearTime = maxClearTime;
+            this.Description = description;
+            CheckList = new List<string>();
+        }
+
+        public EscapeRoom() {
+            CheckList = new List<string>();
+        }
+
+        public void AddToList(string item) {
+            CheckList.Add(item);
+        }
+
     }
 }

@@ -61,12 +61,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ServiceReference3\Reference.cs">
+    <Compile Include="Connected Services\EscRef\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -109,33 +104,20 @@
     <None Include="Connected Services\EmpRef\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\EmplyeeServices.wsdl" />
-    <None Include="Connected Services\ServiceReference1\item.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference1\item1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference1\item2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference1\MAPMAServiceLayers.ServiceReference1.Employee.datasource">
+    <None Include="Connected Services\EscRef\MAPMAServiceLayers.EscRef.EscapeRoom.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference3\Arrays.xsd">
+    <None Include="Connected Services\EscRef\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference3\MAPMAServiceLayers.ServiceReference3.EscapeRoom.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference3\ModelLayer.xsd">
+    <None Include="Connected Services\EscRef\ModelLayer.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference3\service.wsdl" />
-    <None Include="Connected Services\ServiceReference3\service.xsd">
+    <None Include="Connected Services\EscRef\service.wsdl" />
+    <None Include="Connected Services\EscRef\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference3\service1.xsd">
+    <None Include="Connected Services\EscRef\service1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -146,23 +128,7 @@
     <WCFMetadataStorage Include="Connected Services\BookingRef\" />
     <WCFMetadataStorage Include="Connected Services\CusRef\" />
     <WCFMetadataStorage Include="Connected Services\EmpRef\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceReference3\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <WCFMetadataStorage Include="Connected Services\EscRef\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\EmpRef\configuration91.svcinfo" />
@@ -189,13 +155,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference3\configuration91.svcinfo" />
+    <None Include="Connected Services\EscRef\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference3\configuration.svcinfo" />
+    <None Include="Connected Services\EscRef\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference3\Reference.svcmap">
+    <None Include="Connected Services\EscRef\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

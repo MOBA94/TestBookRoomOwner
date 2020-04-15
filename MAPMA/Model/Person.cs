@@ -6,20 +6,37 @@ using System.Threading.Tasks;
 
 namespace MAPMA.Model
 {
-    public abstract class Person
-    {
-        public string firstName { get => firstName; set => firstName = value; }
-        public string lastName { get => lastName; set => lastName = value; }
-        public string mail { get => mail; set => mail = value; }
-        public string phone { get => phone; set => phone = value; }
+    public abstract class Person {
+        public string FirstName {
+            get; set;
+        }
 
-        public Person(string FirstName, string LastName, string Mail, string Phone)
-        {
-            this.firstName = FirstName;
-            this.lastName = LastName;
-            this.mail = Mail;
-            this.phone = Phone;
+        
+        public string LastName {
+            get; set;
+        }
+
+        
+        public string Mail {
+            get; set;
+        }
+
+        
+        public string Phone {
+            get; set;
+        }
+
+        public Person(string FirstName, string LastName, string Mail, string Phone) {
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Mail = Mail;
+            this.Phone = Phone;
+        }
+
+        public Person() {
+
         }
     }
 }
+
 

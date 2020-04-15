@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace MAPMA.Model
 {
-    class Employee : Person
+    public class Employee : Person
     {
-        public string address { get => address; set => address = value; }
-        public int zipcode { get => zipcode; set => zipcode = value; }
-        public string cityName { get => cityName; set => cityName = value; }
-        public string region { get => region; set => region = value; }
-        public int employeeID { get => employeeID; set => employeeID = value; }
+        public string Address { get ; set; }
+        public int Zipcode { get; set ; }
+        public string CityName { get ; set; }
+        public string Region { get ; set ; }
+        public int EmployeeID { get; set; }
 
-        public Employee(string address, int zipCode, string cityName, int employeeID, string firstName, string lastName, string mail, string phone) : base(firstName, lastName, mail, phone)
+        public Employee(string Address, int ZipCode, string CityName, int EmployeeID, string FirstName, string LastName, string Mail, string Phone) : base(FirstName, LastName, Mail, Phone)
         {
-            this.address = address;
-            this.zipcode = zipcode;
-            this.cityName = cityName;
-            this.region = region;
-            this.employeeID = employeeID;
+            this.Address = Address;
+            this.Zipcode = ZipCode;
+            this.CityName = CityName;
+            this.Region = Region;
+            this.EmployeeID = EmployeeID;
+        }
+
+        public Employee() {
+
         }
     }
 }

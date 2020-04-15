@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using MAPMA.Model;
+using MAPMA.Controller;
 
 namespace TestBookRoomOwner
 {
@@ -15,7 +16,7 @@ namespace TestBookRoomOwner
             Customer cus = new Customer("Mick", "Andersen", "mymail.com", "61267389");
             EscapeRoom er = new EscapeRoom("Ghost House", "Beskrivelse af rum", 750);
             Booking book = new Booking(cus, er);
-            BookingController bc = new BookingController();
+            BookingCtr bc = new BookingCtr();
 
 
             //Act

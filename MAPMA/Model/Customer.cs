@@ -6,18 +6,32 @@ using System.Threading.Tasks;
 
 namespace MAPMA.Model
 {
-    class Customer : Person
-    {
-        public int customerNo { get; set; }
-        public string password { get; set; }
-        public string username { get; set; }
+    public class Customer : Person {
 
-        public Customer(string password, string username, string firstName, string lastName, string mail, string phone) : base(firstName, lastName, mail, phone)
-        {
-            this.password = password;
-            this.username = username;
+        public int CustomerNo {
+            get; set;
         }
 
+        public string Password {
+            get; set;
+        }
 
+        public string Username {
+            get; set;
+        }
+
+        public Customer(int customerNo, string password, string username, string FirstName, string LastName, string Mail, string Phone) : base(FirstName, LastName, Mail, Phone) {
+            this.CustomerNo = customerNo;
+            this.Password = password;
+            this.Username = username;
+        }
+
+        public Customer(string password, string username, string FirstName, string LastName, string Mail, string Phone) : base(FirstName, LastName, Mail, Phone) {
+            this.Password = password;
+            this.Username = username;
+        }
+
+        public Customer() {
+        }
     }
 }
