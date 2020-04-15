@@ -61,6 +61,7 @@
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\EscapeRoom.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

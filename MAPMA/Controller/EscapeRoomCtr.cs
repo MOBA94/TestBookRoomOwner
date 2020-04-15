@@ -34,11 +34,11 @@ namespace MAPMA.Controller
             return ERList;
         }
 
-        public EscapeRoom GetForOwner(int ER_ID) {
-            ServiceLayer.EscRef.IEscapeRoom_Services Service = new ServiceLayer.EscRef.EscapeRoom_ServicesClient();
-            EscapeRoom ER;
-            Service.GetForOwner(ER_ID);
-            return ER;
-        }
+        //public EscapeRoom GetForOwner(int ER_ID) {
+        //    ServiceLayer.EscRef.IEscapeRoom_Services Service = new ServiceLayer.EscRef.EscapeRoom_ServicesClient();
+        //    EscapeRoom ER;
+        //    Service.GetForOwner(ER_ID);
+        //    return ER;
+        //}
     }
 }

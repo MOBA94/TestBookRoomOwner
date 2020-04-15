@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MAPMAServiceLayers;
 
 
 namespace MAPMA.GUI
@@ -23,6 +24,8 @@ namespace MAPMA.GUI
         private void Button1_Click ( object sender, EventArgs e )
         {
             EscapeRoomCtr erc = new EscapeRoomCtr();
+
+
 
             foreach (EscapeRoom er in erc.GetAllForOwner()) {
                 listBox1.Items.Add(er.Name);

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MAPMAServiceLayers {
-    class Class1 {
+    public class Class1 {
 
         public IEnumerable<EscapeRoom> GetAllForOwner() {
             IEscapeRoom_Services Service = new MAPMAServiceLayers.EscRef.EscapeRoom_ServicesClient();
