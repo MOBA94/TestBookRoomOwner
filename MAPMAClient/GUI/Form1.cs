@@ -23,14 +23,15 @@ namespace MAPMAClient.GUI {
 
 
             foreach (EscapeRoom escapeRoom in escapeRooms) {
-                this.lbxEsc.Items.Add(escapeRoom);
+                this.lbxEsc.Items.Add(escapeRoom.name);
             }
 
         }
 
         private void button2_Click(object sender, EventArgs e) {
             EscapeRoomServices es = new EscapeRoomServices();
-            lblEsc.Text = es.GetForOwner(int.Parse(txtID.Text)).name;
+            int num = int.Parse(txtID.Text);
+            lblEsc.Text = es.GetForOwner(num).name;
         }
     }
 }
