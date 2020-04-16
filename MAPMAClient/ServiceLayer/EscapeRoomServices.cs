@@ -8,6 +8,11 @@ using ServiceLayer = MAPMAClient.EscRef;
 
 namespace MAPMAClient.ServiceLayer {
     public class EscapeRoomServices {
+
+        public EscapeRoomServices() {
+        
+        }
+
         public List<EscapeRoom> GetAllForOwner() {
             IEscapeRoom_Services Service = new EscapeRoom_ServicesClient();
 
@@ -15,12 +20,12 @@ namespace MAPMAClient.ServiceLayer {
             return GetClintsideEscapeRooms(escapeRooms);
         }
 
-        public EscapeRoom GetForOwner(int ER_ID) {
+        public MAPMAClient.Model.EscapeRoom GetForOwner(int ER_ID) {
             IEscapeRoom_Services Service = new EscapeRoom_ServicesClient();
             try {
                 var escapeRooms = Service.GetForOwner(ER_ID);
 
-                EscapeRoom es;
+                MAPMAClient.Model.EscapeRoom es;
 
                 es = GetClientsideOneEscapeRoom(escapeRooms);
 
@@ -35,17 +40,17 @@ namespace MAPMAClient.ServiceLayer {
 
         }
 
-        private EscapeRoom GetClientsideOneEscapeRoom(EscapeRoom escapeRoom) {
-            EscapeRoom es;
+        private MAPMAClient.Model.EscapeRoom GetClientsideOneEscapeRoom(EscapeRoom escapeRoom) {
+            MAPMAClient.Model.EscapeRoom es;
 
-            es = new EscapeRoom {
-                cleanTime = escapeRoom.cleanTime,
-                description = escapeRoom.description,
-               escapeRoomID = escapeRoom.escapeRoomID,
-                maxClearTime = escapeRoom.maxClearTime,
-                name = escapeRoom.name,
-                price = escapeRoom.price,
-                rating = escapeRoom.rating
+            es = new MAPMAClient.Model.EscapeRoom {
+                CleanTime = escapeRoom.cleanTime,
+                Description = escapeRoom.description,
+               EscapeRoomID = escapeRoom.escapeRoomID,
+                MaxClearTime = escapeRoom.maxClearTime,
+                Name = escapeRoom.name,
+                Price = escapeRoom.price,
+                Rating = escapeRoom.rating
             };
 
             return es;
