@@ -23,7 +23,7 @@ namespace MAPMAServiceLayers.EscRef {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] checkListField;
+        private System.Collections.Generic.List<string> checkListField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal cleanTimeField;
@@ -60,7 +60,7 @@ namespace MAPMAServiceLayers.EscRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] checkList {
+        public System.Collections.Generic.List<string> checkList {
             get {
                 return this.checkListField;
             }
@@ -384,12 +384,12 @@ namespace MAPMAServiceLayers.EscRef {
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetAl" +
             "lForOwner", ReplyAction="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetAl" +
             "lForOwnerResponse")]
-        MAPMAServiceLayers.EscRef.EscapeRoom[] GetAllForOwner();
+        System.Collections.Generic.List<MAPMAServiceLayers.EscRef.EscapeRoom> GetAllForOwner();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetAl" +
             "lForOwner", ReplyAction="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetAl" +
             "lForOwnerResponse")]
-        System.Threading.Tasks.Task<MAPMAServiceLayers.EscRef.EscapeRoom[]> GetAllForOwnerAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<MAPMAServiceLayers.EscRef.EscapeRoom>> GetAllForOwnerAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -427,11 +427,11 @@ namespace MAPMAServiceLayers.EscRef {
             return base.Channel.GetForOwnerAsync(ER_ID);
         }
         
-        public MAPMAServiceLayers.EscRef.EscapeRoom[] GetAllForOwner() {
+        public System.Collections.Generic.List<MAPMAServiceLayers.EscRef.EscapeRoom> GetAllForOwner() {
             return base.Channel.GetAllForOwner();
         }
         
-        public System.Threading.Tasks.Task<MAPMAServiceLayers.EscRef.EscapeRoom[]> GetAllForOwnerAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<MAPMAServiceLayers.EscRef.EscapeRoom>> GetAllForOwnerAsync() {
             return base.Channel.GetAllForOwnerAsync();
         }
     }
