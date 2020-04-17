@@ -118,6 +118,15 @@
     <None Include="Connected Services\BookRef\item1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\BookRef\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BookRef\item21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BookRef\MAPMAClient.BookRef.Booking.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CusRef\CustomerServices.wsdl" />
     <None Include="Connected Services\CusRef\item.xsd">
       <SubType>Designer</SubType>

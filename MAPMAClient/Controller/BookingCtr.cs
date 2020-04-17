@@ -31,11 +31,17 @@ namespace MAPMAClient.Controller {
         }
 
         public void Delete(Customer cus, EscapeRoom esr, DateTime date) {
-            
+            Booking book = new Booking() {
+                Cus = cus,
+                Er = esr,
+                Date = date
+            };
+
+            BOOKS.Delete(book);
         }
 
-        public Booking Find(Customer cus, EscapeRoom esr, DateTime date) {
-            return null;
+        public Booking Get(Customer cus, EscapeRoom esr, DateTime date) {
+            return BOOKS.Get(cus, esr, date);
         }
     }
 }
