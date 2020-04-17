@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MAPMAClient.Controller;
+using MAPMAClient.EscRef;
 
 namespace MAPMAClient.GUI
 {
@@ -20,7 +21,7 @@ namespace MAPMAClient.GUI
 
         private void CreateEscapeRoom_Load ( object sender, EventArgs e )
         {
-
+            UpdateEscapeRoomList();
         }
 
         private void btnCreateEscapeRoom_Click ( object sender, EventArgs e )
@@ -32,8 +33,32 @@ namespace MAPMAClient.GUI
             decimal rating = 0;
             int Emp = int.Parse(txtEmployeeID.Text);
             esC.CreateEscapeRoom(txtName.Text ,txbDescription.Text, MaxC, ClTi, Pri, rating, Emp);
+            UpdateEscapeRoomList();
+        }
 
+        private void UpdateEscapeRoomList ( )
+        {
+            EscapeRoomCtr esc = new EscapeRoomCtr();
+            dataGridView1.DataSource = esc.GetAllEscapeRooms();
+        }
 
+        private void dataGridView1_CellContentClick ( object sender, DataGridViewCellEventArgs e )
+        {
+            try
+            {
+                var SelectedRow = dataGridView1.SelectedRows[0].DataBoundItem as EscapeRoom;
+                lblShowEscapeRoomID.Text = SelectedRow.escapeRoomID.ToString();
+                txtName.Text = SelectedRow.name;
+                txbDescription.Text = SelectedRow.description;
+                txtMaxClearTime.Text = SelectedRow.maxClearTime.ToString();
+                txtCleanTime.Text = SelectedRow.cleanTime.ToString();
+                txtPrice.Text = SelectedRow.price.ToString();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

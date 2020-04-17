@@ -22,15 +22,19 @@ namespace TestBookRoomOwner
             //Arrange
             EscapeRoomServices ess = new EscapeRoomServices();
             MAPMAClient.EscRef.EscapeRoom Es1 = new MAPMAClient.EscRef.EscapeRoom();
-                Es1.name = "The Dark Room";
-                Es1.price = 1200;
-                Es1.cleanTime = 90;
-                Es1.maxClearTime = 180;
-                Es1.description = "The Fors is Strong in the darkside";
+            MAPMAClient.EscRef.Employee Em1 = new MAPMAClient.EscRef.Employee();
+            Es1.name = "The Dark Room";
+            Es1.description = "The Fors is Strong in the darkside";
+            Es1.maxClearTime = 180;
+            Es1.cleanTime = 90;
+            Es1.price = 1200;
+            Es1.rating = 0;
+            Es1.emp.employeeID = Em1.employeeID = 1;
+
 
 
             //Act
-            ess.Create(Es1);
+            ess.CreateEscapeRoom(Es1.name, Es1.description, Es1.maxClearTime, Es1.cleanTime, Es1.price, Es1.rating, Es1.emp.employeeID);
 
             //Assert
             List<MAPMAClient.EscRef.EscapeRoom> list = ess.GetAllForOwner();

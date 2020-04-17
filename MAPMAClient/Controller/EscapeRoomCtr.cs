@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MAPMAClient.EscRef;
 using MAPMAClient.ServiceLayer;
 
 namespace MAPMAClient.Controller {
@@ -13,6 +14,11 @@ namespace MAPMAClient.Controller {
                EscapeRoomServices escService = new EscapeRoomServices();
             rating = 0;
             escService.CreateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId);
+        }
+
+        public List<EscapeRoom> GetAllEscapeRooms() {
+            EscapeRoomServices escService = new EscapeRoomServices();
+            return escService.GetAllForOwner();
         }
     }
 }
