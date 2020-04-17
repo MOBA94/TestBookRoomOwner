@@ -34,6 +34,11 @@ namespace MAPMAClient.ServiceLayer {
 
 
         }
+        public void CreateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId) {
+            IEscapeRoom_Services Service = new EscapeRoom_ServicesClient();
+            Service.CreateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId);
+            
+        }
 
         private EscapeRoom GetClientsideOneEscapeRoom(EscapeRoom escapeRoom) {
             EscapeRoom es;
@@ -72,6 +77,7 @@ namespace MAPMAClient.ServiceLayer {
             }
             return foundEsc;
         }
+
     }
 
 }

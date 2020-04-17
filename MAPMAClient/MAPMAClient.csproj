@@ -78,6 +78,12 @@
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\CreateEscapeRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CreateEscapeRoom.Designer.cs">
+      <DependentUpon>CreateEscapeRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Employee.cs" />
@@ -89,6 +95,9 @@
     <Compile Include="ServiceLayer\CusServices.cs" />
     <Compile Include="ServiceLayer\EmpServices.cs" />
     <Compile Include="ServiceLayer\EscapeRoomServices.cs" />
+    <EmbeddedResource Include="GUI\CreateEscapeRoom.resx">
+      <DependentUpon>CreateEscapeRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
