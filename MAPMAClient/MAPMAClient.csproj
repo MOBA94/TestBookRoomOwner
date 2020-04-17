@@ -72,6 +72,12 @@
     <Compile Include="Controller\CustomerCtr.cs" />
     <Compile Include="Controller\EmployeeCtr.cs" />
     <Compile Include="Controller\EscapeRoomCtr.cs" />
+    <Compile Include="GUI\CreateBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CreateBooking.Designer.cs">
+      <DependentUpon>CreateBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="ServiceLayer\CusServices.cs" />
     <Compile Include="ServiceLayer\EmpServices.cs" />
     <Compile Include="ServiceLayer\EscapeRoomServices.cs" />
+    <EmbeddedResource Include="GUI\CreateBooking.resx">
+      <DependentUpon>CreateBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
