@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MAPMAClient.Controller {
-    class EmployeeCtr {
+    public class EmployeeCtr {
 
         private EmpServices EMPS;
 

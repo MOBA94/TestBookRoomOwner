@@ -17,7 +17,18 @@ namespace MAPMAClient.ServiceLayer {
             IBookingServices Service = new BookingServicesClient();
 
             Service.Create(book.Emp.EmployeeID, book.Cus.Username, book.Er.EscapeRoomID, book.BookingTime, book.AmountOfPeople, book.Date);
+        }
 
+        public void Delete(Customer cus, EscapeRoom esr, DateTime date) {
+            IBookingServices Service = new BookingServicesClient();
+
+            
+        }
+
+        public Booking Find(Customer cus, EscapeRoom esr, DateTime date) {
+            IBookingServices Service = new BookingServicesClient();
+
+            return null;
         }
     }
 }

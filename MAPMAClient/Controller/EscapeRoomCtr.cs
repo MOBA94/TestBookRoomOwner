@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MAPMAClient.Controller {
-    class EscapeRoomCtr {
+    public class EscapeRoomCtr {
 
         private EscapeRoomServices ERS;
 
@@ -19,6 +19,10 @@ namespace MAPMAClient.Controller {
         public EscapeRoom GetForOwner(int ER_ID) {
 
             return ERS.GetForOwner(ER_ID);
+        }
+
+        public List<MAPMAClient.Model.EscapeRoom> GetAllForOwner() {
+            return ERS.GetAllForOwner();
         }
     }
 }

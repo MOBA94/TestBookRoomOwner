@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MAPMAClient.Controller {
-    class BookingCtr {
+    public class BookingCtr {
 
         private BookServices BOOKS;
 
@@ -28,6 +28,14 @@ namespace MAPMAClient.Controller {
             };
 
             BOOKS.Create(book);
+        }
+
+        public void Delete(Customer cus, EscapeRoom esr, DateTime date) {
+            
+        }
+
+        public Booking Find(Customer cus, EscapeRoom esr, DateTime date) {
+            return null;
         }
     }
 }

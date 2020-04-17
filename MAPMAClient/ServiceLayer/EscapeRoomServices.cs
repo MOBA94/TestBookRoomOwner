@@ -13,7 +13,7 @@ namespace MAPMAClient.ServiceLayer {
         
         }
 
-        public List<EscapeRoom> GetAllForOwner() {
+        public List<MAPMAClient.Model.EscapeRoom> GetAllForOwner() {
             IEscapeRoom_Services Service = new EscapeRoom_ServicesClient();
 
             var escapeRooms = Service.GetAllForOwner();
@@ -57,19 +57,19 @@ namespace MAPMAClient.ServiceLayer {
         }
 
 
-        private List<EscapeRoom> GetClintsideEscapeRooms(IEnumerable<EscapeRoom> escapeRooms) {
-            List<EscapeRoom> foundEsc = new List<EscapeRoom>();
-            EscapeRoom es;
+        private List<MAPMAClient.Model.EscapeRoom> GetClintsideEscapeRooms(IEnumerable<EscapeRoom> escapeRooms) {
+            List<MAPMAClient.Model.EscapeRoom> foundEsc = new List<MAPMAClient.Model.EscapeRoom>();
+            MAPMAClient.Model.EscapeRoom es;
 
             foreach (var ER in escapeRooms) {
-                es = new EscapeRoom {
-                    cleanTime = ER.cleanTime,
-                    description = ER.description,
-                    escapeRoomID = ER.escapeRoomID,
-                    maxClearTime = ER.maxClearTime,
-                    name = ER.name,
-                    price = ER.price,
-                    rating = ER.rating
+                es = new MAPMAClient.Model.EscapeRoom {
+                    CleanTime = ER.cleanTime,
+                    Description = ER.description,
+                    EscapeRoomID = ER.escapeRoomID,
+                    MaxClearTime = ER.maxClearTime,
+                    Name = ER.name,
+                    Price = ER.price,
+                    Rating = ER.rating
                 };
 
                 foundEsc.Add(es);

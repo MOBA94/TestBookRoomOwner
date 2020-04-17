@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MAPMAClient.Controller {
-    class CustomerCtr {
+    public class CustomerCtr {
 
         private CusServices CUSS;
 
