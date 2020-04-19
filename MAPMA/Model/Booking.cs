@@ -3,24 +3,67 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MAPMA.Model;
 
-namespace MAPMA
-{
-    class Booking
+namespace MAPMA.Model {
+    public class Booking
     {
-        public int amountOfPeople { get => amountOfPeople; set => amountOfPeople = value; }
-        public string cusName { get => cusName; set => cusName = value; }
-        public DateTime date { get => date; set => date = value; }
-        public DateTime bookingTime { get => bookingTime; set => bookingTime = value; }
-        public EscapeRoom er { get => er; set => er = value; }
-        public Customer cus { get => cus; set => cus = value; }
-        public Employee emp { get => emp; set => emp = value; }
 
-        public Booking(int amountOfPeople, DateTime date, DateTime bookingTime)
+        public int AmountOfPeople
         {
-            this.amountOfPeople = amountOfPeople;
-            this.date = date;
-            this.bookingTime = bookingTime;
+            get; set;
+        }
+        public DateTime Date
+        {
+            get; set;
+        }
+        public DateTime BookingTime
+        {
+            get; set;
+        }
+        public EscapeRoom Er
+        {
+            get; set;
+        }
+        public Customer Cus
+        {
+            get; set;
+        }
+        public Employee Emp
+        {
+            get; set;
+        }
+
+        public Booking ( int amountOfPeople, DateTime date, DateTime bookingTime )
+        {
+            this.AmountOfPeople = amountOfPeople;
+            this.Date = date;
+            this.BookingTime = bookingTime;
+        }
+
+        public Booking ( int amountOfPeople, DateTime date, DateTime bookingTime, Customer cus, EscapeRoom er )
+        {
+            this.AmountOfPeople = amountOfPeople;
+            this.Date = date;
+            this.BookingTime = bookingTime;
+            this.Cus = cus;
+            this.Er = er;
+
+        }
+
+        public Booking ( int amountOfPeople, DateTime date, DateTime bookingTime, Employee emp, EscapeRoom er )
+        {
+            this.AmountOfPeople = amountOfPeople;
+            this.Date = date;
+            this.BookingTime = bookingTime;
+            this.Emp = emp;
+            this.Er = er;
+        }
+
+        public Booking ( )
+        {
+
         }
     }
+
 }

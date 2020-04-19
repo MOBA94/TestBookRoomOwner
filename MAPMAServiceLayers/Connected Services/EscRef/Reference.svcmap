@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cc05b6a0-c77c-40a1-bb2f-030c27b36f48" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8735/Design_Time_Addresses/Escaperoom/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="193e9462-4baa-4e63-8552-5e725649a14b" SourceId="1" SourceUrl="http://localhost:8735/Design_Time_Addresses/Escaperoom/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="3c80738a-6625-4439-84b4-1a8d8172984c" SourceId="1" SourceUrl="http://localhost:8735/Design_Time_Addresses/Escaperoom/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="1b064b09-5cc7-4b9c-bf2d-1ba989572984" SourceId="1" SourceUrl="http://localhost:8735/Design_Time_Addresses/Escaperoom/mex" />
+    <MetadataFile FileName="ModelLayer.xsd" MetadataType="Schema" ID="24b8ba71-5434-4c89-bc4f-2ca7c98be44a" SourceId="1" SourceUrl="http://localhost:8735/Design_Time_Addresses/Escaperoom/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="1afd459e-3d58-4ce0-9915-4b60a8d4e992" SourceId="1" SourceUrl="http://localhost:8735/Design_Time_Addresses/Escaperoom/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

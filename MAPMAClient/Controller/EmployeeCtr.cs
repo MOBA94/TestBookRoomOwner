@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MAPMA.DataBase
-{
-    class BookingDB
-    {
+namespace MAPMAClient.Controller {
+    class EmployeeCtr {
     }
 }

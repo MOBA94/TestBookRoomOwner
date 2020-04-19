@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MAPMA.DataBase
-{
-    class CustomerDB
-    {
+namespace MAPMAClient.ServiceLayer {
+    class CusServices {
     }
 }

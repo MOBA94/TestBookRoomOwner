@@ -35,6 +35,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,26 +47,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\EscaRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controller\BookingCtr.cs" />
     <Compile Include="Controller\CustomerCtr.cs" />
     <Compile Include="Controller\EmployeeCtr.cs" />
     <Compile Include="Controller\EscapeRoomCtr.cs" />
-    <Compile Include="DataBase\BookingDB.cs" />
-    <Compile Include="DataBase\CustomerDB.cs" />
-    <Compile Include="DataBase\EmployeeDB.cs" />
-    <Compile Include="DataBase\EscapeRoomDB.cs" />
+    <Compile Include="GUI\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\EscapeRoom.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLayer\EscServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\EscaRef\EscapeRoom_Services.wsdl" />
+    <None Include="Connected Services\EscaRef\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EscaRef\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EscaRef\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EscaRef\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GUI\" />
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EscaRef\item.disco" />
+    <None Include="Connected Services\EscaRef\configuration91.svcinfo" />
+    <None Include="Connected Services\EscaRef\configuration.svcinfo" />
+    <None Include="Connected Services\EscaRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Properties\NewFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MAPMAServiceLayers\MAPMAServiceLayers.csproj">
+      <Project>{621c28cf-28d9-4cd8-9631-b5272bc0df0a}</Project>
+      <Name>MAPMAServiceLayers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUI\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\EscaRef\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
