@@ -72,6 +72,12 @@
     <Compile Include="Controller\CustomerCtr.cs" />
     <Compile Include="Controller\EmployeeCtr.cs" />
     <Compile Include="Controller\EscapeRoomCtr.cs" />
+    <Compile Include="GUI\CreateBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CreateBooking.Designer.cs">
+      <DependentUpon>CreateBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="ServiceLayer\CusServices.cs" />
     <Compile Include="ServiceLayer\EmpServices.cs" />
     <Compile Include="ServiceLayer\EscapeRoomServices.cs" />
+    <EmbeddedResource Include="GUI\CreateBooking.resx">
+      <DependentUpon>CreateBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CreateEscapeRoom.resx">
       <DependentUpon>CreateEscapeRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +126,15 @@
     </None>
     <None Include="Connected Services\BookRef\item1.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BookRef\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BookRef\item21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BookRef\MAPMAClient.BookRef.Booking.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CusRef\CustomerServices.wsdl" />
     <None Include="Connected Services\CusRef\item.xsd">

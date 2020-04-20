@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MAPMAClient.Model;
+using MAPMAClient.ServiceLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +9,23 @@ using MAPMAClient.EscRef;
 using MAPMAClient.ServiceLayer;
 
 namespace MAPMAClient.Controller {
-    class EscapeRoomCtr {
+    public class EscapeRoomCtr {
+
+        private EscapeRoomServices ERS;
+
+        public EscapeRoomCtr() {
+
+            ERS = new EscapeRoomServices();
+        }
+
+        public EscapeRoom GetForOwner(int ER_ID) {
+
+            return ERS.GetForOwner(ER_ID);
+        }
+
+        public List<MAPMAClient.Model.EscapeRoom> GetAllForOwner() {
+            return ERS.GetAllForOwner();
+        }
 
 
         public void CreateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId) {
