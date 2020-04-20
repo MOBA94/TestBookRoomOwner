@@ -561,10 +561,10 @@ namespace MAPMAClient.BookRef {
         System.Threading.Tasks.Task CreateAsync(int EmpID, string username, int ER_ID, System.DateTime bookTime, int AOP, System.DateTime Bdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/Get", ReplyAction="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/GetResponse")]
-        MAPMAClient.BookRef.Booking Get(int EmpID, string username, System.DateTime Bdate);
+        MAPMAClient.BookRef.Booking Get(int EscID, string username, System.DateTime Bdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/Get", ReplyAction="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/GetResponse")]
-        System.Threading.Tasks.Task<MAPMAClient.BookRef.Booking> GetAsync(int EmpID, string username, System.DateTime Bdate);
+        System.Threading.Tasks.Task<MAPMAClient.BookRef.Booking> GetAsync(int EscID, string username, System.DateTime Bdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/Delete", ReplyAction="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/DeleteRespon" +
             "se")]
@@ -610,12 +610,12 @@ namespace MAPMAClient.BookRef {
             return base.Channel.CreateAsync(EmpID, username, ER_ID, bookTime, AOP, Bdate);
         }
         
-        public MAPMAClient.BookRef.Booking Get(int EmpID, string username, System.DateTime Bdate) {
-            return base.Channel.Get(EmpID, username, Bdate);
+        public MAPMAClient.BookRef.Booking Get(int EscID, string username, System.DateTime Bdate) {
+            return base.Channel.Get(EscID, username, Bdate);
         }
         
-        public System.Threading.Tasks.Task<MAPMAClient.BookRef.Booking> GetAsync(int EmpID, string username, System.DateTime Bdate) {
-            return base.Channel.GetAsync(EmpID, username, Bdate);
+        public System.Threading.Tasks.Task<MAPMAClient.BookRef.Booking> GetAsync(int EscID, string username, System.DateTime Bdate) {
+            return base.Channel.GetAsync(EscID, username, Bdate);
         }
         
         public void Delete(int EmpID, string username, int ER_ID, System.DateTime bookTime, int AOP, System.DateTime Bdate) {

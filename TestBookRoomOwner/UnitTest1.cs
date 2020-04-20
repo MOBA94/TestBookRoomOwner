@@ -24,20 +24,28 @@ namespace TestBookRoomOwner
                 AmountOfPeople = 7,
                 BookingTime = DateTime.Now,
                 Cus = cus,
-                Date = DateTime.Now.AddDays(7.0),
+                Date = DateTime.Now.AddDays(7.0).Date,
                 Emp = em,
                 Er = er
             
+            };
+            MAPMAClient.Model.Booking bookWithoutTime = new MAPMAClient.Model.Booking() {
+                AmountOfPeople = 7,
+                Cus = cus,
+                Date = DateTime.Now.AddDays(7.0).Date,
+                Emp = em,
+                Er = er
+
             };
 
 
             ////Act
             bc.Create(book.Emp,book.Cus,book.Er,book.BookingTime,book.AmountOfPeople,book.Date);
-
+            
             ////Assert
-            Assert.AreEqual(book, bc.Get(cus,er, book.Date));
+            Assert.AreEqual(bookWithoutTime, bc.Get(cus,er, book.Date));
 
-            bc.Delete(cus, er, book.Date);
+            //bc.Delete(cus, er, book.Date);
 
         }
     }
