@@ -30,11 +30,14 @@ namespace MAPMAClient.Controller {
             BOOKS.Create(book);
         }
 
-        public void Delete(Customer cus, EscapeRoom esr, DateTime date) {
+        public void Delete(Customer cus, EscapeRoom esr, DateTime date, Employee emp, int aop, DateTime bookTime) {
             Booking book = new Booking() {
                 Cus = cus,
                 Er = esr,
-                Date = date
+                Date = date,
+                Emp = emp,
+                AmountOfPeople = aop,
+                BookingTime = bookTime
             };
 
             BOOKS.Delete(book);

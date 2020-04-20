@@ -20,6 +20,7 @@ namespace TestBookRoomOwner
             MAPMAClient.Model.Customer cus = cc.Get("Anorak");
             MAPMAClient.Model.EscapeRoom er = ec.GetForOwner(2);
             MAPMAClient.Model.Employee em = emc.Get(1);
+            MAPMAClient.Model.Booking hostBook;
             MAPMAClient.Model.Booking book = new MAPMAClient.Model.Booking() {
                 AmountOfPeople = 7,
                 BookingTime = DateTime.Now,
@@ -41,11 +42,14 @@ namespace TestBookRoomOwner
 
             ////Act
             bc.Create(book.Emp,book.Cus,book.Er,book.BookingTime,book.AmountOfPeople,book.Date);
-            
-            ////Assert
-            Assert.AreEqual(bookWithoutTime, bc.Get(cus,er, book.Date));
+            hostBook = bc.Get(cus, er, book.Date);
 
-            //bc.Delete(cus, er, book.Date);
+            ////Assert
+            Assert.AreEqual(bookWithoutTime.Date, hostBook.Date);
+            Assert.AreEqual(bookWithoutTime.Emp.EmployeeID, hostBook.Emp.EmployeeID);
+            Assert.AreEqual(bookWithoutTime.Cus.Username, hostBook.Cus.Username);
+
+            bc.Delete(cus, er, book.Date, book.Emp,book.AmountOfPeople, book.BookingTime);
 
         }
     }
