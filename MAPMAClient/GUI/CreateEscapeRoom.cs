@@ -39,7 +39,7 @@ namespace MAPMAClient.GUI
         private void UpdateEscapeRoomList ( )
         {
             EscapeRoomCtr esc = new EscapeRoomCtr();
-            dataGridView1.DataSource = esc.GetAllEscapeRooms();
+            dataGridView1.DataSource = esc.GetAllForOwner();
         }
 
         private void dataGridView1_CellContentClick ( object sender, DataGridViewCellEventArgs e )

@@ -18,7 +18,7 @@ namespace MAPMAClient.Controller {
             ERS = new EscapeRoomServices();
         }
 
-        public EscapeRoom GetForOwner(int ER_ID) {
+        public MAPMAClient.Model.EscapeRoom GetForOwner(int ER_ID) {
 
             return ERS.GetForOwner(ER_ID);
         }
@@ -29,14 +29,9 @@ namespace MAPMAClient.Controller {
 
 
         public void CreateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId) {
-               EscapeRoomServices escService = new EscapeRoomServices();
             rating = 0;
-            escService.CreateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId);
+            ERS.CreateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId);
         }
 
-        public List<EscapeRoom> GetAllEscapeRooms() {
-            EscapeRoomServices escService = new EscapeRoomServices();
-            return escService.GetAllForOwner();
-        }
     }
 }

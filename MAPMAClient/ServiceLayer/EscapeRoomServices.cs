@@ -45,6 +45,11 @@ namespace MAPMAClient.ServiceLayer {
             
         }
 
+        public void DeleteEscapeRoom(int id) {
+            IEscapeRoom_Services Service = new EscapeRoom_ServicesClient();
+            Service.DeleteEscapeRoom(id);
+        }
+
         private MAPMAClient.Model.EscapeRoom GetClientsideOneEscapeRoom(EscapeRoom escapeRoom) {
             MAPMAClient.Model.EscapeRoom es;
 
@@ -56,6 +61,7 @@ namespace MAPMAClient.ServiceLayer {
                 Name = escapeRoom.name,
                 Price = escapeRoom.price,
                 Rating = escapeRoom.rating
+               
             };
 
             return es;
@@ -65,8 +71,21 @@ namespace MAPMAClient.ServiceLayer {
         private List<MAPMAClient.Model.EscapeRoom> GetClintsideEscapeRooms(IEnumerable<EscapeRoom> escapeRooms) {
             List<MAPMAClient.Model.EscapeRoom> foundEsc = new List<MAPMAClient.Model.EscapeRoom>();
             MAPMAClient.Model.EscapeRoom es;
+            MAPMAClient.Model.Employee emp;
 
             foreach (var ER in escapeRooms) {
+                emp = new MAPMAClient.Model.Employee {
+                    Address = ER.emp.address,
+                    CityName = ER.emp.cityName,
+                    EmployeeID = ER.emp.employeeID,
+                    FirstName = ER.emp.firstName,
+                    LastName = ER.emp.lastName,
+                    Mail = ER.emp.mail,
+                    Phone = ER.emp.phone,
+                    Region = ER.emp.region,
+                    Zipcode = ER.emp.zipcode
+                };
+
                 es = new MAPMAClient.Model.EscapeRoom {
                     CleanTime = ER.cleanTime,
                     Description = ER.description,
@@ -74,7 +93,8 @@ namespace MAPMAClient.ServiceLayer {
                     MaxClearTime = ER.maxClearTime,
                     Name = ER.name,
                     Price = ER.price,
-                    Rating = ER.rating
+                    Rating = ER.rating,
+                    Emp = emp
                 };
 
                 foundEsc.Add(es);
