@@ -14,7 +14,8 @@ namespace MAPMAClient {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreateBooking());
+            //Application.Run(new CreateBooking());
+            Application.Run(new CreateEscapeRoom());
         }
     }
 }
