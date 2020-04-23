@@ -21,7 +21,7 @@ namespace MAPMAClient.GUI {
         private Customer Cus;
         private List<EscapeRoom> escapeRooms;
         private EscapeRoom EsR;
-        private DateTime TimeForBooking;
+        private TimeSpan TimeForBooking;
         private DateTime DateForBooking;
 
 
@@ -104,7 +104,7 @@ namespace MAPMAClient.GUI {
         }
 
         private void dtpBookTime_ValueChanged(object sender, EventArgs e) {
-            TimeForBooking = dtpBookTime.Value;
+            TimeForBooking = dtpBookTime.Value.TimeOfDay;
         }
 
         private void calBookTime_DateChanged(object sender, DateRangeEventArgs e) {

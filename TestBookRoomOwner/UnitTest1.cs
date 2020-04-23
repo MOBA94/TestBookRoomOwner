@@ -23,7 +23,7 @@ namespace TestBookRoomOwner
             MAPMAClient.Model.Booking hostBook;
             MAPMAClient.Model.Booking book = new MAPMAClient.Model.Booking() {
                 AmountOfPeople = 7,
-                BookingTime = DateTime.Now,
+                BookingTime = DateTime.Now.TimeOfDay,
                 Cus = cus,
                 Date = DateTime.Now.AddDays(7.0).Date,
                 Emp = em,

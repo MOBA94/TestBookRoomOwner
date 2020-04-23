@@ -15,7 +15,7 @@ namespace MAPMAClient.Controller {
             BOOKS = new BookServices();
         }
 
-        public void Create(Employee Emp, Customer Cus, EscapeRoom ER, DateTime BookingTime, int AmountOfPeople, DateTime Date) {
+        public void Create(Employee Emp, Customer Cus, EscapeRoom ER, TimeSpan BookingTime, int AmountOfPeople, DateTime Date) {
 
             Booking book = new Booking() {
                 AmountOfPeople = AmountOfPeople,
@@ -30,7 +30,7 @@ namespace MAPMAClient.Controller {
             BOOKS.Create(book);
         }
 
-        public void Delete(Customer cus, EscapeRoom esr, DateTime date, Employee emp, int aop, DateTime bookTime) {
+        public void Delete(Customer cus, EscapeRoom esr, DateTime date, Employee emp, int aop, TimeSpan bookTime) {
             Booking book = new Booking() {
                 Cus = cus,
                 Er = esr,

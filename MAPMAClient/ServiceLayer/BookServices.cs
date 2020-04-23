@@ -44,6 +44,12 @@ namespace MAPMAClient.ServiceLayer {
 
         }
 
+        public List<Model.Booking> GetAllBookings() {
+
+
+            return null;
+        }
+
         private Model.Booking GetClientsideBooking(BookRef.Booking booking) {
             MAPMAClient.Model.Booking book;
             MAPMAClient.Model.Customer cus;
