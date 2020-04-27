@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MAPMAClient.Model;
+using MAPMAClient.Controller;
 
 
 namespace TestBookRoomOwner
@@ -11,20 +13,43 @@ namespace TestBookRoomOwner
         public void TestBookRoomOwner()
         {
             //Arrange 
-            //bool roomBooked = false;
-            //Customer cus = new Customer("Mick", "Andersen", "mymail.com", "61267389");
-            //EscapeRoom er = new EscapeRoom("Ghost House", "Beskrivelse af rum", 750);
-            //Booking book = new Booking(cus, er);
-            //BookingCtr bc = new BookingCtr();
+            BookingCtr bc = new BookingCtr();
+            CustomerCtr cc = new CustomerCtr();
+            EscapeRoomCtr ec = new EscapeRoomCtr();
+            EmployeeCtr emc = new EmployeeCtr();
+            MAPMAClient.Model.Customer cus = cc.Get("Anorak");
+            MAPMAClient.Model.EscapeRoom er = ec.GetForOwner(2);
+            MAPMAClient.Model.Employee em = emc.Get(1);
+            MAPMAClient.Model.Booking hostBook;
+            MAPMAClient.Model.Booking book = new MAPMAClient.Model.Booking() {
+                AmountOfPeople = 7,
+                BookingTime = DateTime.Now.TimeOfDay,
+                Cus = cus,
+                Date = DateTime.Now.AddDays(7.0).Date,
+                Emp = em,
+                Er = er
+            
+            };
+            MAPMAClient.Model.Booking bookWithoutTime = new MAPMAClient.Model.Booking() {
+                AmountOfPeople = 7,
+                Cus = cus,
+                Date = DateTime.Now.AddDays(7.0).Date,
+                Emp = em,
+                Er = er
+
+            };
 
 
             ////Act
-            //bc.BookRoomOwner(book);
+            bc.Create(book.Emp,book.Cus,book.Er,book.BookingTime,book.AmountOfPeople,book.Date);
+            hostBook = bc.Get(cus, er, book.Date);
 
             ////Assert
-            //Assert.Equals(book, bc.FindBooking);
+            Assert.AreEqual(bookWithoutTime.Date, hostBook.Date);
+            Assert.AreEqual(bookWithoutTime.Emp.EmployeeID, hostBook.Emp.EmployeeID);
+            Assert.AreEqual(bookWithoutTime.Cus.Username, hostBook.Cus.Username);
 
-            //bc.DeleteBooking(cus, er);
+            bc.Delete(cus, er, book.Date, book.Emp,book.AmountOfPeople, book.BookingTime);
 
         }
     }

@@ -390,6 +390,26 @@ namespace MAPMAClient.EscRef {
             "lForOwner", ReplyAction="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/GetAl" +
             "lForOwnerResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<MAPMAClient.EscRef.EscapeRoom>> GetAllForOwnerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/Creat" +
+            "eEscapeRoom", ReplyAction="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/Creat" +
+            "eEscapeRoomResponse")]
+        void CreateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/Creat" +
+            "eEscapeRoom", ReplyAction="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/Creat" +
+            "eEscapeRoomResponse")]
+        System.Threading.Tasks.Task CreateEscapeRoomAsync(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/Delet" +
+            "eEscapeRoom", ReplyAction="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/Delet" +
+            "eEscapeRoomResponse")]
+        void DeleteEscapeRoom(int ER_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/Delet" +
+            "eEscapeRoom", ReplyAction="http://localhost:8735/Design_Time_Addresses/Escaperoom/IEscapeRoom_Services/Delet" +
+            "eEscapeRoomResponse")]
+        System.Threading.Tasks.Task DeleteEscapeRoomAsync(int ER_ID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -433,6 +453,22 @@ namespace MAPMAClient.EscRef {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<MAPMAClient.EscRef.EscapeRoom>> GetAllForOwnerAsync() {
             return base.Channel.GetAllForOwnerAsync();
+        }
+        
+        public void CreateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId) {
+            base.Channel.CreateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId);
+        }
+        
+        public System.Threading.Tasks.Task CreateEscapeRoomAsync(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId) {
+            return base.Channel.CreateEscapeRoomAsync(name, description, maxClearTime, cleanTime, price, rating, empId);
+        }
+        
+        public void DeleteEscapeRoom(int ER_ID) {
+            base.Channel.DeleteEscapeRoom(ER_ID);
+        }
+        
+        public System.Threading.Tasks.Task DeleteEscapeRoomAsync(int ER_ID) {
+            return base.Channel.DeleteEscapeRoomAsync(ER_ID);
         }
     }
 }

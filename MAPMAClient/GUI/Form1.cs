@@ -16,22 +16,22 @@ namespace MAPMAClient.GUI {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e) {
-            this.lbxEsc.Items.Clear();
-            EscapeRoomServices es = new EscapeRoomServices();
-            List<EscapeRoom> escapeRooms = es.GetAllForOwner();
+        ////private void button1_Click(object sender, EventArgs e) {
+        ////    this.lbxEsc.Items.Clear();
+        ////    EscapeRoomServices es = new EscapeRoomServices();
+        ////    //List<EscapeRoom> escapeRooms = es.GetAllForOwner();
 
 
-            foreach (EscapeRoom escapeRoom in escapeRooms) {
-                this.lbxEsc.Items.Add(escapeRoom.name);
-            }
+        ////    foreach (EscapeRoom escapeRoom in escapeRooms) {
+        ////        this.lbxEsc.Items.Add(escapeRoom.name);
+        ////    }
 
-        }
+        ////}
 
         private void button2_Click(object sender, EventArgs e) {
             EscapeRoomServices es = new EscapeRoomServices();
             int num = int.Parse(txtID.Text);
-            lblEsc.Text = es.GetForOwner(num).name;
+            lblEsc.Text = es.GetForOwner(num).Name;
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//klar til arbejde emd Ranz
+
 namespace MAPMAClient.Model {
     public class Booking {
 
@@ -13,7 +13,7 @@ namespace MAPMAClient.Model {
         public DateTime Date {
             get; set;
         }
-        public DateTime BookingTime {
+        public TimeSpan BookingTime {
             get; set;
         }
         public EscapeRoom Er {
@@ -26,13 +26,13 @@ namespace MAPMAClient.Model {
             get; set;
         }
 
-        public Booking(int amountOfPeople, DateTime date, DateTime bookingTime) {
+        public Booking(int amountOfPeople, DateTime date, TimeSpan bookingTime) {
             this.AmountOfPeople = amountOfPeople;
             this.Date = date;
             this.BookingTime = bookingTime;
         }
 
-        public Booking(int amountOfPeople, DateTime date, DateTime bookingTime, Customer cus, EscapeRoom er) {
+        public Booking(int amountOfPeople, DateTime date, TimeSpan bookingTime, Customer cus, EscapeRoom er) {
             this.AmountOfPeople = amountOfPeople;
             this.Date = date;
             this.BookingTime = bookingTime;
@@ -41,7 +41,7 @@ namespace MAPMAClient.Model {
 
         }
 
-        public Booking(int amountOfPeople, DateTime date, DateTime bookingTime, Employee emp, EscapeRoom er) {
+        public Booking(int amountOfPeople, DateTime date, TimeSpan bookingTime, Employee emp, EscapeRoom er) {
             this.AmountOfPeople = amountOfPeople;
             this.Date = date;
             this.BookingTime = bookingTime;
