@@ -44,10 +44,30 @@ namespace MAPMAClient.ServiceLayer {
 
         }
 
-        public List<Model.Booking> GetAllBookings() {
+        public List<Model.Booking> GetAll() {
+            IBookingServices Service = new BookingServicesClient();
 
+            try {
+                var bookings = Service.GetAll();
+                return GetClientSideBooking(bookings);
+            }
+            catch(NullReferenceException NE) {
+                Console.WriteLine(NE);
+                Console.ReadLine();
+                return null;
+            }
 
-            return null;
+        }
+
+        private List<Model.Booking> GetClientSideBooking ( List<BookRef.Booking> bookings )
+        {
+            List<Model.Booking> foundbooks = new List<Model.Booking>();
+
+            foreach (var book in bookings) {
+                foundbooks.Add(GetClientsideBooking(book));
+            }
+
+            return foundbooks;
         }
 
         private Model.Booking GetClientsideBooking(BookRef.Booking booking) {

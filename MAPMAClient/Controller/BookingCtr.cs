@@ -46,5 +46,10 @@ namespace MAPMAClient.Controller {
         public Booking Get(Customer cus, EscapeRoom esr, DateTime date) {
             return BOOKS.Get(cus, esr, date);
         }
+
+        public List<Model.Booking> GetAll() {
+            return BOOKS.GetAll();
+        }
+
     }
 }

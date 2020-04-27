@@ -173,7 +173,7 @@
             // 
             // btnDeleteEscapeRoom
             // 
-            this.btnDeleteEscapeRoom.BackColor = System.Drawing.Color.Firebrick;
+            this.btnDeleteEscapeRoom.BackColor = System.Drawing.Color.IndianRed;
             this.btnDeleteEscapeRoom.Location = new System.Drawing.Point(127, 354);
             this.btnDeleteEscapeRoom.Name = "btnDeleteEscapeRoom";
             this.btnDeleteEscapeRoom.Size = new System.Drawing.Size(95, 23);
@@ -183,7 +183,7 @@
             // 
             // btnCreateEscapeRoom
             // 
-            this.btnCreateEscapeRoom.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnCreateEscapeRoom.BackColor = System.Drawing.Color.LawnGreen;
             this.btnCreateEscapeRoom.Location = new System.Drawing.Point(228, 354);
             this.btnCreateEscapeRoom.Name = "btnCreateEscapeRoom";
             this.btnCreateEscapeRoom.Size = new System.Drawing.Size(107, 23);
@@ -311,7 +311,7 @@
             // 
             // btnDoneCreateEscapeRoom
             // 
-            this.btnDoneCreateEscapeRoom.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnDoneCreateEscapeRoom.BackColor = System.Drawing.Color.LawnGreen;
             this.btnDoneCreateEscapeRoom.Location = new System.Drawing.Point(1082, 415);
             this.btnDoneCreateEscapeRoom.Name = "btnDoneCreateEscapeRoom";
             this.btnDoneCreateEscapeRoom.Size = new System.Drawing.Size(75, 23);
@@ -321,7 +321,7 @@
             // 
             // btnBackCreateEscapeRoom
             // 
-            this.btnBackCreateEscapeRoom.BackColor = System.Drawing.Color.Firebrick;
+            this.btnBackCreateEscapeRoom.BackColor = System.Drawing.Color.IndianRed;
             this.btnBackCreateEscapeRoom.Location = new System.Drawing.Point(1001, 415);
             this.btnBackCreateEscapeRoom.Name = "btnBackCreateEscapeRoom";
             this.btnBackCreateEscapeRoom.Size = new System.Drawing.Size(75, 23);
