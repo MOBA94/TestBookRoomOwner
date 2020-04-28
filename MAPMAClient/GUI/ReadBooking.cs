@@ -61,11 +61,12 @@ namespace MAPMAClient.GUI
 
         private void dgvAllBookings_CellContentDoubleClick ( object sender, DataGridViewCellEventArgs e )
         {
+            int index = e.RowIndex;
             MAPMAClient.Model.Booking book = dgvAllBookings.CurrentRow.DataBoundItem as MAPMAClient.Model.Booking;
-            Edit_Delete ed = new Edit_Delete();
-            ed.book = book;
-            ed.Show();
-            this.Hide();
+                Edit_Delete ed = new Edit_Delete(book);
+                ed.Show();
+                this.Hide();
+            
         }
     }
 }

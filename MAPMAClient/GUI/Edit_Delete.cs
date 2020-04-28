@@ -13,12 +13,11 @@ namespace MAPMAClient.GUI
 {
     public partial class Edit_Delete : Form
     {
-        public Booking book { get; set; }
 
-        public Edit_Delete ()
+        public Edit_Delete (Booking book)
         {
             InitializeComponent();
-            FillLabels();
+            FillLabels(book);
         }
 
         private void btnDelete_Click ( object sender, EventArgs e )
@@ -28,10 +27,11 @@ namespace MAPMAClient.GUI
 
         private void btnCancel_Click ( object sender, EventArgs e )
         {
-
+            this.Close();
+            
         }
 
-        private void FillLabels() {
+        private void FillLabels(Booking book) {
             string aop = Convert.ToString(book.AmountOfPeople);
             lblAmountOfPeopleDelete.Text = aop;
             string bt = Convert.ToString(book.BookingTime);

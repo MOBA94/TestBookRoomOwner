@@ -45,6 +45,7 @@
             this.dgvAllBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllBookings.Location = new System.Drawing.Point(12, 38);
             this.dgvAllBookings.Name = "dgvAllBookings";
+            this.dgvAllBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAllBookings.Size = new System.Drawing.Size(629, 487);
             this.dgvAllBookings.TabIndex = 0;
             this.dgvAllBookings.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllBookings_CellContentDoubleClick);
