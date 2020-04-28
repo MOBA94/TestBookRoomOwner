@@ -58,5 +58,14 @@ namespace MAPMAClient.GUI
         {
             this.Close();
         }
+
+        private void dgvAllBookings_CellContentDoubleClick ( object sender, DataGridViewCellEventArgs e )
+        {
+            MAPMAClient.Model.Booking book = dgvAllBookings.CurrentRow.DataBoundItem as MAPMAClient.Model.Booking;
+            Edit_Delete ed = new Edit_Delete();
+            ed.book = book;
+            ed.Show();
+            this.Hide();
+        }
     }
 }

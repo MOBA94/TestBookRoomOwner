@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.dgvAllBookings = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
-            this.bookingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bookingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnCloseReadBooking = new System.Windows.Forms.Button();
             this.txbSerchReadBooking = new System.Windows.Forms.TextBox();
+            this.bookingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllBookings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource1)).BeginInit();
@@ -47,6 +47,7 @@
             this.dgvAllBookings.Name = "dgvAllBookings";
             this.dgvAllBookings.Size = new System.Drawing.Size(629, 487);
             this.dgvAllBookings.TabIndex = 0;
+            this.dgvAllBookings.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllBookings_CellContentDoubleClick);
             // 
             // btnClose
             // 
@@ -57,14 +58,6 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Afslut";
             this.btnClose.UseVisualStyleBackColor = false;
-            // 
-            // bookingBindingSource
-            // 
-            this.bookingBindingSource.DataSource = typeof(MAPMAClient.BookRef.Booking);
-            // 
-            // bookingBindingSource1
-            // 
-            this.bookingBindingSource1.DataSource = typeof(MAPMAClient.BookRef.Booking);
             // 
             // btnCloseReadBooking
             // 
@@ -84,6 +77,14 @@
             this.txbSerchReadBooking.Size = new System.Drawing.Size(182, 20);
             this.txbSerchReadBooking.TabIndex = 3;
             this.txbSerchReadBooking.TextChanged += new System.EventHandler(this.txbSerchReadBooking_TextChanged);
+            // 
+            // bookingBindingSource
+            // 
+            this.bookingBindingSource.DataSource = typeof(MAPMAClient.BookRef.Booking);
+            // 
+            // bookingBindingSource1
+            // 
+            this.bookingBindingSource1.DataSource = typeof(MAPMAClient.BookRef.Booking);
             // 
             // ReadBooking
             // 
