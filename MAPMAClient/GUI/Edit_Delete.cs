@@ -8,25 +8,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MAPMAClient.Controller;
 
 namespace MAPMAClient.GUI
 {
     public partial class Edit_Delete : Form
     {
+        private Booking book;
 
-        public Edit_Delete (Booking book)
+        public Edit_Delete (Booking booking)
         {
             InitializeComponent();
+            book = booking;
             FillLabels(book);
         }
 
         private void btnDelete_Click ( object sender, EventArgs e )
         {
-
+            BookingCtr bookctr = new BookingCtr();
+            bookctr.Delete(book.Cus, book.Er, book.Date, book.Emp, book.AmountOfPeople, book.BookingTime);
+            ReadBooking rb = new ReadBooking();
+            rb.Show();
+            this.Close();
         }
 
         private void btnCancel_Click ( object sender, EventArgs e )
         {
+            ReadBooking rb = new ReadBooking();
+            rb.Show();
             this.Close();
             
         }

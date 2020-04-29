@@ -17,6 +17,7 @@ namespace MAPMAClient.GUI
 
         private DataTable dt;
         private BindingSource bs;
+        private List<MAPMAClient.Model.Booking> bookings;
 
         public ReadBooking ( )
         {
@@ -30,6 +31,7 @@ namespace MAPMAClient.GUI
             BookingCtr book = new BookingCtr();
             dt = new DataTable();
             bs = new BindingSource();
+            bookings = book.GetAll();
 
             dt.Columns.Add("Escaperoom", typeof(string));
             dt.Columns.Add("Tidspunkt for booking", typeof(TimeSpan));
@@ -38,7 +40,7 @@ namespace MAPMAClient.GUI
             dt.Columns.Add("Brugernavn", typeof(string));
             dt.Columns.Add("Medarbejder", typeof(string));
 
-            foreach (var Booking in book.GetAll()) {
+            foreach (var Booking in bookings) {
                 dt.Rows.Add(Booking.Er.Name, Booking.BookingTime, Booking.Date.ToShortDateString(), Booking.AmountOfPeople, Booking.Cus.Username, Booking.Emp.FirstName + Booking.Emp.LastName);
             }
 
@@ -59,14 +61,14 @@ namespace MAPMAClient.GUI
             this.Close();
         }
 
-        private void dgvAllBookings_CellContentDoubleClick ( object sender, DataGridViewCellEventArgs e )
+
+        private void dgvAllBookings_CellDoubleClick ( object sender, DataGridViewCellEventArgs e )
         {
             int index = e.RowIndex;
-            MAPMAClient.Model.Booking book = dgvAllBookings.CurrentRow.DataBoundItem as MAPMAClient.Model.Booking;
-                Edit_Delete ed = new Edit_Delete(book);
-                ed.Show();
-                this.Hide();
-            
+            MAPMAClient.Model.Booking book = bookings.ElementAt(index);
+            Edit_Delete ed = new Edit_Delete(book);
+            ed.Show();
+            this.Hide();
         }
     }
 }
