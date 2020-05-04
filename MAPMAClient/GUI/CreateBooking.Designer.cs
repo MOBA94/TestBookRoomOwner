@@ -56,7 +56,7 @@
             this.lblBookTime = new System.Windows.Forms.Label();
             this.calBookTime = new System.Windows.Forms.MonthCalendar();
             this.lblBookCalenderRead = new System.Windows.Forms.Label();
-            this.dtpBookTime = new System.Windows.Forms.DateTimePicker();
+            this.cmbFreeTimes = new System.Windows.Forms.ComboBox();
             this.grbEscapeRoom.SuspendLayout();
             this.grbCustomer.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -70,6 +70,7 @@
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Annuller";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnFinish
             // 
@@ -241,7 +242,7 @@
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.Size = new System.Drawing.Size(170, 20);
             this.txbUserName.TabIndex = 1;
-            this.txbUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbName_KeyDown);
+            this.txbUserName.Leave += new System.EventHandler(this.txbName_KeyDown);
             // 
             // lblUsername
             // 
@@ -302,9 +303,9 @@
             this.txbAmountOfPeople.Location = new System.Drawing.Point(9, 124);
             this.txbAmountOfPeople.Name = "txbAmountOfPeople";
             this.txbAmountOfPeople.Size = new System.Drawing.Size(96, 20);
-            this.txbAmountOfPeople.TabIndex = 5;
-            this.txbAmountOfPeople.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbAmountOfPeople_KeyDown);
+            this.txbAmountOfPeople.TabIndex = 5;            
             this.txbAmountOfPeople.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbAmountOfPeople_KeyPress);
+            this.txbAmountOfPeople.Leave += new System.EventHandler(this.txbAmountOfPeople_Leave);
             // 
             // lblBookAmountOfPeople
             // 
@@ -360,7 +361,8 @@
             // 
             // calBookTime
             // 
-            this.calBookTime.Location = new System.Drawing.Point(608, 33);
+            this.calBookTime.Enabled = false;
+            this.calBookTime.Location = new System.Drawing.Point(611, 32);
             this.calBookTime.MaxSelectionCount = 1;
             this.calBookTime.Name = "calBookTime";
             this.calBookTime.TabIndex = 7;
@@ -375,22 +377,21 @@
             this.lblBookCalenderRead.TabIndex = 8;
             this.lblBookCalenderRead.Text = "Dato Booking";
             // 
-            // dtpBookTime
+            // cmbFreeTimes
             // 
-            this.dtpBookTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpBookTime.Location = new System.Drawing.Point(608, 220);
-            this.dtpBookTime.Name = "dtpBookTime";
-            this.dtpBookTime.ShowUpDown = true;
-            this.dtpBookTime.Size = new System.Drawing.Size(168, 20);
-            this.dtpBookTime.TabIndex = 9;
-            this.dtpBookTime.ValueChanged += new System.EventHandler(this.dtpBookTime_ValueChanged);
+            this.cmbFreeTimes.FormattingEnabled = true;
+            this.cmbFreeTimes.Location = new System.Drawing.Point(611, 220);
+            this.cmbFreeTimes.Name = "cmbFreeTimes";
+            this.cmbFreeTimes.Size = new System.Drawing.Size(171, 21);
+            this.cmbFreeTimes.TabIndex = 10;
+            this.cmbFreeTimes.SelectedIndexChanged += new System.EventHandler(this.cmbFreeTimes_SelectedIndexChanged);
             // 
             // CreateBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 333);
-            this.Controls.Add(this.dtpBookTime);
+            this.Controls.Add(this.cmbFreeTimes);
             this.Controls.Add(this.lblBookCalenderRead);
             this.Controls.Add(this.lblBookTime);
             this.Controls.Add(this.calBookTime);
@@ -447,6 +448,6 @@
         private System.Windows.Forms.Label lblPhoneRead;
         private System.Windows.Forms.Label lblBookDateRead;
         private System.Windows.Forms.Label lblBookDate;
-        private System.Windows.Forms.DateTimePicker dtpBookTime;
+        private System.Windows.Forms.ComboBox cmbFreeTimes;
     }
 }

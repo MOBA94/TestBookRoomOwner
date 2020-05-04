@@ -67,6 +67,12 @@ namespace MAPMAClient.ServiceLayer {
             return es;
         }
 
+        public List<TimeSpan> FreeTimes(int ER_ID, DateTime Bdate) {
+            IEscapeRoom_Services Service = new EscapeRoom_ServicesClient();
+
+            return Service.FreeTimes(ER_ID, Bdate);
+        }
+
 
         private List<MAPMAClient.Model.EscapeRoom> GetClintsideEscapeRooms(IEnumerable<EscapeRoom> escapeRooms) {
             List<MAPMAClient.Model.EscapeRoom> foundEsc = new List<MAPMAClient.Model.EscapeRoom>();

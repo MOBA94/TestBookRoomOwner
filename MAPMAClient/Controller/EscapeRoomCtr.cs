@@ -33,5 +33,9 @@ namespace MAPMAClient.Controller {
             ERS.CreateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId);
         }
 
+        public List<TimeSpan> FreeTimes(int ER_ID, DateTime Bdate) {
+            return ERS.FreeTimes(ER_ID, Bdate);
+        }
+
     }
 }

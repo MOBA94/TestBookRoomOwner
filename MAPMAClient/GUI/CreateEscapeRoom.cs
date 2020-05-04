@@ -60,5 +60,17 @@ namespace MAPMAClient.GUI
                 throw;
             }
         }
+
+        private void btnBackCreateEscapeRoom_Click(object sender, EventArgs e) {
+            MainMenu mm = new MainMenu();
+            mm.Show();
+            this.Hide();
+        }
+
+        private void btnDoneCreateEscapeRoom_Click(object sender, EventArgs e) {
+            MainMenu mm = new MainMenu();
+            mm.Show();
+            this.Hide();
+        }
     }
 }
