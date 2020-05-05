@@ -51,6 +51,10 @@ namespace MAPMAClient.Model
             get; set;
         }
 
+        public byte[] Image {
+            get; set;
+        }
+
         public EscapeRoom(int escapeRoomID, string name, decimal price, decimal cleanTime, decimal maxClearTime, string description) {
             this.EscapeRoomID = EscapeRoomID;
             this.Name = name;

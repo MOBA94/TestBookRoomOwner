@@ -39,9 +39,9 @@ namespace MAPMAClient.ServiceLayer {
 
 
         }
-        public void CreateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId) {
+        public void CreateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId, byte[] img) {
             IEscapeRoom_Services Service = new EscapeRoom_ServicesClient();
-            Service.CreateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId);
+            Service.CreateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId, img);
             
         }
 

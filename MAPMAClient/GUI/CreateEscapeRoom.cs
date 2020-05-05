@@ -32,7 +32,8 @@ namespace MAPMAClient.GUI
             decimal Pri = decimal.Parse(txtPrice.Text);
             decimal rating = 0;
             int Emp = int.Parse(txtEmployeeID.Text);
-            esC.CreateEscapeRoom(txtName.Text ,txbDescription.Text, MaxC, ClTi, Pri, rating, Emp);
+            byte[] img = null;
+            esC.CreateEscapeRoom(txtName.Text ,txbDescription.Text, MaxC, ClTi, Pri, rating, Emp, img);
             UpdateEscapeRoomList();
         }
 

@@ -35,11 +35,12 @@ namespace TestBookRoomOwner
             Es1.Price = 1200;
             Es1.Rating = 0;
             Es1.Emp = Em1;
+            Es1.Image = null;
 
 
 
             //Act
-            ess.CreateEscapeRoom(Es1.Name, Es1.Description, Es1.MaxClearTime, Es1.CleanTime, Es1.Price, Es1.Rating, Es1.Emp.EmployeeID);
+            ess.CreateEscapeRoom(Es1.Name, Es1.Description, Es1.MaxClearTime, Es1.CleanTime, Es1.Price, Es1.Rating, Es1.Emp.EmployeeID, Es1.Image);
 
             //Assert
             List<MAPMAClient.Model.EscapeRoom> escapeRooms = new List<MAPMAClient.Model.EscapeRoom>();
