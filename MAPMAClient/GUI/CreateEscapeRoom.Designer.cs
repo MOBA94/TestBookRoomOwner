@@ -48,12 +48,6 @@
             this.txtMaxClearTime = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.escapeRoomBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.escapeRoomBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnDoneCreateEscapeRoom = new System.Windows.Forms.Button();
-            this.btnBackCreateEscapeRoom = new System.Windows.Forms.Button();
-            this.escapeRoomServicesClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.checkListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cleanTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +56,14 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.escapeRoomBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.escapeRoomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDoneCreateEscapeRoom = new System.Windows.Forms.Button();
+            this.btnBackCreateEscapeRoom = new System.Windows.Forms.Button();
+            this.escapeRoomServicesClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.checkListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pbEscaperoom = new System.Windows.Forms.PictureBox();
+            this.btnFindPicture = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomServicesClientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscaperoom)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
@@ -137,6 +140,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnFindPicture);
+            this.groupBox1.Controls.Add(this.pbEscaperoom);
             this.groupBox1.Controls.Add(this.lblShowEscapeRoomID);
             this.groupBox1.Controls.Add(this.lblEscapeRoomID);
             this.groupBox1.Controls.Add(this.btnDeleteEscapeRoom);
@@ -155,7 +160,7 @@
             this.groupBox1.Controls.Add(this.lblPrice);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 393);
+            this.groupBox1.Size = new System.Drawing.Size(360, 601);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -180,7 +185,7 @@
             // btnDeleteEscapeRoom
             // 
             this.btnDeleteEscapeRoom.BackColor = System.Drawing.Color.IndianRed;
-            this.btnDeleteEscapeRoom.Location = new System.Drawing.Point(127, 354);
+            this.btnDeleteEscapeRoom.Location = new System.Drawing.Point(127, 572);
             this.btnDeleteEscapeRoom.Name = "btnDeleteEscapeRoom";
             this.btnDeleteEscapeRoom.Size = new System.Drawing.Size(95, 23);
             this.btnDeleteEscapeRoom.TabIndex = 1;
@@ -190,7 +195,7 @@
             // btnCreateEscapeRoom
             // 
             this.btnCreateEscapeRoom.BackColor = System.Drawing.Color.LawnGreen;
-            this.btnCreateEscapeRoom.Location = new System.Drawing.Point(228, 354);
+            this.btnCreateEscapeRoom.Location = new System.Drawing.Point(228, 572);
             this.btnCreateEscapeRoom.Name = "btnCreateEscapeRoom";
             this.btnCreateEscapeRoom.Size = new System.Drawing.Size(107, 23);
             this.btnCreateEscapeRoom.TabIndex = 15;
@@ -239,7 +244,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(384, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(773, 393);
+            this.groupBox2.Size = new System.Drawing.Size(773, 566);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
@@ -264,48 +269,9 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(758, 358);
+            this.dataGridView1.Size = new System.Drawing.Size(758, 541);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // escapeRoomBindingSource1
-            // 
-            this.escapeRoomBindingSource1.DataSource = typeof(MAPMAClient.EscRef.EscapeRoom);
-            // 
-            // escapeRoomBindingSource
-            // 
-            this.escapeRoomBindingSource.DataSource = typeof(MAPMAClient.EscRef.EscapeRoom);
-            // 
-            // btnDoneCreateEscapeRoom
-            // 
-            this.btnDoneCreateEscapeRoom.BackColor = System.Drawing.Color.LawnGreen;
-            this.btnDoneCreateEscapeRoom.Location = new System.Drawing.Point(1082, 415);
-            this.btnDoneCreateEscapeRoom.Name = "btnDoneCreateEscapeRoom";
-            this.btnDoneCreateEscapeRoom.Size = new System.Drawing.Size(75, 23);
-            this.btnDoneCreateEscapeRoom.TabIndex = 11;
-            this.btnDoneCreateEscapeRoom.Text = "Færdig";
-            this.btnDoneCreateEscapeRoom.UseVisualStyleBackColor = false;
-            this.btnDoneCreateEscapeRoom.Click += new System.EventHandler(this.btnDoneCreateEscapeRoom_Click);
-            // 
-            // btnBackCreateEscapeRoom
-            // 
-            this.btnBackCreateEscapeRoom.BackColor = System.Drawing.Color.IndianRed;
-            this.btnBackCreateEscapeRoom.Location = new System.Drawing.Point(1001, 415);
-            this.btnBackCreateEscapeRoom.Name = "btnBackCreateEscapeRoom";
-            this.btnBackCreateEscapeRoom.Size = new System.Drawing.Size(75, 23);
-            this.btnBackCreateEscapeRoom.TabIndex = 12;
-            this.btnBackCreateEscapeRoom.Text = "Tilbage";
-            this.btnBackCreateEscapeRoom.UseVisualStyleBackColor = false;
-            this.btnBackCreateEscapeRoom.Click += new System.EventHandler(this.btnBackCreateEscapeRoom_Click);
-            // 
-            // escapeRoomServicesClientBindingSource
-            // 
-            this.escapeRoomServicesClientBindingSource.DataSource = typeof(MAPMAClient.EscRef.EscapeRoom_ServicesClient);
-            // 
-            // checkListBindingSource
-            // 
-            this.checkListBindingSource.DataMember = "checkList";
-            this.checkListBindingSource.DataSource = this.escapeRoomBindingSource1;
             // 
             // cleanTimeDataGridViewTextBoxColumn
             // 
@@ -363,11 +329,68 @@
             this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
             this.ratingDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // escapeRoomBindingSource1
+            // 
+            this.escapeRoomBindingSource1.DataSource = typeof(MAPMAClient.EscRef.EscapeRoom);
+            // 
+            // escapeRoomBindingSource
+            // 
+            this.escapeRoomBindingSource.DataSource = typeof(MAPMAClient.EscRef.EscapeRoom);
+            // 
+            // btnDoneCreateEscapeRoom
+            // 
+            this.btnDoneCreateEscapeRoom.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnDoneCreateEscapeRoom.Location = new System.Drawing.Point(1073, 584);
+            this.btnDoneCreateEscapeRoom.Name = "btnDoneCreateEscapeRoom";
+            this.btnDoneCreateEscapeRoom.Size = new System.Drawing.Size(75, 23);
+            this.btnDoneCreateEscapeRoom.TabIndex = 11;
+            this.btnDoneCreateEscapeRoom.Text = "Færdig";
+            this.btnDoneCreateEscapeRoom.UseVisualStyleBackColor = false;
+            this.btnDoneCreateEscapeRoom.Click += new System.EventHandler(this.btnDoneCreateEscapeRoom_Click);
+            // 
+            // btnBackCreateEscapeRoom
+            // 
+            this.btnBackCreateEscapeRoom.BackColor = System.Drawing.Color.IndianRed;
+            this.btnBackCreateEscapeRoom.Location = new System.Drawing.Point(970, 584);
+            this.btnBackCreateEscapeRoom.Name = "btnBackCreateEscapeRoom";
+            this.btnBackCreateEscapeRoom.Size = new System.Drawing.Size(75, 23);
+            this.btnBackCreateEscapeRoom.TabIndex = 12;
+            this.btnBackCreateEscapeRoom.Text = "Tilbage";
+            this.btnBackCreateEscapeRoom.UseVisualStyleBackColor = false;
+            this.btnBackCreateEscapeRoom.Click += new System.EventHandler(this.btnBackCreateEscapeRoom_Click);
+            // 
+            // escapeRoomServicesClientBindingSource
+            // 
+            this.escapeRoomServicesClientBindingSource.DataSource = typeof(MAPMAClient.EscRef.EscapeRoom_ServicesClient);
+            // 
+            // checkListBindingSource
+            // 
+            this.checkListBindingSource.DataMember = "checkList";
+            this.checkListBindingSource.DataSource = this.escapeRoomBindingSource1;
+            // 
+            // pbEscaperoom
+            // 
+            this.pbEscaperoom.Location = new System.Drawing.Point(6, 366);
+            this.pbEscaperoom.Name = "pbEscaperoom";
+            this.pbEscaperoom.Size = new System.Drawing.Size(200, 200);
+            this.pbEscaperoom.TabIndex = 18;
+            this.pbEscaperoom.TabStop = false;
+            // 
+            // btnFindPicture
+            // 
+            this.btnFindPicture.Location = new System.Drawing.Point(228, 366);
+            this.btnFindPicture.Name = "btnFindPicture";
+            this.btnFindPicture.Size = new System.Drawing.Size(107, 23);
+            this.btnFindPicture.TabIndex = 19;
+            this.btnFindPicture.Text = "Find billede";
+            this.btnFindPicture.UseVisualStyleBackColor = true;
+            this.btnFindPicture.Click += new System.EventHandler(this.btnFindPicture_Click);
+            // 
             // CreateEscapeRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1165, 450);
+            this.ClientSize = new System.Drawing.Size(1165, 653);
             this.Controls.Add(this.btnBackCreateEscapeRoom);
             this.Controls.Add(this.btnDoneCreateEscapeRoom);
             this.Controls.Add(this.groupBox2);
@@ -383,6 +406,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomServicesClientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscaperoom)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,5 +445,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ratingDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource escapeRoomServicesClientBindingSource;
         private System.Windows.Forms.BindingSource checkListBindingSource;
+        private System.Windows.Forms.Button btnFindPicture;
+        private System.Windows.Forms.PictureBox pbEscaperoom;
     }
 }

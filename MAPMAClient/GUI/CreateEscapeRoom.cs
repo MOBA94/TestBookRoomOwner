@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using MAPMAClient.Controller;
 using MAPMAClient.EscRef;
 
@@ -24,15 +26,25 @@ namespace MAPMAClient.GUI
             UpdateEscapeRoomList();
         }
 
-        private void btnCreateEscapeRoom_Click ( object sender, EventArgs e )
+        byte[] ConvertImgToBinary (Image img )
         {
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+
+        }
+
+        private void btnCreateEscapeRoom_Click(object sender, EventArgs e) {
             EscapeRoomCtr esC = new EscapeRoomCtr();
             decimal MaxC = decimal.Parse(txtMaxClearTime.Text);
             decimal ClTi = decimal.Parse(txtCleanTime.Text);
             decimal Pri = decimal.Parse(txtPrice.Text);
             decimal rating = 0;
             int Emp = int.Parse(txtEmployeeID.Text);
-            byte[] img = null;
+            byte[] img = ConvertImgToBinary(pbEscaperoom.Image);
             esC.CreateEscapeRoom(txtName.Text ,txbDescription.Text, MaxC, ClTi, Pri, rating, Emp, img);
             UpdateEscapeRoomList();
         }
@@ -72,6 +84,19 @@ namespace MAPMAClient.GUI
             MainMenu mm = new MainMenu();
             mm.Show();
             this.Hide();
+        }
+
+        private void btnFindPicture_Click ( object sender, EventArgs e )
+        {
+            string fileName;
+            using(OpenFileDialog ofd = new OpenFileDialog() {Filter="JPEG|*.jpg", ValidateNames = true, Multiselect = false})
+            {
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    fileName = ofd.FileName;
+                    pbEscaperoom.Image = Image.FromFile(fileName);
+                }
+            }
         }
     }
 }

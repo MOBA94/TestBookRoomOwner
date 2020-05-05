@@ -9,6 +9,7 @@ using MAPMAClient.EscRef;
 using MAPMAClient.ServiceLayer;
 using System.IO;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace MAPMAClient.Controller {
     public class EscapeRoomCtr {
