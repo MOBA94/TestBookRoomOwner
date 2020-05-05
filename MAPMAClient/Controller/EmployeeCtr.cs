@@ -20,5 +20,9 @@ namespace MAPMAClient.Controller {
 
             return EMPS.Get(id);
         }
+
+        public List<Employee> GetAll() {
+            return EMPS.GetAllEmployees();
+        }
     }
 }

@@ -50,6 +50,11 @@ namespace MAPMAClient.ServiceLayer {
             Service.DeleteEscapeRoom(id);
         }
 
+        public void UpdateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId) {
+            IEscapeRoom_Services Service = new EscapeRoom_ServicesClient();
+            Service.Update(name, description, maxClearTime, cleanTime, price, rating, empId);
+        }
+
         private MAPMAClient.Model.EscapeRoom GetClientsideOneEscapeRoom(EscapeRoom escapeRoom) {
             MAPMAClient.Model.EscapeRoom es;
 

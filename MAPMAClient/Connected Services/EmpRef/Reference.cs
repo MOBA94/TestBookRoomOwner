@@ -205,6 +205,14 @@ namespace MAPMAClient.EmpRef {
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8736/Design_Time_Addresses/Employee/IEmplyeeServices/Get", ReplyAction="http://localhost:8736/Design_Time_Addresses/Employee/IEmplyeeServices/GetResponse" +
             "")]
         System.Threading.Tasks.Task<MAPMAClient.EmpRef.Employee> GetAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8736/Design_Time_Addresses/Employee/IEmplyeeServices/GetAll", ReplyAction="http://localhost:8736/Design_Time_Addresses/Employee/IEmplyeeServices/GetAllRespo" +
+            "nse")]
+        System.Collections.Generic.List<MAPMAClient.EmpRef.Employee> GetAll();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8736/Design_Time_Addresses/Employee/IEmplyeeServices/GetAll", ReplyAction="http://localhost:8736/Design_Time_Addresses/Employee/IEmplyeeServices/GetAllRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<MAPMAClient.EmpRef.Employee>> GetAllAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -240,6 +248,14 @@ namespace MAPMAClient.EmpRef {
         
         public System.Threading.Tasks.Task<MAPMAClient.EmpRef.Employee> GetAsync(int id) {
             return base.Channel.GetAsync(id);
+        }
+        
+        public System.Collections.Generic.List<MAPMAClient.EmpRef.Employee> GetAll() {
+            return base.Channel.GetAll();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<MAPMAClient.EmpRef.Employee>> GetAllAsync() {
+            return base.Channel.GetAllAsync();
         }
     }
 }
