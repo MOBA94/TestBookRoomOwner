@@ -23,6 +23,7 @@ namespace MAPMAClient.GUI {
         private EscapeRoom EsR;
         private TimeSpan TimeForBooking;
         private DateTime DateForBooking;
+        private List<TimeSpan> freeTimes;
 
 
         public CreateBooking() {
@@ -44,14 +45,6 @@ namespace MAPMAClient.GUI {
             }
         }
 
-        private void txbAmountOfPeople_KeyDown(object sender, KeyEventArgs e) {
-
-            if (e.KeyCode == Keys.Enter) {
-                AmountOfPeople = int.Parse(txbAmountOfPeople.Text);
-                lblErrorAOP.Visible = false;
-            }
-        }
-
         private void txbAmountOfPeople_KeyPress(object sender, KeyPressEventArgs e) {
             try {
                 int.Parse(txbAmountOfPeople.Text);
@@ -61,17 +54,6 @@ namespace MAPMAClient.GUI {
                 Console.ReadLine();
                 txbAmountOfPeople.ResetText();
                 lblErrorAOP.Visible = true;
-            }
-        }
-
-        private void txbName_KeyDown(object sender, KeyEventArgs e) {
-
-            if (e.KeyCode == Keys.Enter) {
-                 Cus = Cusctr.Get(txbUserName.Text);
-                lblFirstNameRead.Text = Cus.FirstName;
-                lblLastNameRead.Text = Cus.LastName;
-                lblPhoneRead.Text = Cus.Phone;
-                lblBookCustomerNameRead.Text = Cus.FirstName + Cus.LastName;
             }
         }
 
@@ -90,6 +72,7 @@ namespace MAPMAClient.GUI {
                 }
             }
             changeEscapeRoomLabels();
+            calBookTime.Enabled = true;
         }
 
         private void changeEscapeRoomLabels() {
@@ -103,21 +86,63 @@ namespace MAPMAClient.GUI {
 
         }
 
-        private void dtpBookTime_ValueChanged(object sender, EventArgs e) {
-            TimeForBooking = dtpBookTime.Value.TimeOfDay;
-        }
-
         private void calBookTime_DateChanged(object sender, DateRangeEventArgs e) {
             DateForBooking = calBookTime.SelectionRange.Start;
             string date = Convert.ToString(DateForBooking.ToShortDateString());
             lblBookDateRead.Text = date;
+
+            cmbFreeTimes.Items.Clear();
+            freeTimes = ERCtr.FreeTimes(EsR.EscapeRoomID, DateForBooking);
+            foreach (TimeSpan ts in freeTimes) {
+                cmbFreeTimes.Items.Add(ts);
+            }
         }
 
         private void btnFinish_Click(object sender, EventArgs e) {
             //Skal laves om når der kommer et login på clienten indtil da en stub.
+            
             Employee emp;
             emp = EmpCtr.Get(1);
             BookCtr.Create(emp, Cus, EsR, TimeForBooking, AmountOfPeople, DateForBooking);
+
+
+            MainMenu mm = new MainMenu();
+            mm.Show();
+            this.Hide();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e) {
+            this.Hide();
+            MainMenu mm = new MainMenu();
+            mm.Show();
+        }
+
+        private void cmbFreeTimes_SelectedIndexChanged(object sender, EventArgs e) {
+            bool found = false;
+            int i = 0;
+
+            while (i < freeTimes.Count && !found) {
+                if (freeTimes.ElementAt(i).Equals(cmbFreeTimes.SelectedItem)) {
+                    TimeForBooking = freeTimes.ElementAt(i);
+                    found = true;
+                }
+                else {
+                    i++;
+                }
+            }
+        }
+
+        private void txbName_KeyDown(object sender, EventArgs e) {
+            Cus = Cusctr.Get(txbUserName.Text);
+            lblFirstNameRead.Text = Cus.FirstName;
+            lblLastNameRead.Text = Cus.LastName;
+            lblPhoneRead.Text = Cus.Phone;
+            lblBookCustomerNameRead.Text = Cus.FirstName + Cus.LastName;
+        }
+
+        private void txbAmountOfPeople_Leave(object sender, EventArgs e) {
+            AmountOfPeople = int.Parse(txbAmountOfPeople.Text);
+            lblErrorAOP.Visible = false;
         }
     }
 }

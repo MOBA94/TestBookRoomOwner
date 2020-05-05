@@ -96,6 +96,12 @@
     <Compile Include="GUI\CreateEscapeRoom.Designer.cs">
       <DependentUpon>CreateEscapeRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ReadBooking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,9 +130,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ReadBooking.resx">
-      <DependentUpon>ReadBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -196,6 +199,7 @@
     <None Include="Connected Services\EscRef\MAPMAClient.EscRef.EscapeRoom.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\MAPMAClient.EscRef.EscapeRoom_ServicesClient.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -48,21 +48,27 @@
             this.txtMaxClearTime = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.escapeRoomIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maxClearTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cleanTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.escapeRoomBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.escapeRoomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDoneCreateEscapeRoom = new System.Windows.Forms.Button();
             this.btnBackCreateEscapeRoom = new System.Windows.Forms.Button();
+            this.escapeRoomServicesClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.checkListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cleanTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.escapeRoomIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxClearTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.escapeRoomServicesClientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
@@ -245,61 +251,22 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.escapeRoomIDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.maxClearTimeDataGridViewTextBoxColumn,
             this.cleanTimeDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
+            this.descriptionDataGridViewTextBoxColumn,
+            this.empDataGridViewTextBoxColumn,
+            this.escapeRoomIDDataGridViewTextBoxColumn,
+            this.maxClearTimeDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.ratingDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.escapeRoomBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(758, 358);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // escapeRoomIDDataGridViewTextBoxColumn
-            // 
-            this.escapeRoomIDDataGridViewTextBoxColumn.DataPropertyName = "escapeRoomID";
-            this.escapeRoomIDDataGridViewTextBoxColumn.HeaderText = "escapeRoomID";
-            this.escapeRoomIDDataGridViewTextBoxColumn.Name = "escapeRoomIDDataGridViewTextBoxColumn";
-            this.escapeRoomIDDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Navn";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Beskrivelse";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // maxClearTimeDataGridViewTextBoxColumn
-            // 
-            this.maxClearTimeDataGridViewTextBoxColumn.DataPropertyName = "maxClearTime";
-            this.maxClearTimeDataGridViewTextBoxColumn.HeaderText = "Max gennemførsels tid";
-            this.maxClearTimeDataGridViewTextBoxColumn.Name = "maxClearTimeDataGridViewTextBoxColumn";
-            this.maxClearTimeDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // cleanTimeDataGridViewTextBoxColumn
-            // 
-            this.cleanTimeDataGridViewTextBoxColumn.DataPropertyName = "cleanTime";
-            this.cleanTimeDataGridViewTextBoxColumn.HeaderText = "Klargøringstid";
-            this.cleanTimeDataGridViewTextBoxColumn.Name = "cleanTimeDataGridViewTextBoxColumn";
-            this.cleanTimeDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Pris";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 60;
             // 
             // escapeRoomBindingSource1
             // 
@@ -318,6 +285,7 @@
             this.btnDoneCreateEscapeRoom.TabIndex = 11;
             this.btnDoneCreateEscapeRoom.Text = "Færdig";
             this.btnDoneCreateEscapeRoom.UseVisualStyleBackColor = false;
+            this.btnDoneCreateEscapeRoom.Click += new System.EventHandler(this.btnDoneCreateEscapeRoom_Click);
             // 
             // btnBackCreateEscapeRoom
             // 
@@ -328,6 +296,72 @@
             this.btnBackCreateEscapeRoom.TabIndex = 12;
             this.btnBackCreateEscapeRoom.Text = "Tilbage";
             this.btnBackCreateEscapeRoom.UseVisualStyleBackColor = false;
+            this.btnBackCreateEscapeRoom.Click += new System.EventHandler(this.btnBackCreateEscapeRoom_Click);
+            // 
+            // escapeRoomServicesClientBindingSource
+            // 
+            this.escapeRoomServicesClientBindingSource.DataSource = typeof(MAPMAClient.EscRef.EscapeRoom_ServicesClient);
+            // 
+            // checkListBindingSource
+            // 
+            this.checkListBindingSource.DataMember = "checkList";
+            this.checkListBindingSource.DataSource = this.escapeRoomBindingSource1;
+            // 
+            // cleanTimeDataGridViewTextBoxColumn
+            // 
+            this.cleanTimeDataGridViewTextBoxColumn.DataPropertyName = "cleanTime";
+            this.cleanTimeDataGridViewTextBoxColumn.HeaderText = "cleanTime";
+            this.cleanTimeDataGridViewTextBoxColumn.Name = "cleanTimeDataGridViewTextBoxColumn";
+            this.cleanTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // empDataGridViewTextBoxColumn
+            // 
+            this.empDataGridViewTextBoxColumn.DataPropertyName = "emp";
+            this.empDataGridViewTextBoxColumn.HeaderText = "emp";
+            this.empDataGridViewTextBoxColumn.Name = "empDataGridViewTextBoxColumn";
+            this.empDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // escapeRoomIDDataGridViewTextBoxColumn
+            // 
+            this.escapeRoomIDDataGridViewTextBoxColumn.DataPropertyName = "escapeRoomID";
+            this.escapeRoomIDDataGridViewTextBoxColumn.HeaderText = "escapeRoomID";
+            this.escapeRoomIDDataGridViewTextBoxColumn.Name = "escapeRoomIDDataGridViewTextBoxColumn";
+            this.escapeRoomIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maxClearTimeDataGridViewTextBoxColumn
+            // 
+            this.maxClearTimeDataGridViewTextBoxColumn.DataPropertyName = "maxClearTime";
+            this.maxClearTimeDataGridViewTextBoxColumn.HeaderText = "maxClearTime";
+            this.maxClearTimeDataGridViewTextBoxColumn.Name = "maxClearTimeDataGridViewTextBoxColumn";
+            this.maxClearTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ratingDataGridViewTextBoxColumn
+            // 
+            this.ratingDataGridViewTextBoxColumn.DataPropertyName = "rating";
+            this.ratingDataGridViewTextBoxColumn.HeaderText = "rating";
+            this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
+            this.ratingDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // CreateEscapeRoom
             // 
@@ -347,6 +381,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.escapeRoomServicesClientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkListBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,11 +411,15 @@
         private System.Windows.Forms.Button btnDeleteEscapeRoom;
         private System.Windows.Forms.Label lblShowEscapeRoomID;
         private System.Windows.Forms.Label lblEscapeRoomID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn escapeRoomIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maxClearTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cleanTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn empDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn escapeRoomIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maxClearTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ratingDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource escapeRoomServicesClientBindingSource;
+        private System.Windows.Forms.BindingSource checkListBindingSource;
     }
 }
