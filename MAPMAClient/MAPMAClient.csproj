@@ -108,6 +108,12 @@
     <Compile Include="GUI\ReadBooking.Designer.cs">
       <DependentUpon>ReadBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Update_Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Update_Room.Designer.cs">
+      <DependentUpon>Update_Room.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Employee.cs" />
@@ -130,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ReadBooking.resx">
+      <DependentUpon>ReadBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Update_Room.resx">
+      <DependentUpon>Update_Room.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

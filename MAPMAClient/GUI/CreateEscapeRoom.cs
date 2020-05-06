@@ -16,6 +16,7 @@ namespace MAPMAClient.GUI
 {
     public partial class CreateEscapeRoom : Form
     {
+        private List<MAPMAClient.Model.EscapeRoom> escapeRooms;
         public CreateEscapeRoom ( )
         {
             InitializeComponent();
@@ -52,26 +53,35 @@ namespace MAPMAClient.GUI
         private void UpdateEscapeRoomList ( )
         {
             EscapeRoomCtr esc = new EscapeRoomCtr();
-            dataGridView1.DataSource = esc.GetAllForOwner();
+            escapeRooms = esc.GetAllForOwner();
+            dataGridView1.DataSource = escapeRooms;
         }
 
         private void dataGridView1_CellContentClick ( object sender, DataGridViewCellEventArgs e )
         {
-            try
-            {
-                var SelectedRow = dataGridView1.SelectedRows[0].DataBoundItem as EscapeRoom;
-                lblShowEscapeRoomID.Text = SelectedRow.escapeRoomID.ToString();
-                txtName.Text = SelectedRow.name;
-                txbDescription.Text = SelectedRow.description;
-                txtMaxClearTime.Text = SelectedRow.maxClearTime.ToString();
-                txtCleanTime.Text = SelectedRow.cleanTime.ToString();
-                txtPrice.Text = SelectedRow.price.ToString();
-            }
-            catch (Exception)
-            {
+            //try
+            //{
+            //    var SelectedRow = dataGridView1.SelectedRows[0].DataBoundItem as EscapeRoom;
+            //    lblShowEscapeRoomID.Text = SelectedRow.escapeRoomID.ToString();
+            //    txtName.Text = SelectedRow.name;
+            //    txbDescription.Text = SelectedRow.description;
+            //    txtMaxClearTime.Text = SelectedRow.maxClearTime.ToString();
+            //    txtCleanTime.Text = SelectedRow.cleanTime.ToString();
+            //    txtPrice.Text = SelectedRow.price.ToString();
+            //}
+            //catch (Exception)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            int index = e.RowIndex;
+            MAPMAClient.Model.EscapeRoom escapeRoom = escapeRooms.ElementAt(index);
+            Update_Room ur = new Update_Room(escapeRoom);
+            ur.Show();
+            this.Hide();
         }
 
         private void btnBackCreateEscapeRoom_Click(object sender, EventArgs e) {

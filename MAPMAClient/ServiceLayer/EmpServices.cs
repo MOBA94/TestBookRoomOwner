@@ -30,7 +30,35 @@ namespace MAPMAClient.ServiceLayer {
                 Console.ReadLine();
                 return null;
             }
-        }  
+        }
+
+        public List<MAPMAClient.Model.Employee> GetAll() {
+            IEmplyeeServices Service = new EmplyeeServicesClient();
+
+            var employees = Service.GetAll();
+            return GetClientsideEmployees(employees);
+        }
+
+        private List<Model.Employee> GetClientsideEmployees(IEnumerable<EmpRef.Employee> employees) {
+            List<Model.Employee> foundEmp = new List<Model.Employee>();
+            Model.Employee emp;
+
+            foreach (var emps in employees) {
+                emp = new MAPMAClient.Model.Employee {
+                    Address = emps.address,
+                    CityName = emps.cityName,
+                    EmployeeID = emps.employeeID,
+                    FirstName = emps.firstName,
+                    LastName = emps.lastName,
+                    Mail = emps.mail,
+                    Phone = emps.phone,
+                    Region = emps.region,
+                    Zipcode = emps.zipcode
+                };
+                foundEmp.Add(emp);
+            }
+            return foundEmp;
+        }
 
         private Model.Employee GetEmployeeClientSide(EmpRef.Employee employee) {
             MAPMAClient.Model.Employee emp;
