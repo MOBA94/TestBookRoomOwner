@@ -33,8 +33,8 @@ namespace MAPMAClient.Controller {
             ERS.CreateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId);
         }
 
-        public void UpdateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId) {
-            ERS.UpdateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId);
+        public void UpdateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId, int escId) {
+            ERS.UpdateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId, escId);
         }
 
     }

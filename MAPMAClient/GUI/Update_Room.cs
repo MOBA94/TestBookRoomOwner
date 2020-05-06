@@ -37,7 +37,7 @@ namespace MAPMAClient.GUI {
             foreach (Employee emp in employees) {
                 cobEmployeeName.Items.Add(emp.FirstName + emp.LastName);
             }
-            //cobEmployeeName.SelectionStart = employees.IndexOf(ER.Emp);
+            cobEmployeeName.SelectedItem = ER.Emp.FirstName + ER.Emp.LastName;
         }
 
         private void FillTextBoxEscapeRoom(EscapeRoom esr) {
@@ -63,9 +63,9 @@ namespace MAPMAClient.GUI {
             bool found = false;
             int i = 0;
             Emp = new Employee();
-            string name = employees.ElementAt(i).FirstName + employees.ElementAt(i).LastName;
 
             while (i < employees.Count && !found) {
+                string name = employees.ElementAt(i).FirstName + employees.ElementAt(i).LastName;
                 if (name.Equals(cobEmployeeName.SelectedItem)) {
                     Emp = employees.ElementAt(i);
                     found = true;
@@ -98,10 +98,41 @@ namespace MAPMAClient.GUI {
             else {
                 empID = Emp.EmployeeID;
             }
-            ERctr.UpdateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empID);
+            ERctr.UpdateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empID, ER.EscapeRoomID);
             this.Hide();
             CreateEscapeRoom cer = new CreateEscapeRoom();
             cer.Show();
         }
+
+        private void txbPrice_TextChanged(object sender, EventArgs e) {
+            try {
+                decimal.Parse(txbPrice.Text);
+            }
+            catch(FormatException FE) {
+                txbPrice.Text = "";
+                //lblErrorPrice.Visible = true;
+            }
+        }
+
+        private void txbMaxClearTime_TextChanged(object sender, EventArgs e) {
+            try {
+                decimal.Parse(txbMaxClearTime.Text);
+            }
+            catch (FormatException FE) {
+                txbMaxClearTime.Text = "";
+                lblErrorClearTime.Visible = true;
+            }
+        }
+
+        private void txbCleanTime_TextChanged(object sender, EventArgs e) {
+            try {
+                decimal.Parse(txbCleanTime.Text);
+            }
+            catch (FormatException FE) {
+                txbCleanTime.Text = "";
+                lblErrorCleanTime.Visible = true;
+            }
+        }
+
     }
 }
