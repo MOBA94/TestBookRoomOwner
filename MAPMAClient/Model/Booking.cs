@@ -25,6 +25,9 @@ namespace MAPMAClient.Model {
         public Employee Emp {
             get; set;
         }
+        public int Id {
+            get; set;
+        }
 
         public Booking(int amountOfPeople, DateTime date, TimeSpan bookingTime) {
             this.AmountOfPeople = amountOfPeople;

@@ -26,5 +26,12 @@ namespace MAPMAClient.GUI {
             ce.Show();
             this.Hide();
         }
+
+        private void btnReadBookings_Click ( object sender, EventArgs e )
+        {
+            ReadBooking rb = new ReadBooking();
+            rb.Show();
+            this.Hide();
+        }
     }
 }

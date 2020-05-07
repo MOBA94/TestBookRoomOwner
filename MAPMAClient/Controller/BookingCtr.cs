@@ -43,6 +43,21 @@ namespace MAPMAClient.Controller {
             BOOKS.Delete(book);
         }
 
+        public void Update(Customer cus, EscapeRoom esr, DateTime date, Employee emp, int aop, TimeSpan bookTime, int id)
+        {
+            Booking book = new Booking()
+            {
+                AmountOfPeople = aop,
+                BookingTime = bookTime,
+                Cus = cus,
+                Date = date,
+                Emp = emp,
+                Er = esr,
+                Id = id
+            };
+            BOOKS.Update(book);
+        }
+
         public Booking Get(Customer cus, EscapeRoom esr, DateTime date) {
             return BOOKS.Get(cus, esr, date);
         }

@@ -24,7 +24,7 @@ namespace TestBookRoomOwner {
             };
 
             //Act
-            esrCtr.CreateEscapeRoom(Er.Name, Er.Description, Er.MaxClearTime, Er.CleanTime, Er.Price, Er.Rating, Er.Emp.EmployeeID);
+            esrCtr.CreateEscapeRoom(Er.Name, Er.Description, Er.MaxClearTime, Er.CleanTime, Er.Price, Er.Rating, Er.Emp.EmployeeID, Er.Image);
             EscapeRoom TestEr = esrCtr.GetForOwner(esrCtr.GetAllForOwner().Count);
             esrCtr.UpdateEscapeRoom("The best", "I am the best", 200, 20, 500, 5, Er.Emp.EmployeeID, TestEr.EscapeRoomID);
             TestEr = esrCtr.GetForOwner(esrCtr.GetAllForOwner().Count);

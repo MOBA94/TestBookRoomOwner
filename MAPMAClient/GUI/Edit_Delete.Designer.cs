@@ -30,6 +30,15 @@
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gbBookingInfo = new System.Windows.Forms.GroupBox();
+            this.cbBookingTime = new System.Windows.Forms.ComboBox();
+            this.cbEmployee = new System.Windows.Forms.ComboBox();
+            this.cbEscaperoom = new System.Windows.Forms.ComboBox();
+            this.tbAmountOfPeople = new System.Windows.Forms.TextBox();
+            this.lblEmployeeNameDelete = new System.Windows.Forms.Label();
+            this.lblDateDelete = new System.Windows.Forms.Label();
+            this.lblEscaperoomDelete = new System.Windows.Forms.Label();
+            this.lblAmountOfPeopleDelete = new System.Windows.Forms.Label();
+            this.lblBookingTimeDelete = new System.Windows.Forms.Label();
             this.lblEmployeeNameEdit_Delete = new System.Windows.Forms.Label();
             this.lblDateEdit_Delete = new System.Windows.Forms.Label();
             this.lblBookingTimeEdit_Delete = new System.Windows.Forms.Label();
@@ -46,19 +55,21 @@
             this.lblLastNameDelete = new System.Windows.Forms.Label();
             this.lblFirstNameDelete = new System.Windows.Forms.Label();
             this.lblUsernameDelete = new System.Windows.Forms.Label();
-            this.lblBookingTimeDelete = new System.Windows.Forms.Label();
-            this.lblAmountOfPeopleDelete = new System.Windows.Forms.Label();
-            this.lblEscaperoomDelete = new System.Windows.Forms.Label();
-            this.lblDateDelete = new System.Windows.Forms.Label();
-            this.lblEmployeeNameDelete = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.mcUpdateBooking = new System.Windows.Forms.MonthCalendar();
             this.gbBookingInfo.SuspendLayout();
             this.gbBrugerInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbBookingInfo
             // 
+            this.gbBookingInfo.Controls.Add(this.mcUpdateBooking);
+            this.gbBookingInfo.Controls.Add(this.cbBookingTime);
+            this.gbBookingInfo.Controls.Add(this.cbEmployee);
+            this.gbBookingInfo.Controls.Add(this.cbEscaperoom);
+            this.gbBookingInfo.Controls.Add(this.tbAmountOfPeople);
             this.gbBookingInfo.Controls.Add(this.lblEmployeeNameDelete);
             this.gbBookingInfo.Controls.Add(this.lblDateDelete);
             this.gbBookingInfo.Controls.Add(this.lblEscaperoomDelete);
@@ -76,10 +87,89 @@
             this.gbBookingInfo.TabStop = false;
             this.gbBookingInfo.Text = "Booking Info";
             // 
+            // cbBookingTime
+            // 
+            this.cbBookingTime.FormattingEnabled = true;
+            this.cbBookingTime.Location = new System.Drawing.Point(117, 321);
+            this.cbBookingTime.Name = "cbBookingTime";
+            this.cbBookingTime.Size = new System.Drawing.Size(236, 21);
+            this.cbBookingTime.TabIndex = 15;
+            this.cbBookingTime.Visible = false;
+            // 
+            // cbEmployee
+            // 
+            this.cbEmployee.FormattingEnabled = true;
+            this.cbEmployee.Location = new System.Drawing.Point(118, 105);
+            this.cbEmployee.Name = "cbEmployee";
+            this.cbEmployee.Size = new System.Drawing.Size(235, 21);
+            this.cbEmployee.TabIndex = 14;
+            this.cbEmployee.Visible = false;
+            this.cbEmployee.SelectedIndexChanged += new System.EventHandler(this.cbEmployee_SelectedIndexChanged);
+            // 
+            // cbEscaperoom
+            // 
+            this.cbEscaperoom.FormattingEnabled = true;
+            this.cbEscaperoom.Location = new System.Drawing.Point(117, 31);
+            this.cbEscaperoom.Name = "cbEscaperoom";
+            this.cbEscaperoom.Size = new System.Drawing.Size(235, 21);
+            this.cbEscaperoom.TabIndex = 13;
+            this.cbEscaperoom.Visible = false;
+            this.cbEscaperoom.SelectedIndexChanged += new System.EventHandler(this.cbEscaperoom_SelectedIndexChanged);
+            // 
+            // tbAmountOfPeople
+            // 
+            this.tbAmountOfPeople.Location = new System.Drawing.Point(117, 68);
+            this.tbAmountOfPeople.Name = "tbAmountOfPeople";
+            this.tbAmountOfPeople.Size = new System.Drawing.Size(236, 20);
+            this.tbAmountOfPeople.TabIndex = 10;
+            this.tbAmountOfPeople.Visible = false;
+            this.tbAmountOfPeople.TextChanged += new System.EventHandler(this.tbAmountOfPeople_TextChanged);
+            this.tbAmountOfPeople.Leave += new System.EventHandler(this.tbAmountOfPeople_Leave);
+            // 
+            // lblEmployeeNameDelete
+            // 
+            this.lblEmployeeNameDelete.AutoSize = true;
+            this.lblEmployeeNameDelete.Location = new System.Drawing.Point(111, 108);
+            this.lblEmployeeNameDelete.Name = "lblEmployeeNameDelete";
+            this.lblEmployeeNameDelete.Size = new System.Drawing.Size(0, 13);
+            this.lblEmployeeNameDelete.TabIndex = 9;
+            // 
+            // lblDateDelete
+            // 
+            this.lblDateDelete.AutoSize = true;
+            this.lblDateDelete.Location = new System.Drawing.Point(111, 144);
+            this.lblDateDelete.Name = "lblDateDelete";
+            this.lblDateDelete.Size = new System.Drawing.Size(0, 13);
+            this.lblDateDelete.TabIndex = 8;
+            // 
+            // lblEscaperoomDelete
+            // 
+            this.lblEscaperoomDelete.AutoSize = true;
+            this.lblEscaperoomDelete.Location = new System.Drawing.Point(111, 34);
+            this.lblEscaperoomDelete.Name = "lblEscaperoomDelete";
+            this.lblEscaperoomDelete.Size = new System.Drawing.Size(0, 13);
+            this.lblEscaperoomDelete.TabIndex = 7;
+            // 
+            // lblAmountOfPeopleDelete
+            // 
+            this.lblAmountOfPeopleDelete.AutoSize = true;
+            this.lblAmountOfPeopleDelete.Location = new System.Drawing.Point(111, 71);
+            this.lblAmountOfPeopleDelete.Name = "lblAmountOfPeopleDelete";
+            this.lblAmountOfPeopleDelete.Size = new System.Drawing.Size(0, 13);
+            this.lblAmountOfPeopleDelete.TabIndex = 6;
+            // 
+            // lblBookingTimeDelete
+            // 
+            this.lblBookingTimeDelete.AutoSize = true;
+            this.lblBookingTimeDelete.Location = new System.Drawing.Point(111, 329);
+            this.lblBookingTimeDelete.Name = "lblBookingTimeDelete";
+            this.lblBookingTimeDelete.Size = new System.Drawing.Size(0, 13);
+            this.lblBookingTimeDelete.TabIndex = 5;
+            // 
             // lblEmployeeNameEdit_Delete
             // 
             this.lblEmployeeNameEdit_Delete.AutoSize = true;
-            this.lblEmployeeNameEdit_Delete.Location = new System.Drawing.Point(6, 181);
+            this.lblEmployeeNameEdit_Delete.Location = new System.Drawing.Point(6, 108);
             this.lblEmployeeNameEdit_Delete.Name = "lblEmployeeNameEdit_Delete";
             this.lblEmployeeNameEdit_Delete.Size = new System.Drawing.Size(72, 13);
             this.lblEmployeeNameEdit_Delete.TabIndex = 4;
@@ -88,7 +178,7 @@
             // lblDateEdit_Delete
             // 
             this.lblDateEdit_Delete.AutoSize = true;
-            this.lblDateEdit_Delete.Location = new System.Drawing.Point(6, 145);
+            this.lblDateEdit_Delete.Location = new System.Drawing.Point(6, 144);
             this.lblDateEdit_Delete.Name = "lblDateEdit_Delete";
             this.lblDateEdit_Delete.Size = new System.Drawing.Size(36, 13);
             this.lblDateEdit_Delete.TabIndex = 3;
@@ -97,7 +187,7 @@
             // lblBookingTimeEdit_Delete
             // 
             this.lblBookingTimeEdit_Delete.AutoSize = true;
-            this.lblBookingTimeEdit_Delete.Location = new System.Drawing.Point(6, 108);
+            this.lblBookingTimeEdit_Delete.Location = new System.Drawing.Point(6, 329);
             this.lblBookingTimeEdit_Delete.Name = "lblBookingTimeEdit_Delete";
             this.lblBookingTimeEdit_Delete.Size = new System.Drawing.Size(98, 13);
             this.lblBookingTimeEdit_Delete.TabIndex = 2;
@@ -226,46 +316,6 @@
             this.lblUsernameDelete.Size = new System.Drawing.Size(0, 13);
             this.lblUsernameDelete.TabIndex = 5;
             // 
-            // lblBookingTimeDelete
-            // 
-            this.lblBookingTimeDelete.AutoSize = true;
-            this.lblBookingTimeDelete.Location = new System.Drawing.Point(111, 108);
-            this.lblBookingTimeDelete.Name = "lblBookingTimeDelete";
-            this.lblBookingTimeDelete.Size = new System.Drawing.Size(0, 13);
-            this.lblBookingTimeDelete.TabIndex = 5;
-            // 
-            // lblAmountOfPeopleDelete
-            // 
-            this.lblAmountOfPeopleDelete.AutoSize = true;
-            this.lblAmountOfPeopleDelete.Location = new System.Drawing.Point(111, 71);
-            this.lblAmountOfPeopleDelete.Name = "lblAmountOfPeopleDelete";
-            this.lblAmountOfPeopleDelete.Size = new System.Drawing.Size(0, 13);
-            this.lblAmountOfPeopleDelete.TabIndex = 6;
-            // 
-            // lblEscaperoomDelete
-            // 
-            this.lblEscaperoomDelete.AutoSize = true;
-            this.lblEscaperoomDelete.Location = new System.Drawing.Point(111, 34);
-            this.lblEscaperoomDelete.Name = "lblEscaperoomDelete";
-            this.lblEscaperoomDelete.Size = new System.Drawing.Size(0, 13);
-            this.lblEscaperoomDelete.TabIndex = 7;
-            // 
-            // lblDateDelete
-            // 
-            this.lblDateDelete.AutoSize = true;
-            this.lblDateDelete.Location = new System.Drawing.Point(111, 145);
-            this.lblDateDelete.Name = "lblDateDelete";
-            this.lblDateDelete.Size = new System.Drawing.Size(0, 13);
-            this.lblDateDelete.TabIndex = 8;
-            // 
-            // lblEmployeeNameDelete
-            // 
-            this.lblEmployeeNameDelete.AutoSize = true;
-            this.lblEmployeeNameDelete.Location = new System.Drawing.Point(111, 181);
-            this.lblEmployeeNameDelete.Name = "lblEmployeeNameDelete";
-            this.lblEmployeeNameDelete.Size = new System.Drawing.Size(0, 13);
-            this.lblEmployeeNameDelete.TabIndex = 9;
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Red;
@@ -288,11 +338,31 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(164, 241);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Opdater";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // mcUpdateBooking
+            // 
+            this.mcUpdateBooking.Location = new System.Drawing.Point(118, 144);
+            this.mcUpdateBooking.MaxSelectionCount = 1;
+            this.mcUpdateBooking.Name = "mcUpdateBooking";
+            this.mcUpdateBooking.TabIndex = 16;
+            this.mcUpdateBooking.Visible = false;
+            this.mcUpdateBooking.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mcUpdateBooking_DateChanged);
+            // 
             // Edit_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.gbBookingInfo);
@@ -333,5 +403,12 @@
         private System.Windows.Forms.Label lblBookingTimeDelete;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.ComboBox cbEmployee;
+        private System.Windows.Forms.ComboBox cbEscaperoom;
+        private System.Windows.Forms.TextBox tbBookingTime;
+        private System.Windows.Forms.TextBox tbAmountOfPeople;
+        private System.Windows.Forms.ComboBox cbBookingTime;
+        private System.Windows.Forms.MonthCalendar mcUpdateBooking;
     }
 }

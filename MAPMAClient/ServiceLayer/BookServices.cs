@@ -44,6 +44,12 @@ namespace MAPMAClient.ServiceLayer {
 
         }
 
+        public void Update (MAPMAClient.Model.Booking book) {
+            IBookingServices Service = new BookingServicesClient();
+
+            Service.Update(book.Emp.EmployeeID, book.Cus.Username, book.Er.EscapeRoomID, book.BookingTime, book.AmountOfPeople, book.Date, book.Id);
+        }
+
         public List<Model.Booking> GetAll() {
             IBookingServices Service = new BookingServicesClient();
 
@@ -114,10 +120,9 @@ namespace MAPMAClient.ServiceLayer {
                 Cus = cus,
                 Date = booking.date,
                 Emp = emp,
-                Er = er
-                
-
-            };
+                Er = er,
+                Id = booking.Id
+                };
 
             return book;
         }

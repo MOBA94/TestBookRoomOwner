@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             this.btnMMCreateBooking = new System.Windows.Forms.Button();
             this.btnMMCreateEscapeRoom = new System.Windows.Forms.Button();
+            this.btnReadBookings = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMMCreateBooking
@@ -47,11 +48,22 @@
             this.btnMMCreateEscapeRoom.UseVisualStyleBackColor = true;
             this.btnMMCreateEscapeRoom.Click += new System.EventHandler(this.btnMMCreateEscapeRoom_Click);
             // 
+            // btnReadBookings
+            // 
+            this.btnReadBookings.Location = new System.Drawing.Point(30, 252);
+            this.btnReadBookings.Name = "btnReadBookings";
+            this.btnReadBookings.Size = new System.Drawing.Size(166, 76);
+            this.btnReadBookings.TabIndex = 2;
+            this.btnReadBookings.Text = "Bookinger";
+            this.btnReadBookings.UseVisualStyleBackColor = true;
+            this.btnReadBookings.Click += new System.EventHandler(this.btnReadBookings_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReadBookings);
             this.Controls.Add(this.btnMMCreateEscapeRoom);
             this.Controls.Add(this.btnMMCreateBooking);
             this.Name = "MainMenu";
@@ -64,5 +76,6 @@
 
         private System.Windows.Forms.Button btnMMCreateBooking;
         private System.Windows.Forms.Button btnMMCreateEscapeRoom;
+        private System.Windows.Forms.Button btnReadBookings;
     }
 }

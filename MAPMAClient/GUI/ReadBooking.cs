@@ -58,6 +58,8 @@ namespace MAPMAClient.GUI
 
         private void btnCloseReadBooking_Click ( object sender, EventArgs e )
         {
+            MainMenu mm = new MainMenu();
+            mm.Show();
             this.Close();
         }
 
