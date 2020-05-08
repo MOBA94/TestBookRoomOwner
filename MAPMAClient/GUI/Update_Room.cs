@@ -134,5 +134,11 @@ namespace MAPMAClient.GUI {
             }
         }
 
+        private void button1_Click(object sender, EventArgs e) {
+            //ERctr.DeleteEscapeRoom();
+            this.Hide();
+            CreateEscapeRoom cer = new CreateEscapeRoom();
+            cer.Show();
+        }
     }
 }

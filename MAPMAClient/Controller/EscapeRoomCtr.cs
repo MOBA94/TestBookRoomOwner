@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MAPMAClient.EscRef;
-using MAPMAClient.ServiceLayer;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
@@ -41,6 +40,9 @@ namespace MAPMAClient.Controller {
             rating = 0;
             ERS.CreateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId, img);
         }
+
+        public void DeleteEscapeRoom(int id) {
+            ERS.DeleteEscapeRoom(id);        }
 
         public List<TimeSpan> FreeTimes(int ER_ID, DateTime Bdate) {
             return ERS.FreeTimes(ER_ID, Bdate);

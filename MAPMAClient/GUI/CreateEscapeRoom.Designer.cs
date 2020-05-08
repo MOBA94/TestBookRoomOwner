@@ -37,6 +37,8 @@
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnFindPicture = new System.Windows.Forms.Button();
+            this.pbEscaperoom = new System.Windows.Forms.PictureBox();
             this.lblShowEscapeRoomID = new System.Windows.Forms.Label();
             this.lblEscapeRoomID = new System.Windows.Forms.Label();
             this.btnDeleteEscapeRoom = new System.Windows.Forms.Button();
@@ -62,25 +64,24 @@
             this.btnBackCreateEscapeRoom = new System.Windows.Forms.Button();
             this.escapeRoomServicesClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pbEscaperoom = new System.Windows.Forms.PictureBox();
-            this.btnFindPicture = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscaperoom)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomServicesClientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEscaperoom)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblName.Location = new System.Drawing.Point(6, 62);
+            this.lblName.Location = new System.Drawing.Point(8, 76);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(39, 13);
+            this.lblName.Size = new System.Drawing.Size(49, 17);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Navn :";
             this.lblName.UseMnemonic = false;
@@ -88,53 +89,59 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(6, 103);
+            this.lblDescription.Location = new System.Drawing.Point(8, 127);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(67, 13);
+            this.lblDescription.Size = new System.Drawing.Size(88, 17);
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "Beskrivelse :";
             // 
             // lblMaxClearTime
             // 
             this.lblMaxClearTime.AutoSize = true;
-            this.lblMaxClearTime.Location = new System.Drawing.Point(6, 196);
+            this.lblMaxClearTime.Location = new System.Drawing.Point(8, 241);
+            this.lblMaxClearTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMaxClearTime.Name = "lblMaxClearTime";
-            this.lblMaxClearTime.Size = new System.Drawing.Size(118, 13);
+            this.lblMaxClearTime.Size = new System.Drawing.Size(157, 17);
             this.lblMaxClearTime.TabIndex = 3;
             this.lblMaxClearTime.Text = "Max gennemførsels tid :";
             // 
             // lblCleanTime
             // 
             this.lblCleanTime.AutoSize = true;
-            this.lblCleanTime.Location = new System.Drawing.Point(6, 236);
+            this.lblCleanTime.Location = new System.Drawing.Point(8, 290);
+            this.lblCleanTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCleanTime.Name = "lblCleanTime";
-            this.lblCleanTime.Size = new System.Drawing.Size(76, 13);
+            this.lblCleanTime.Size = new System.Drawing.Size(103, 17);
             this.lblCleanTime.TabIndex = 4;
             this.lblCleanTime.Text = "Klargøringstid :";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(6, 280);
+            this.lblPrice.Location = new System.Drawing.Point(8, 345);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(30, 13);
+            this.lblPrice.Size = new System.Drawing.Size(40, 17);
             this.lblPrice.TabIndex = 5;
             this.lblPrice.Text = "Pris :";
             // 
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Location = new System.Drawing.Point(6, 322);
+            this.lblEmployeeID.Location = new System.Drawing.Point(8, 396);
+            this.lblEmployeeID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(112, 13);
+            this.lblEmployeeID.Size = new System.Drawing.Size(151, 17);
             this.lblEmployeeID.TabIndex = 6;
             this.lblEmployeeID.Text = "Medarbejder nummer :";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(127, 59);
+            this.txtName.Location = new System.Drawing.Point(169, 73);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(208, 20);
+            this.txtName.Size = new System.Drawing.Size(276, 22);
             this.txtName.TabIndex = 8;
             this.txtName.Text = " ";
             // 
@@ -158,46 +165,73 @@
             this.groupBox1.Controls.Add(this.lblEmployeeID);
             this.groupBox1.Controls.Add(this.lblCleanTime);
             this.groupBox1.Controls.Add(this.lblPrice);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(16, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 601);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(480, 740);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // btnFindPicture
+            // 
+            this.btnFindPicture.Location = new System.Drawing.Point(304, 450);
+            this.btnFindPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFindPicture.Name = "btnFindPicture";
+            this.btnFindPicture.Size = new System.Drawing.Size(143, 28);
+            this.btnFindPicture.TabIndex = 19;
+            this.btnFindPicture.Text = "Find billede";
+            this.btnFindPicture.UseVisualStyleBackColor = true;
+            this.btnFindPicture.Click += new System.EventHandler(this.btnFindPicture_Click);
+            // 
+            // pbEscaperoom
+            // 
+            this.pbEscaperoom.Location = new System.Drawing.Point(8, 450);
+            this.pbEscaperoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbEscaperoom.Name = "pbEscaperoom";
+            this.pbEscaperoom.Size = new System.Drawing.Size(267, 246);
+            this.pbEscaperoom.TabIndex = 18;
+            this.pbEscaperoom.TabStop = false;
+            // 
             // lblShowEscapeRoomID
             // 
             this.lblShowEscapeRoomID.AutoSize = true;
-            this.lblShowEscapeRoomID.Location = new System.Drawing.Point(124, 19);
+            this.lblShowEscapeRoomID.Location = new System.Drawing.Point(165, 23);
+            this.lblShowEscapeRoomID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShowEscapeRoomID.Name = "lblShowEscapeRoomID";
-            this.lblShowEscapeRoomID.Size = new System.Drawing.Size(0, 13);
+            this.lblShowEscapeRoomID.Size = new System.Drawing.Size(0, 17);
             this.lblShowEscapeRoomID.TabIndex = 17;
             // 
             // lblEscapeRoomID
             // 
             this.lblEscapeRoomID.AutoSize = true;
-            this.lblEscapeRoomID.Location = new System.Drawing.Point(6, 19);
+            this.lblEscapeRoomID.Location = new System.Drawing.Point(8, 23);
+            this.lblEscapeRoomID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEscapeRoomID.Name = "lblEscapeRoomID";
-            this.lblEscapeRoomID.Size = new System.Drawing.Size(88, 13);
+            this.lblEscapeRoomID.Size = new System.Drawing.Size(113, 17);
             this.lblEscapeRoomID.TabIndex = 16;
             this.lblEscapeRoomID.Text = "EscapeRoomID :";
             // 
             // btnDeleteEscapeRoom
             // 
             this.btnDeleteEscapeRoom.BackColor = System.Drawing.Color.IndianRed;
-            this.btnDeleteEscapeRoom.Location = new System.Drawing.Point(127, 572);
+            this.btnDeleteEscapeRoom.Location = new System.Drawing.Point(169, 704);
+            this.btnDeleteEscapeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeleteEscapeRoom.Name = "btnDeleteEscapeRoom";
-            this.btnDeleteEscapeRoom.Size = new System.Drawing.Size(95, 23);
+            this.btnDeleteEscapeRoom.Size = new System.Drawing.Size(127, 28);
             this.btnDeleteEscapeRoom.TabIndex = 1;
             this.btnDeleteEscapeRoom.Text = "Slet";
             this.btnDeleteEscapeRoom.UseVisualStyleBackColor = false;
+            this.btnDeleteEscapeRoom.Click += new System.EventHandler(this.btnDeleteEscapeRoom_Click);
             // 
             // btnCreateEscapeRoom
             // 
             this.btnCreateEscapeRoom.BackColor = System.Drawing.Color.LawnGreen;
-            this.btnCreateEscapeRoom.Location = new System.Drawing.Point(228, 572);
+            this.btnCreateEscapeRoom.Location = new System.Drawing.Point(304, 704);
+            this.btnCreateEscapeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateEscapeRoom.Name = "btnCreateEscapeRoom";
-            this.btnCreateEscapeRoom.Size = new System.Drawing.Size(107, 23);
+            this.btnCreateEscapeRoom.Size = new System.Drawing.Size(143, 28);
             this.btnCreateEscapeRoom.TabIndex = 15;
             this.btnCreateEscapeRoom.Text = "Opret";
             this.btnCreateEscapeRoom.UseVisualStyleBackColor = false;
@@ -205,46 +239,53 @@
             // 
             // txbDescription
             // 
-            this.txbDescription.Location = new System.Drawing.Point(127, 103);
+            this.txbDescription.Location = new System.Drawing.Point(169, 127);
+            this.txbDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbDescription.Name = "txbDescription";
-            this.txbDescription.Size = new System.Drawing.Size(208, 78);
+            this.txbDescription.Size = new System.Drawing.Size(276, 95);
             this.txbDescription.TabIndex = 14;
             this.txbDescription.Text = "";
             // 
             // txtEmployeeID
             // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(127, 319);
+            this.txtEmployeeID.Location = new System.Drawing.Point(169, 393);
+            this.txtEmployeeID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(208, 20);
+            this.txtEmployeeID.Size = new System.Drawing.Size(276, 22);
             this.txtEmployeeID.TabIndex = 13;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(127, 277);
+            this.txtPrice.Location = new System.Drawing.Point(169, 341);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(208, 20);
+            this.txtPrice.Size = new System.Drawing.Size(276, 22);
             this.txtPrice.TabIndex = 12;
             // 
             // txtCleanTime
             // 
-            this.txtCleanTime.Location = new System.Drawing.Point(127, 233);
+            this.txtCleanTime.Location = new System.Drawing.Point(169, 287);
+            this.txtCleanTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCleanTime.Name = "txtCleanTime";
-            this.txtCleanTime.Size = new System.Drawing.Size(208, 20);
+            this.txtCleanTime.Size = new System.Drawing.Size(276, 22);
             this.txtCleanTime.TabIndex = 11;
             // 
             // txtMaxClearTime
             // 
-            this.txtMaxClearTime.Location = new System.Drawing.Point(127, 193);
+            this.txtMaxClearTime.Location = new System.Drawing.Point(169, 238);
+            this.txtMaxClearTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaxClearTime.Name = "txtMaxClearTime";
-            this.txtMaxClearTime.Size = new System.Drawing.Size(208, 20);
+            this.txtMaxClearTime.Size = new System.Drawing.Size(276, 22);
             this.txtMaxClearTime.TabIndex = 10;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(384, 12);
+            this.groupBox2.Location = new System.Drawing.Point(512, 15);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(773, 566);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(1031, 697);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
@@ -265,11 +306,13 @@
             this.priceDataGridViewTextBoxColumn,
             this.ratingDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.escapeRoomBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 23);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(758, 541);
+            this.dataGridView1.Size = new System.Drawing.Size(1011, 666);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -278,57 +321,73 @@
             // 
             this.cleanTimeDataGridViewTextBoxColumn.DataPropertyName = "cleanTime";
             this.cleanTimeDataGridViewTextBoxColumn.HeaderText = "cleanTime";
+            this.cleanTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cleanTimeDataGridViewTextBoxColumn.Name = "cleanTimeDataGridViewTextBoxColumn";
             this.cleanTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cleanTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
             // 
             // empDataGridViewTextBoxColumn
             // 
             this.empDataGridViewTextBoxColumn.DataPropertyName = "emp";
             this.empDataGridViewTextBoxColumn.HeaderText = "emp";
+            this.empDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.empDataGridViewTextBoxColumn.Name = "empDataGridViewTextBoxColumn";
             this.empDataGridViewTextBoxColumn.ReadOnly = true;
+            this.empDataGridViewTextBoxColumn.Width = 125;
             // 
             // escapeRoomIDDataGridViewTextBoxColumn
             // 
             this.escapeRoomIDDataGridViewTextBoxColumn.DataPropertyName = "escapeRoomID";
             this.escapeRoomIDDataGridViewTextBoxColumn.HeaderText = "escapeRoomID";
+            this.escapeRoomIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.escapeRoomIDDataGridViewTextBoxColumn.Name = "escapeRoomIDDataGridViewTextBoxColumn";
             this.escapeRoomIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.escapeRoomIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // maxClearTimeDataGridViewTextBoxColumn
             // 
             this.maxClearTimeDataGridViewTextBoxColumn.DataPropertyName = "maxClearTime";
             this.maxClearTimeDataGridViewTextBoxColumn.HeaderText = "maxClearTime";
+            this.maxClearTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maxClearTimeDataGridViewTextBoxColumn.Name = "maxClearTimeDataGridViewTextBoxColumn";
             this.maxClearTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maxClearTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
             this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 125;
             // 
             // ratingDataGridViewTextBoxColumn
             // 
             this.ratingDataGridViewTextBoxColumn.DataPropertyName = "rating";
             this.ratingDataGridViewTextBoxColumn.HeaderText = "rating";
+            this.ratingDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
             this.ratingDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ratingDataGridViewTextBoxColumn.Width = 125;
             // 
             // escapeRoomBindingSource1
             // 
@@ -341,9 +400,10 @@
             // btnDoneCreateEscapeRoom
             // 
             this.btnDoneCreateEscapeRoom.BackColor = System.Drawing.Color.LawnGreen;
-            this.btnDoneCreateEscapeRoom.Location = new System.Drawing.Point(1073, 584);
+            this.btnDoneCreateEscapeRoom.Location = new System.Drawing.Point(1431, 719);
+            this.btnDoneCreateEscapeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDoneCreateEscapeRoom.Name = "btnDoneCreateEscapeRoom";
-            this.btnDoneCreateEscapeRoom.Size = new System.Drawing.Size(75, 23);
+            this.btnDoneCreateEscapeRoom.Size = new System.Drawing.Size(100, 28);
             this.btnDoneCreateEscapeRoom.TabIndex = 11;
             this.btnDoneCreateEscapeRoom.Text = "Færdig";
             this.btnDoneCreateEscapeRoom.UseVisualStyleBackColor = false;
@@ -352,9 +412,10 @@
             // btnBackCreateEscapeRoom
             // 
             this.btnBackCreateEscapeRoom.BackColor = System.Drawing.Color.IndianRed;
-            this.btnBackCreateEscapeRoom.Location = new System.Drawing.Point(970, 584);
+            this.btnBackCreateEscapeRoom.Location = new System.Drawing.Point(1293, 719);
+            this.btnBackCreateEscapeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBackCreateEscapeRoom.Name = "btnBackCreateEscapeRoom";
-            this.btnBackCreateEscapeRoom.Size = new System.Drawing.Size(75, 23);
+            this.btnBackCreateEscapeRoom.Size = new System.Drawing.Size(100, 28);
             this.btnBackCreateEscapeRoom.TabIndex = 12;
             this.btnBackCreateEscapeRoom.Text = "Tilbage";
             this.btnBackCreateEscapeRoom.UseVisualStyleBackColor = false;
@@ -369,45 +430,28 @@
             this.checkListBindingSource.DataMember = "checkList";
             this.checkListBindingSource.DataSource = this.escapeRoomBindingSource1;
             // 
-            // pbEscaperoom
-            // 
-            this.pbEscaperoom.Location = new System.Drawing.Point(6, 366);
-            this.pbEscaperoom.Name = "pbEscaperoom";
-            this.pbEscaperoom.Size = new System.Drawing.Size(200, 200);
-            this.pbEscaperoom.TabIndex = 18;
-            this.pbEscaperoom.TabStop = false;
-            // 
-            // btnFindPicture
-            // 
-            this.btnFindPicture.Location = new System.Drawing.Point(228, 366);
-            this.btnFindPicture.Name = "btnFindPicture";
-            this.btnFindPicture.Size = new System.Drawing.Size(107, 23);
-            this.btnFindPicture.TabIndex = 19;
-            this.btnFindPicture.Text = "Find billede";
-            this.btnFindPicture.UseVisualStyleBackColor = true;
-            this.btnFindPicture.Click += new System.EventHandler(this.btnFindPicture_Click);
-            // 
             // CreateEscapeRoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1165, 653);
+            this.ClientSize = new System.Drawing.Size(1553, 804);
             this.Controls.Add(this.btnBackCreateEscapeRoom);
             this.Controls.Add(this.btnDoneCreateEscapeRoom);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CreateEscapeRoom";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.CreateEscapeRoom_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscaperoom)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomServicesClientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEscaperoom)).EndInit();
             this.ResumeLayout(false);
 
         }

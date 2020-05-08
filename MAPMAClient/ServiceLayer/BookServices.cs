@@ -20,8 +20,6 @@ namespace MAPMAClient.ServiceLayer {
 
         public void Delete(MAPMAClient.Model.Booking book) {
             IBookingServices Service = new BookingServicesClient();
-
-
             Service.Delete(book.Emp.EmployeeID, book.Cus.Username, book.Er.EscapeRoomID, book.BookingTime, book.AmountOfPeople, book.Date);
         }
 

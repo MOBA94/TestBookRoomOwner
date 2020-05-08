@@ -108,5 +108,13 @@ namespace MAPMAClient.GUI
                 }
             }
         }
+
+        private void btnDeleteEscapeRoom_Click(object sender, EventArgs e) {
+
+
+            EscapeRoomCtr erctr = new EscapeRoomCtr();
+
+            //erctr.DeleteEscapeRoom();
+        }
     }
 }
