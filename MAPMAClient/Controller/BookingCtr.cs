@@ -66,5 +66,9 @@ namespace MAPMAClient.Controller {
             return BOOKS.GetAll();
         }
 
+        public List<Model.Booking> GetAllOneRoom(int EscId) {
+            return BOOKS.GetAllOneRoom(EscId);
+        }
+
     }
 }

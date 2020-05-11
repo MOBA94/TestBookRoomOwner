@@ -646,6 +646,16 @@ namespace MAPMAClient.BookRef {
             "se")]
         System.Threading.Tasks.Task DeleteAsync(int EmpID, string username, int ER_ID, System.TimeSpan bookTime, int AOP, System.DateTime Bdate);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/GetAllFromUs" +
+            "er", ReplyAction="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/GetAllFromUs" +
+            "erResponse")]
+        System.Collections.Generic.List<MAPMAClient.BookRef.Booking> GetAllFromUser(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/GetAllFromUs" +
+            "er", ReplyAction="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/GetAllFromUs" +
+            "erResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<MAPMAClient.BookRef.Booking>> GetAllFromUserAsync(string username);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/Update", ReplyAction="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/UpdateRespon" +
             "se")]
         void Update(int EmpID, string username, int ER_ID, System.TimeSpan bookTime, int AOP, System.DateTime Bdate, int bookId);
@@ -653,6 +663,24 @@ namespace MAPMAClient.BookRef {
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/Update", ReplyAction="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/UpdateRespon" +
             "se")]
         System.Threading.Tasks.Task UpdateAsync(int EmpID, string username, int ER_ID, System.TimeSpan bookTime, int AOP, System.DateTime Bdate, int bookId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/Deleteweb", ReplyAction="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/DeletewebRes" +
+            "ponse")]
+        void Deleteweb(string username, int ER_ID, System.TimeSpan bookTime, System.DateTime Bdate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/Deleteweb", ReplyAction="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/DeletewebRes" +
+            "ponse")]
+        System.Threading.Tasks.Task DeletewebAsync(string username, int ER_ID, System.TimeSpan bookTime, System.DateTime Bdate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/GetAllOneRoo" +
+            "m", ReplyAction="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/GetAllOneRoo" +
+            "mResponse")]
+        System.Collections.Generic.List<MAPMAClient.BookRef.Booking> GetAllOneRoom(int EscId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/GetAllOneRoo" +
+            "m", ReplyAction="http://localhost:8734/Design_Time_Addresses/Booking/IBookingServices/GetAllOneRoo" +
+            "mResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<MAPMAClient.BookRef.Booking>> GetAllOneRoomAsync(int EscId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -714,12 +742,36 @@ namespace MAPMAClient.BookRef {
             return base.Channel.DeleteAsync(EmpID, username, ER_ID, bookTime, AOP, Bdate);
         }
         
+        public System.Collections.Generic.List<MAPMAClient.BookRef.Booking> GetAllFromUser(string username) {
+            return base.Channel.GetAllFromUser(username);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<MAPMAClient.BookRef.Booking>> GetAllFromUserAsync(string username) {
+            return base.Channel.GetAllFromUserAsync(username);
+        }
+        
         public void Update(int EmpID, string username, int ER_ID, System.TimeSpan bookTime, int AOP, System.DateTime Bdate, int bookId) {
             base.Channel.Update(EmpID, username, ER_ID, bookTime, AOP, Bdate, bookId);
         }
         
         public System.Threading.Tasks.Task UpdateAsync(int EmpID, string username, int ER_ID, System.TimeSpan bookTime, int AOP, System.DateTime Bdate, int bookId) {
             return base.Channel.UpdateAsync(EmpID, username, ER_ID, bookTime, AOP, Bdate, bookId);
+        }
+        
+        public void Deleteweb(string username, int ER_ID, System.TimeSpan bookTime, System.DateTime Bdate) {
+            base.Channel.Deleteweb(username, ER_ID, bookTime, Bdate);
+        }
+        
+        public System.Threading.Tasks.Task DeletewebAsync(string username, int ER_ID, System.TimeSpan bookTime, System.DateTime Bdate) {
+            return base.Channel.DeletewebAsync(username, ER_ID, bookTime, Bdate);
+        }
+        
+        public System.Collections.Generic.List<MAPMAClient.BookRef.Booking> GetAllOneRoom(int EscId) {
+            return base.Channel.GetAllOneRoom(EscId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<MAPMAClient.BookRef.Booking>> GetAllOneRoomAsync(int EscId) {
+            return base.Channel.GetAllOneRoomAsync(EscId);
         }
     }
 }

@@ -65,6 +65,20 @@ namespace MAPMAClient.ServiceLayer {
 
         }
 
+        public List<Model.Booking> GetAllOneRoom(int EscId) {
+            IBookingServices Service = new BookingServicesClient();
+
+            try {
+                var bookings = Service.GetAllOneRoom(EscId);
+                return GetClientSideBooking(bookings);
+            }
+            catch (NullReferenceException NE) {
+                Console.WriteLine(NE);
+                Console.ReadLine();
+                return null;
+            }
+        }
+
         private List<Model.Booking> GetClientSideBooking ( List<BookRef.Booking> bookings )
         {
             List<Model.Booking> foundbooks = new List<Model.Booking>();
