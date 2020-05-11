@@ -134,5 +134,12 @@ namespace MAPMAClient.GUI {
             }
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int id = ER.EscapeRoomID;
+            ERctr.Delete(id);
+
+            
+        }
     }
 }

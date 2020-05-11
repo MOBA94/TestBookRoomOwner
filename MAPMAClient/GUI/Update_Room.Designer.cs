@@ -24,6 +24,8 @@
         /// </summary>
         private void InitializeComponent() {
             this.grbEscapeRoom = new System.Windows.Forms.GroupBox();
+            this.lblErrorCleanTime = new System.Windows.Forms.Label();
+            this.lblErrorClearTime = new System.Windows.Forms.Label();
             this.lblErrorPrice = new System.Windows.Forms.Label();
             this.txbCleanTime = new System.Windows.Forms.TextBox();
             this.txbMaxClearTime = new System.Windows.Forms.TextBox();
@@ -48,8 +50,7 @@
             this.lblEmpName = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdateRoom = new System.Windows.Forms.Button();
-            this.lblErrorClearTime = new System.Windows.Forms.Label();
-            this.lblErrorCleanTime = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.grbEscapeRoom.SuspendLayout();
             this.grbEmployee.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +76,26 @@
             this.grbEscapeRoom.TabIndex = 0;
             this.grbEscapeRoom.TabStop = false;
             this.grbEscapeRoom.Text = "EscapeRoom info";
+            // 
+            // lblErrorCleanTime
+            // 
+            this.lblErrorCleanTime.AutoSize = true;
+            this.lblErrorCleanTime.Location = new System.Drawing.Point(121, 215);
+            this.lblErrorCleanTime.Name = "lblErrorCleanTime";
+            this.lblErrorCleanTime.Size = new System.Drawing.Size(151, 13);
+            this.lblErrorCleanTime.TabIndex = 12;
+            this.lblErrorCleanTime.Text = "Rengørings tid skal være et tal";
+            this.lblErrorCleanTime.Visible = false;
+            // 
+            // lblErrorClearTime
+            // 
+            this.lblErrorClearTime.AutoSize = true;
+            this.lblErrorClearTime.Location = new System.Drawing.Point(121, 177);
+            this.lblErrorClearTime.Name = "lblErrorClearTime";
+            this.lblErrorClearTime.Size = new System.Drawing.Size(164, 13);
+            this.lblErrorClearTime.TabIndex = 11;
+            this.lblErrorClearTime.Text = "Max tid i Rummet skal være et tal";
+            this.lblErrorClearTime.Visible = false;
             // 
             // lblErrorPrice
             // 
@@ -295,31 +316,23 @@
             this.btnUpdateRoom.UseVisualStyleBackColor = true;
             this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
             // 
-            // lblErrorClearTime
+            // btnDelete
             // 
-            this.lblErrorClearTime.AutoSize = true;
-            this.lblErrorClearTime.Location = new System.Drawing.Point(121, 177);
-            this.lblErrorClearTime.Name = "lblErrorClearTime";
-            this.lblErrorClearTime.Size = new System.Drawing.Size(164, 13);
-            this.lblErrorClearTime.TabIndex = 11;
-            this.lblErrorClearTime.Text = "Max tid i Rummet skal være et tal";
-            this.lblErrorClearTime.Visible = false;
-            // 
-            // lblErrorCleanTime
-            // 
-            this.lblErrorCleanTime.AutoSize = true;
-            this.lblErrorCleanTime.Location = new System.Drawing.Point(121, 215);
-            this.lblErrorCleanTime.Name = "lblErrorCleanTime";
-            this.lblErrorCleanTime.Size = new System.Drawing.Size(151, 13);
-            this.lblErrorCleanTime.TabIndex = 12;
-            this.lblErrorCleanTime.Text = "Rengørings tid skal være et tal";
-            this.lblErrorCleanTime.Visible = false;
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.Location = new System.Drawing.Point(500, 415);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Slet Room";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Update_Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdateRoom);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.grbEmployee);
@@ -363,5 +376,6 @@
         private System.Windows.Forms.Label lblErrorPrice;
         private System.Windows.Forms.Label lblErrorCleanTime;
         private System.Windows.Forms.Label lblErrorClearTime;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
