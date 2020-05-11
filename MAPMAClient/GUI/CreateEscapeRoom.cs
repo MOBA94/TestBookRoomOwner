@@ -17,9 +17,12 @@ namespace MAPMAClient.GUI
     public partial class CreateEscapeRoom : Form
     {
         private List<MAPMAClient.Model.EscapeRoom> escapeRooms;
+        private MAPMAClient.Model.EscapeRoom er;
+
         public CreateEscapeRoom ( )
         {
             InitializeComponent();
+            UpdateEscapeRoomList();
         }
 
         private void CreateEscapeRoom_Load ( object sender, EventArgs e )
@@ -107,6 +110,21 @@ namespace MAPMAClient.GUI
                     pbEscaperoom.Image = Image.FromFile(fileName);
                 }
             }
+        }
+
+        private void btnDeleteEscapeRoom_Click(object sender, EventArgs e)
+        {
+            EscapeRoomCtr erctr = new EscapeRoomCtr();
+            
+            erctr.Delete(er.EscapeRoomID);
+            UpdateEscapeRoomList();
+
+        }
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            er = escapeRooms.ElementAt(index);
         }
     }
 }

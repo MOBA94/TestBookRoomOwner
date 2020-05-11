@@ -142,7 +142,6 @@
             // 
             this.groupBox1.Controls.Add(this.btnFindPicture);
             this.groupBox1.Controls.Add(this.pbEscaperoom);
-            this.groupBox1.Controls.Add(this.lblShowEscapeRoomID);
             this.groupBox1.Controls.Add(this.lblEscapeRoomID);
             this.groupBox1.Controls.Add(this.btnDeleteEscapeRoom);
             this.groupBox1.Controls.Add(this.btnCreateEscapeRoom);
@@ -185,11 +184,21 @@
             // 
             // lblShowEscapeRoomID
             // 
-            this.lblShowEscapeRoomID.AutoSize = true;
-            this.lblShowEscapeRoomID.Location = new System.Drawing.Point(124, 19);
-            this.lblShowEscapeRoomID.Name = "lblShowEscapeRoomID";
-            this.lblShowEscapeRoomID.Size = new System.Drawing.Size(0, 13);
-            this.lblShowEscapeRoomID.TabIndex = 17;
+            this.btnFindPicture.Location = new System.Drawing.Point(228, 366);
+            this.btnFindPicture.Name = "btnFindPicture";
+            this.btnFindPicture.Size = new System.Drawing.Size(107, 23);
+            this.btnFindPicture.TabIndex = 19;
+            this.btnFindPicture.Text = "Find billede";
+            this.btnFindPicture.UseVisualStyleBackColor = true;
+            this.btnFindPicture.Click += new System.EventHandler(this.btnFindPicture_Click);
+            // 
+            // pbEscaperoom
+            // 
+            this.pbEscaperoom.Location = new System.Drawing.Point(6, 366);
+            this.pbEscaperoom.Name = "pbEscaperoom";
+            this.pbEscaperoom.Size = new System.Drawing.Size(200, 200);
+            this.pbEscaperoom.TabIndex = 18;
+            this.pbEscaperoom.TabStop = false;
             // 
             // lblEscapeRoomID
             // 
@@ -209,6 +218,7 @@
             this.btnDeleteEscapeRoom.TabIndex = 1;
             this.btnDeleteEscapeRoom.Text = "Slet";
             this.btnDeleteEscapeRoom.UseVisualStyleBackColor = false;
+            this.btnDeleteEscapeRoom.Click += new System.EventHandler(this.btnDeleteEscapeRoom_Click);
             // 
             // btnCreateEscapeRoom
             // 
@@ -289,6 +299,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(758, 541);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -434,7 +445,6 @@
         private System.Windows.Forms.Button btnBackCreateEscapeRoom;
         private System.Windows.Forms.BindingSource escapeRoomBindingSource1;
         private System.Windows.Forms.Button btnDeleteEscapeRoom;
-        private System.Windows.Forms.Label lblShowEscapeRoomID;
         private System.Windows.Forms.Label lblEscapeRoomID;
         private System.Windows.Forms.DataGridViewTextBoxColumn cleanTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;

@@ -10,6 +10,8 @@ using MAPMAClient.ServiceLayer;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
+using MAPMAClient.BookRef;
+using EscapeRoom = MAPMAClient.Model.EscapeRoom;
 
 namespace MAPMAClient.Controller {
     public class EscapeRoomCtr {
@@ -48,6 +50,16 @@ namespace MAPMAClient.Controller {
 
         public void UpdateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId, int escId) {
             ERS.UpdateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId, escId);
+        }
+
+        public void Delete(int id)
+        {
+            EscapeRoom er = new EscapeRoom()
+            {
+                EscapeRoomID = id
+            };
+            ERS.DeleteEscapeRoom(id);
+
         }
 
     }
