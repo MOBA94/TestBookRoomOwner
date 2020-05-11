@@ -37,6 +37,8 @@
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnFindPicture = new System.Windows.Forms.Button();
+            this.pbEscaperoom = new System.Windows.Forms.PictureBox();
             this.lblShowEscapeRoomID = new System.Windows.Forms.Label();
             this.lblEscapeRoomID = new System.Windows.Forms.Label();
             this.btnDeleteEscapeRoom = new System.Windows.Forms.Button();
@@ -62,16 +64,14 @@
             this.btnBackCreateEscapeRoom = new System.Windows.Forms.Button();
             this.escapeRoomServicesClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pbEscaperoom = new System.Windows.Forms.PictureBox();
-            this.btnFindPicture = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscaperoom)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomServicesClientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEscaperoom)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
@@ -164,6 +164,24 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // btnFindPicture
+            // 
+            this.btnFindPicture.Location = new System.Drawing.Point(228, 366);
+            this.btnFindPicture.Name = "btnFindPicture";
+            this.btnFindPicture.Size = new System.Drawing.Size(107, 23);
+            this.btnFindPicture.TabIndex = 19;
+            this.btnFindPicture.Text = "Find billede";
+            this.btnFindPicture.UseVisualStyleBackColor = true;
+            this.btnFindPicture.Click += new System.EventHandler(this.btnFindPicture_Click);
+            // 
+            // pbEscaperoom
+            // 
+            this.pbEscaperoom.Location = new System.Drawing.Point(6, 366);
+            this.pbEscaperoom.Name = "pbEscaperoom";
+            this.pbEscaperoom.Size = new System.Drawing.Size(200, 200);
+            this.pbEscaperoom.TabIndex = 18;
+            this.pbEscaperoom.TabStop = false;
             // 
             // lblShowEscapeRoomID
             // 
@@ -369,24 +387,6 @@
             this.checkListBindingSource.DataMember = "checkList";
             this.checkListBindingSource.DataSource = this.escapeRoomBindingSource1;
             // 
-            // pbEscaperoom
-            // 
-            this.pbEscaperoom.Location = new System.Drawing.Point(6, 366);
-            this.pbEscaperoom.Name = "pbEscaperoom";
-            this.pbEscaperoom.Size = new System.Drawing.Size(200, 200);
-            this.pbEscaperoom.TabIndex = 18;
-            this.pbEscaperoom.TabStop = false;
-            // 
-            // btnFindPicture
-            // 
-            this.btnFindPicture.Location = new System.Drawing.Point(228, 366);
-            this.btnFindPicture.Name = "btnFindPicture";
-            this.btnFindPicture.Size = new System.Drawing.Size(107, 23);
-            this.btnFindPicture.TabIndex = 19;
-            this.btnFindPicture.Text = "Find billede";
-            this.btnFindPicture.UseVisualStyleBackColor = true;
-            this.btnFindPicture.Click += new System.EventHandler(this.btnFindPicture_Click);
-            // 
             // CreateEscapeRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,13 +401,13 @@
             this.Load += new System.EventHandler(this.CreateEscapeRoom_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscaperoom)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.escapeRoomServicesClientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEscaperoom)).EndInit();
             this.ResumeLayout(false);
 
         }
