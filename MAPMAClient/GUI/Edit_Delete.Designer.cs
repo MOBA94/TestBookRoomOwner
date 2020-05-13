@@ -30,6 +30,7 @@
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gbBookingInfo = new System.Windows.Forms.GroupBox();
+            this.mcUpdateBooking = new System.Windows.Forms.MonthCalendar();
             this.cbBookingTime = new System.Windows.Forms.ComboBox();
             this.cbEmployee = new System.Windows.Forms.ComboBox();
             this.cbEscaperoom = new System.Windows.Forms.ComboBox();
@@ -58,13 +59,14 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.mcUpdateBooking = new System.Windows.Forms.MonthCalendar();
+            this.lblErrorAmountOfPeople = new System.Windows.Forms.Label();
             this.gbBookingInfo.SuspendLayout();
             this.gbBrugerInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbBookingInfo
             // 
+            this.gbBookingInfo.Controls.Add(this.lblErrorAmountOfPeople);
             this.gbBookingInfo.Controls.Add(this.mcUpdateBooking);
             this.gbBookingInfo.Controls.Add(this.cbBookingTime);
             this.gbBookingInfo.Controls.Add(this.cbEmployee);
@@ -87,32 +89,46 @@
             this.gbBookingInfo.TabStop = false;
             this.gbBookingInfo.Text = "Booking Info";
             // 
+            // mcUpdateBooking
+            // 
+            this.mcUpdateBooking.Location = new System.Drawing.Point(118, 144);
+            this.mcUpdateBooking.MaxSelectionCount = 1;
+            this.mcUpdateBooking.MinDate = new System.DateTime(2020, 5, 5, 0, 0, 0, 0);
+            this.mcUpdateBooking.Name = "mcUpdateBooking";
+            this.mcUpdateBooking.TabIndex = 4;
+            this.mcUpdateBooking.Visible = false;
+            this.mcUpdateBooking.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mcUpdateBooking_DateChanged);
+            // 
             // cbBookingTime
             // 
+            this.cbBookingTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBookingTime.FormattingEnabled = true;
             this.cbBookingTime.Location = new System.Drawing.Point(117, 321);
             this.cbBookingTime.Name = "cbBookingTime";
             this.cbBookingTime.Size = new System.Drawing.Size(236, 21);
-            this.cbBookingTime.TabIndex = 15;
+            this.cbBookingTime.TabIndex = 5;
             this.cbBookingTime.Visible = false;
+            this.cbBookingTime.SelectedIndexChanged += new System.EventHandler(this.cbBookingTime_SelectedIndexChanged);
             // 
             // cbEmployee
             // 
+            this.cbEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEmployee.FormattingEnabled = true;
             this.cbEmployee.Location = new System.Drawing.Point(118, 105);
             this.cbEmployee.Name = "cbEmployee";
             this.cbEmployee.Size = new System.Drawing.Size(235, 21);
-            this.cbEmployee.TabIndex = 14;
+            this.cbEmployee.TabIndex = 3;
             this.cbEmployee.Visible = false;
             this.cbEmployee.SelectedIndexChanged += new System.EventHandler(this.cbEmployee_SelectedIndexChanged);
             // 
             // cbEscaperoom
             // 
+            this.cbEscaperoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEscaperoom.FormattingEnabled = true;
             this.cbEscaperoom.Location = new System.Drawing.Point(117, 31);
             this.cbEscaperoom.Name = "cbEscaperoom";
             this.cbEscaperoom.Size = new System.Drawing.Size(235, 21);
-            this.cbEscaperoom.TabIndex = 13;
+            this.cbEscaperoom.TabIndex = 1;
             this.cbEscaperoom.Visible = false;
             this.cbEscaperoom.SelectedIndexChanged += new System.EventHandler(this.cbEscaperoom_SelectedIndexChanged);
             // 
@@ -121,10 +137,9 @@
             this.tbAmountOfPeople.Location = new System.Drawing.Point(117, 68);
             this.tbAmountOfPeople.Name = "tbAmountOfPeople";
             this.tbAmountOfPeople.Size = new System.Drawing.Size(236, 20);
-            this.tbAmountOfPeople.TabIndex = 10;
+            this.tbAmountOfPeople.TabIndex = 2;
             this.tbAmountOfPeople.Visible = false;
             this.tbAmountOfPeople.TextChanged += new System.EventHandler(this.tbAmountOfPeople_TextChanged);
-            this.tbAmountOfPeople.Leave += new System.EventHandler(this.tbAmountOfPeople_Leave);
             // 
             // lblEmployeeNameDelete
             // 
@@ -322,7 +337,7 @@
             this.btnDelete.Location = new System.Drawing.Point(245, 241);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 3;
+            this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Slet";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -333,7 +348,7 @@
             this.btnCancel.Location = new System.Drawing.Point(712, 415);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Annuller";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -343,19 +358,21 @@
             this.btnUpdate.Location = new System.Drawing.Point(164, 241);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Opdater";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // mcUpdateBooking
+            // lblErrorAmountOfPeople
             // 
-            this.mcUpdateBooking.Location = new System.Drawing.Point(118, 144);
-            this.mcUpdateBooking.MaxSelectionCount = 1;
-            this.mcUpdateBooking.Name = "mcUpdateBooking";
-            this.mcUpdateBooking.TabIndex = 16;
-            this.mcUpdateBooking.Visible = false;
-            this.mcUpdateBooking.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mcUpdateBooking_DateChanged);
+            this.lblErrorAmountOfPeople.AutoSize = true;
+            this.lblErrorAmountOfPeople.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorAmountOfPeople.Location = new System.Drawing.Point(117, 91);
+            this.lblErrorAmountOfPeople.Name = "lblErrorAmountOfPeople";
+            this.lblErrorAmountOfPeople.Size = new System.Drawing.Size(96, 13);
+            this.lblErrorAmountOfPeople.TabIndex = 10;
+            this.lblErrorAmountOfPeople.Text = "Må ikke være tom!";
+            this.lblErrorAmountOfPeople.Visible = false;
             // 
             // Edit_Delete
             // 
@@ -410,5 +427,6 @@
         private System.Windows.Forms.TextBox tbAmountOfPeople;
         private System.Windows.Forms.ComboBox cbBookingTime;
         private System.Windows.Forms.MonthCalendar mcUpdateBooking;
+        private System.Windows.Forms.Label lblErrorAmountOfPeople;
     }
 }

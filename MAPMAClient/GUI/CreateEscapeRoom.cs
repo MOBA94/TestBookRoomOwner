@@ -23,6 +23,7 @@ namespace MAPMAClient.GUI
         {
             InitializeComponent();
             UpdateEscapeRoomList();
+
         }
 
         private void CreateEscapeRoom_Load ( object sender, EventArgs e )
@@ -122,21 +123,39 @@ namespace MAPMAClient.GUI
             dt.Columns.Add("Medarbejder", typeof(string));
             dt.Columns.Add("Max Gennemførsels tid", typeof(decimal));
             dt.Columns.Add("Klargøringstid", typeof(decimal));
+            dt.Columns.Add("id", typeof(int));
 
             foreach (var EscapeRoom in escapeRooms) {
-                dt.Rows.Add(EscapeRoom.Name,  EscapeRoom.Price, EscapeRoom.Emp.FirstName + " " + EscapeRoom.Emp.LastName, EscapeRoom.MaxClearTime, EscapeRoom.CleanTime);
+                dt.Rows.Add(EscapeRoom.Name,  EscapeRoom.Price, EscapeRoom.Emp.FirstName + " " + EscapeRoom.Emp.LastName, EscapeRoom.MaxClearTime, EscapeRoom.CleanTime, EscapeRoom.EscapeRoomID);
             }
 
             bs.DataSource = dt;
             dataGridView1.DataSource = bs;
+            dataGridView1.Columns["id"].Visible = false;
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
             int index = e.RowIndex;
-            MAPMAClient.Model.EscapeRoom escapeRoom = escapeRooms.ElementAt(index);
-            Update_Room ur = new Update_Room(escapeRoom);
-            ur.Show();
-            this.Hide();
+            int id = (int)dataGridView1[5, index].Value;
+            int i = 0;
+            bool found = false;
+            MAPMAClient.Model.EscapeRoom escapeRoom = null;
+
+            while (i < escapeRooms.Count && !found) {
+                if (escapeRooms.ElementAt(i).EscapeRoomID == id) {
+                    escapeRoom = escapeRooms.ElementAt(i);
+                    found = true;
+                }
+                else {
+                    i++;
+                }
+            }
+
+            if (escapeRoom != null) {
+                Update_Room ur = new Update_Room(escapeRoom);
+                ur.Show();
+                this.Hide();
+            }
         }
 
 

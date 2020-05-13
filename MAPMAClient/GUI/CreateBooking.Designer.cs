@@ -33,7 +33,7 @@
             this.lblPriceRead = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.cobNavnER = new System.Windows.Forms.ComboBox();
+            this.cobNameER = new System.Windows.Forms.ComboBox();
             this.grbCustomer = new System.Windows.Forms.GroupBox();
             this.lblPhoneRead = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
@@ -56,7 +56,8 @@
             this.lblBookTime = new System.Windows.Forms.Label();
             this.calBookTime = new System.Windows.Forms.MonthCalendar();
             this.lblBookCalenderRead = new System.Windows.Forms.Label();
-            this.cmbFreeTimes = new System.Windows.Forms.ComboBox();
+            this.cobFreeTimes = new System.Windows.Forms.ComboBox();
+            this.lblErrorTime = new System.Windows.Forms.Label();
             this.grbEscapeRoom.SuspendLayout();
             this.grbCustomer.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -91,7 +92,7 @@
             this.grbEscapeRoom.Controls.Add(this.lblPriceRead);
             this.grbEscapeRoom.Controls.Add(this.lblPrice);
             this.grbEscapeRoom.Controls.Add(this.lblName);
-            this.grbEscapeRoom.Controls.Add(this.cobNavnER);
+            this.grbEscapeRoom.Controls.Add(this.cobNameER);
             this.grbEscapeRoom.Location = new System.Drawing.Point(13, 13);
             this.grbEscapeRoom.Name = "grbEscapeRoom";
             this.grbEscapeRoom.Size = new System.Drawing.Size(209, 235);
@@ -159,14 +160,15 @@
             this.lblName.TabIndex = 1;
             this.lblName.Text = "EscapeRoom Navn";
             // 
-            // cobNavnER
+            // cobNameER
             // 
-            this.cobNavnER.FormattingEnabled = true;
-            this.cobNavnER.Location = new System.Drawing.Point(10, 36);
-            this.cobNavnER.Name = "cobNavnER";
-            this.cobNavnER.Size = new System.Drawing.Size(171, 21);
-            this.cobNavnER.TabIndex = 0;
-            this.cobNavnER.SelectedIndexChanged += new System.EventHandler(this.cobNavnER_SelectedIndexChanged);
+            this.cobNameER.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cobNameER.FormattingEnabled = true;
+            this.cobNameER.Location = new System.Drawing.Point(10, 36);
+            this.cobNameER.Name = "cobNameER";
+            this.cobNameER.Size = new System.Drawing.Size(171, 21);
+            this.cobNameER.TabIndex = 0;
+            this.cobNameER.SelectedIndexChanged += new System.EventHandler(this.cobNameER_SelectedIndexChanged);
             // 
             // grbCustomer
             // 
@@ -242,6 +244,7 @@
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.Size = new System.Drawing.Size(170, 20);
             this.txbUserName.TabIndex = 1;
+            this.txbUserName.TextChanged += new System.EventHandler(this.txbUserName_TextChanged);
             this.txbUserName.Leave += new System.EventHandler(this.txbName_KeyDown);
             // 
             // lblUsername
@@ -303,8 +306,8 @@
             this.txbAmountOfPeople.Location = new System.Drawing.Point(9, 124);
             this.txbAmountOfPeople.Name = "txbAmountOfPeople";
             this.txbAmountOfPeople.Size = new System.Drawing.Size(96, 20);
-            this.txbAmountOfPeople.TabIndex = 5;            
-            this.txbAmountOfPeople.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbAmountOfPeople_KeyPress);
+            this.txbAmountOfPeople.TabIndex = 5;
+            this.txbAmountOfPeople.TextChanged += new System.EventHandler(this.txbAmountOfPeople_TextChanged);
             this.txbAmountOfPeople.Leave += new System.EventHandler(this.txbAmountOfPeople_Leave);
             // 
             // lblBookAmountOfPeople
@@ -377,21 +380,34 @@
             this.lblBookCalenderRead.TabIndex = 8;
             this.lblBookCalenderRead.Text = "Dato Booking";
             // 
-            // cmbFreeTimes
+            // cobFreeTimes
             // 
-            this.cmbFreeTimes.FormattingEnabled = true;
-            this.cmbFreeTimes.Location = new System.Drawing.Point(611, 220);
-            this.cmbFreeTimes.Name = "cmbFreeTimes";
-            this.cmbFreeTimes.Size = new System.Drawing.Size(171, 21);
-            this.cmbFreeTimes.TabIndex = 10;
-            this.cmbFreeTimes.SelectedIndexChanged += new System.EventHandler(this.cmbFreeTimes_SelectedIndexChanged);
+            this.cobFreeTimes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cobFreeTimes.FormattingEnabled = true;
+            this.cobFreeTimes.Location = new System.Drawing.Point(611, 220);
+            this.cobFreeTimes.Name = "cobFreeTimes";
+            this.cobFreeTimes.Size = new System.Drawing.Size(171, 21);
+            this.cobFreeTimes.TabIndex = 10;
+            this.cobFreeTimes.SelectedIndexChanged += new System.EventHandler(this.cobFreeTimes_SelectedIndexChanged);
+            // 
+            // lblErrorTime
+            // 
+            this.lblErrorTime.AutoSize = true;
+            this.lblErrorTime.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorTime.Location = new System.Drawing.Point(611, 248);
+            this.lblErrorTime.Name = "lblErrorTime";
+            this.lblErrorTime.Size = new System.Drawing.Size(183, 13);
+            this.lblErrorTime.TabIndex = 11;
+            this.lblErrorTime.Text = "Tidspunktet er taget, vælg en anden.";
+            this.lblErrorTime.Visible = false;
             // 
             // CreateBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 333);
-            this.Controls.Add(this.cmbFreeTimes);
+            this.Controls.Add(this.lblErrorTime);
+            this.Controls.Add(this.cobFreeTimes);
             this.Controls.Add(this.lblBookCalenderRead);
             this.Controls.Add(this.lblBookTime);
             this.Controls.Add(this.calBookTime);
@@ -421,7 +437,7 @@
         private System.Windows.Forms.Label lblPriceRead;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.ComboBox cobNavnER;
+        private System.Windows.Forms.ComboBox cobNameER;
         private System.Windows.Forms.GroupBox grbCustomer;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblClearTimeRead;
@@ -448,6 +464,7 @@
         private System.Windows.Forms.Label lblPhoneRead;
         private System.Windows.Forms.Label lblBookDateRead;
         private System.Windows.Forms.Label lblBookDate;
-        private System.Windows.Forms.ComboBox cmbFreeTimes;
+        private System.Windows.Forms.ComboBox cobFreeTimes;
+        private System.Windows.Forms.Label lblErrorTime;
     }
 }

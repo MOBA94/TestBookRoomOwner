@@ -105,32 +105,56 @@ namespace MAPMAClient.GUI {
             cer.Show(); 
         }
 
-        private void btnUpdateRoom_Click(object sender, EventArgs e) {
-            string name = txbName.Text;
-            string description = txbDescription.Text;
-            decimal maxClearTime = Convert.ToDecimal(txbMaxClearTime.Text);
-            decimal cleanTime = Convert.ToDecimal(txbCleanTime.Text);
-            decimal price = Convert.ToDecimal(txbPrice.Text);
-            //skal laves om når vi har mere rating indover
-            decimal rating = 0;
-            int empID;
-            if (Emp == null) {
-                empID = ER.Emp.EmployeeID;
+        private void btnUpdateRoom_Click ( object sender, EventArgs e ) {
+
+            if (txbName.Text.Equals("")) {
+                txbName.Text = "Dette felt skal have en værdig";
+                txbName.BackColor = Color.Red;
+
+            }
+            else if (txbDescription.Text.Equals("")) {
+                txbDescription.Text = "Dette felt skal have en værdig";
+                txbDescription.BackColor = Color.Red;
+            }
+            else if (txbMaxClearTime.Text.Equals("")) {
+                txbMaxClearTime.Text = "";
+                txbMaxClearTime.BackColor = Color.Red;
+            }
+            else if (txbCleanTime.Text.Equals("")) {
+                txbCleanTime.Text = "";
+                txbCleanTime.BackColor = Color.Red;
+            }
+            else if (txbPrice.Text.Equals("")) {
+                txbPrice.Text = "";
+                txbPrice.BackColor = Color.Red;
             }
             else {
-                empID = Emp.EmployeeID;
+                string name = txbName.Text;
+                string description = txbDescription.Text;
+                decimal maxClearTime = Convert.ToDecimal(txbMaxClearTime.Text);
+                decimal cleanTime = Convert.ToDecimal(txbCleanTime.Text);
+                decimal price = Convert.ToDecimal(txbPrice.Text);
+                //skal laves om når vi har mere rating indover
+                decimal rating = 0;
+                int empID;
+                if (Emp == null) {
+                    empID = ER.Emp.EmployeeID;
+                }
+                else {
+                    empID = Emp.EmployeeID;
+                }
+                byte[] img;
+                if (ER.Image == null) {
+                    img = ConvertImgToBinary(pbEscapeRoom.Image);
+                }
+                else {
+                    img = ER.Image;
+                }
+                ERctr.UpdateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empID, ER.EscapeRoomID, img);
+                this.Hide();
+                CreateEscapeRoom cer = new CreateEscapeRoom();
+                cer.Show();
             }
-            byte[] img;
-            if (ER.Image == null) {
-                img = ConvertImgToBinary(pbEscapeRoom.Image);
-            }
-            else {
-                img = ER.Image;
-            }
-            ERctr.UpdateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empID, ER.EscapeRoomID, img);
-            this.Hide();
-            CreateEscapeRoom cer = new CreateEscapeRoom();
-            cer.Show();
         }
 
         private void txbPrice_TextChanged(object sender, EventArgs e) {
