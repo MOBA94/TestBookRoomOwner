@@ -47,7 +47,7 @@
             this.btnMMCreateEscapeRoom.Name = "btnMMCreateEscapeRoom";
             this.btnMMCreateEscapeRoom.Size = new System.Drawing.Size(166, 76);
             this.btnMMCreateEscapeRoom.TabIndex = 1;
-            this.btnMMCreateEscapeRoom.Text = "Opret nyt EscapeRoom";
+            this.btnMMCreateEscapeRoom.Text = "Escaperooms";
             this.btnMMCreateEscapeRoom.UseVisualStyleBackColor = true;
             this.btnMMCreateEscapeRoom.Click += new System.EventHandler(this.btnMMCreateEscapeRoom_Click);
             // 

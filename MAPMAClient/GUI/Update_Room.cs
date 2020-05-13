@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MAPMAClient.Model;
 using MAPMAClient.Controller;
+using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace MAPMAClient.GUI {
     public partial class Update_Room : Form {
@@ -35,9 +37,28 @@ namespace MAPMAClient.GUI {
             cobEmployeeName.Items.Clear();
 
             foreach (Employee emp in employees) {
-                cobEmployeeName.Items.Add(emp.FirstName + emp.LastName);
+                cobEmployeeName.Items.Add(emp.FirstName + " " + emp.LastName);
             }
-            cobEmployeeName.SelectedItem = ER.Emp.FirstName + ER.Emp.LastName;
+            cobEmployeeName.SelectedItem = ER.Emp.FirstName + " " + ER.Emp.LastName;
+        }
+
+        private Image ByteArrayToImage ( byte[] byteArrayIn )
+        {
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                var Imager = Image.FromStream(ms);
+
+                return Imager;
+            }
+        }
+
+        byte[] ConvertImgToBinary(Image img) {
+
+            using (MemoryStream ms = new MemoryStream()) {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+
         }
 
         private void FillTextBoxEscapeRoom(EscapeRoom esr) {
@@ -49,6 +70,7 @@ namespace MAPMAClient.GUI {
             txbName.Text = esr.Name;
             string price = Convert.ToString(esr.Price);
             txbPrice.Text = price;
+            pbEscapeRoom.Image = ByteArrayToImage(esr.Image);
         }
 
         private void FillLabelsEmployee(Employee emp) {
@@ -65,7 +87,7 @@ namespace MAPMAClient.GUI {
             Emp = new Employee();
 
             while (i < employees.Count && !found) {
-                string name = employees.ElementAt(i).FirstName + employees.ElementAt(i).LastName;
+                string name = employees.ElementAt(i).FirstName + " " + employees.ElementAt(i).LastName;
                 if (name.Equals(cobEmployeeName.SelectedItem)) {
                     Emp = employees.ElementAt(i);
                     found = true;
@@ -83,25 +105,56 @@ namespace MAPMAClient.GUI {
             cer.Show(); 
         }
 
-        private void btnUpdateRoom_Click(object sender, EventArgs e) {
-            string name = txbName.Text;
-            string description = txbDescription.Text;
-            decimal maxClearTime = Convert.ToDecimal(txbMaxClearTime.Text);
-            decimal cleanTime = Convert.ToDecimal(txbCleanTime.Text);
-            decimal price = Convert.ToDecimal(txbPrice.Text);
-            //skal laves om når vi har mere rating indover
-            decimal rating = 0;
-            int empID;
-            if (Emp == null) {
-                empID = ER.Emp.EmployeeID;
+        private void btnUpdateRoom_Click ( object sender, EventArgs e ) {
+
+            if (txbName.Text.Equals("")) {
+                txbName.Text = "Dette felt skal have en værdig";
+                txbName.BackColor = Color.Red;
+
+            }
+            else if (txbDescription.Text.Equals("")) {
+                txbDescription.Text = "Dette felt skal have en værdig";
+                txbDescription.BackColor = Color.Red;
+            }
+            else if (txbMaxClearTime.Text.Equals("")) {
+                txbMaxClearTime.Text = "";
+                txbMaxClearTime.BackColor = Color.Red;
+            }
+            else if (txbCleanTime.Text.Equals("")) {
+                txbCleanTime.Text = "";
+                txbCleanTime.BackColor = Color.Red;
+            }
+            else if (txbPrice.Text.Equals("")) {
+                txbPrice.Text = "";
+                txbPrice.BackColor = Color.Red;
             }
             else {
-                empID = Emp.EmployeeID;
+                string name = txbName.Text;
+                string description = txbDescription.Text;
+                decimal maxClearTime = Convert.ToDecimal(txbMaxClearTime.Text);
+                decimal cleanTime = Convert.ToDecimal(txbCleanTime.Text);
+                decimal price = Convert.ToDecimal(txbPrice.Text);
+                //skal laves om når vi har mere rating indover
+                decimal rating = 0;
+                int empID;
+                if (Emp == null) {
+                    empID = ER.Emp.EmployeeID;
+                }
+                else {
+                    empID = Emp.EmployeeID;
+                }
+                byte[] img;
+                if (ER.Image == null) {
+                    img = ConvertImgToBinary(pbEscapeRoom.Image);
+                }
+                else {
+                    img = ER.Image;
+                }
+                ERctr.UpdateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empID, ER.EscapeRoomID, img);
+                this.Hide();
+                CreateEscapeRoom cer = new CreateEscapeRoom();
+                cer.Show();
             }
-            ERctr.UpdateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empID, ER.EscapeRoomID);
-            this.Hide();
-            CreateEscapeRoom cer = new CreateEscapeRoom();
-            cer.Show();
         }
 
         private void txbPrice_TextChanged(object sender, EventArgs e) {
@@ -140,6 +193,20 @@ namespace MAPMAClient.GUI {
             ERctr.Delete(id);
 
             
+        }
+
+        private void btnFindPicture_Click ( object sender, EventArgs e )
+        {
+            string fileName;
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    fileName = ofd.FileName;
+                    pbEscapeRoom.Image = Image.FromFile(fileName);
+                    ER.Image = null;
+                }
+            }
         }
     }
 }

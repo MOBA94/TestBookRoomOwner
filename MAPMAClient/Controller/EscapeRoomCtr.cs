@@ -48,8 +48,8 @@ namespace MAPMAClient.Controller {
             return ERS.FreeTimes(ER_ID, Bdate);
         }
 
-        public void UpdateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId, int escId) {
-            ERS.UpdateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId, escId);
+        public void UpdateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId, int escId, byte[] img) {
+            ERS.UpdateEscapeRoom(name, description, maxClearTime, cleanTime, price, rating, empId, escId, img);
         }
 
         public void Delete(int id)

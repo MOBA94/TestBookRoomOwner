@@ -50,9 +50,11 @@
             this.lblEmpName = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdateRoom = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.pbEscapeRoom = new System.Windows.Forms.PictureBox();
+            this.btnFindPicture = new System.Windows.Forms.Button();
             this.grbEscapeRoom.SuspendLayout();
             this.grbEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscapeRoom)).BeginInit();
             this.SuspendLayout();
             // 
             // grbEscapeRoom
@@ -298,7 +300,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnCancel.Location = new System.Drawing.Point(684, 415);
+            this.btnCancel.Location = new System.Drawing.Point(690, 455);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 23);
             this.btnCancel.TabIndex = 5;
@@ -308,41 +310,50 @@
             // 
             // btnUpdateRoom
             // 
-            this.btnUpdateRoom.Location = new System.Drawing.Point(581, 415);
+            this.btnUpdateRoom.Location = new System.Drawing.Point(587, 455);
             this.btnUpdateRoom.Name = "btnUpdateRoom";
             this.btnUpdateRoom.Size = new System.Drawing.Size(97, 23);
             this.btnUpdateRoom.TabIndex = 6;
-            this.btnUpdateRoom.Text = "Updater Rum";
+            this.btnUpdateRoom.Text = "Opdater rum";
             this.btnUpdateRoom.UseVisualStyleBackColor = true;
             this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
             // 
-            // btnDelete
+            // pbEscapeRoom
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Red;
-            this.btnDelete.Location = new System.Drawing.Point(500, 415);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 7;
-            this.btnDelete.Text = "Slet Room";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.pbEscapeRoom.Location = new System.Drawing.Point(13, 276);
+            this.pbEscapeRoom.Name = "pbEscapeRoom";
+            this.pbEscapeRoom.Size = new System.Drawing.Size(200, 200);
+            this.pbEscapeRoom.TabIndex = 7;
+            this.pbEscapeRoom.TabStop = false;
+            // 
+            // btnFindPicture
+            // 
+            this.btnFindPicture.Location = new System.Drawing.Point(220, 276);
+            this.btnFindPicture.Name = "btnFindPicture";
+            this.btnFindPicture.Size = new System.Drawing.Size(75, 23);
+            this.btnFindPicture.TabIndex = 8;
+            this.btnFindPicture.Text = "Find billede";
+            this.btnFindPicture.UseVisualStyleBackColor = true;
+            this.btnFindPicture.Click += new System.EventHandler(this.btnFindPicture_Click);
             // 
             // Update_Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnDelete);
+            this.ClientSize = new System.Drawing.Size(800, 490);
+            this.Controls.Add(this.btnFindPicture);
+            this.Controls.Add(this.pbEscapeRoom);
             this.Controls.Add(this.btnUpdateRoom);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.grbEmployee);
             this.Controls.Add(this.grbEscapeRoom);
             this.Name = "Update_Room";
-            this.Text = "Update_Room";
+            this.Text = "Opdater Escaperoom";
             this.grbEscapeRoom.ResumeLayout(false);
             this.grbEscapeRoom.PerformLayout();
             this.grbEmployee.ResumeLayout(false);
             this.grbEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscapeRoom)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,6 +387,7 @@
         private System.Windows.Forms.Label lblErrorPrice;
         private System.Windows.Forms.Label lblErrorCleanTime;
         private System.Windows.Forms.Label lblErrorClearTime;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.PictureBox pbEscapeRoom;
+        private System.Windows.Forms.Button btnFindPicture;
     }
 }

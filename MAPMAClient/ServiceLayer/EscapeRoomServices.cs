@@ -50,9 +50,9 @@ namespace MAPMAClient.ServiceLayer {
             Service.DeleteEscapeRoom(id);
         }
 
-        public void UpdateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId, int escId) {
+        public void UpdateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId, int escId, byte[] img) {
             IEscapeRoom_Services Service = new EscapeRoom_ServicesClient();
-            Service.Update(name, description, maxClearTime, cleanTime, price, rating, empId, escId);
+            Service.Update(name, description, maxClearTime, cleanTime, price, rating, empId, escId, img);
         }
 
         private MAPMAClient.Model.EscapeRoom GetClientsideOneEscapeRoom(EscapeRoom escapeRoom) {
@@ -65,7 +65,8 @@ namespace MAPMAClient.ServiceLayer {
                 MaxClearTime = escapeRoom.maxClearTime,
                 Name = escapeRoom.name,
                 Price = escapeRoom.price,
-                Rating = escapeRoom.rating
+                Rating = escapeRoom.rating,
+                Image = escapeRoom.Image
                
             };
 
@@ -105,7 +106,8 @@ namespace MAPMAClient.ServiceLayer {
                     Name = ER.name,
                     Price = ER.price,
                     Rating = ER.rating,
-                    Emp = emp
+                    Emp = emp,
+                    Image = ER.Image
                 };
 
                 foundEsc.Add(es);

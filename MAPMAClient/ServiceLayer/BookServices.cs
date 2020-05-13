@@ -12,10 +12,10 @@ namespace MAPMAClient.ServiceLayer {
         
         }
 
-        public void Create(MAPMAClient.Model.Booking book) {
+        public int Create(MAPMAClient.Model.Booking book) {
             IBookingServices Service = new BookingServicesClient();
 
-            Service.Create(book.Emp.EmployeeID, book.Cus.Username, book.Er.EscapeRoomID, book.BookingTime, book.AmountOfPeople, book.Date);
+           return Service.Create(book.Emp.EmployeeID, book.Cus.Username, book.Er.EscapeRoomID, book.BookingTime, book.AmountOfPeople, book.Date);
         }
 
         public void Delete(MAPMAClient.Model.Booking book) {

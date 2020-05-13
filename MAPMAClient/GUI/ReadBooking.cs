@@ -39,13 +39,19 @@ namespace MAPMAClient.GUI
             dt.Columns.Add("Antal Personer", typeof(int));
             dt.Columns.Add("Brugernavn", typeof(string));
             dt.Columns.Add("Medarbejder", typeof(string));
+            dt.Columns.Add("id", typeof(int));
+
 
             foreach (var Booking in bookings) {
-                dt.Rows.Add(Booking.Er.Name, Booking.BookingTime, Booking.Date.ToShortDateString(), Booking.AmountOfPeople, Booking.Cus.Username, Booking.Emp.FirstName + Booking.Emp.LastName);
+                if (Booking.Date >= DateTime.Now.Date)
+                {
+                    dt.Rows.Add(Booking.Er.Name, Booking.BookingTime, Booking.Date.ToShortDateString(), Booking.AmountOfPeople, Booking.Cus.Username, Booking.Emp.FirstName + Booking.Emp.LastName, Booking.Id);
+                }
             }
 
             bs.DataSource = dt;
             dgvAllBookings.DataSource = bs;
+            dgvAllBookings.Columns["id"].Visible = false;
 
 
         }
@@ -67,10 +73,26 @@ namespace MAPMAClient.GUI
         private void dgvAllBookings_CellDoubleClick ( object sender, DataGridViewCellEventArgs e )
         {
             int index = e.RowIndex;
-            MAPMAClient.Model.Booking book = bookings.ElementAt(index);
-            Edit_Delete ed = new Edit_Delete(book);
-            ed.Show();
-            this.Hide();
+            int id = (int)dgvAllBookings[6, index].Value;
+            int i = 0;
+            bool found = false;
+            MAPMAClient.Model.Booking book = null;
+
+            while (i < bookings.Count && !found) {
+                if (bookings.ElementAt(i).Id == id) {
+                    book = bookings.ElementAt(i);
+                    found = true;
+                }
+                else {
+                    i++;
+                }
+            }
+
+            if (book != null) {
+                Edit_Delete ed = new Edit_Delete(book);
+                ed.Show();
+                this.Hide();
+            }
         }
     }
 }

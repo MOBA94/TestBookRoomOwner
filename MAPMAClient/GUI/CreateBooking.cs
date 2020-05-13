@@ -34,36 +34,29 @@ namespace MAPMAClient.GUI {
             EmpCtr = new EmployeeCtr();
             escapeRooms = new List<EscapeRoom>();
             CreateBooking_Load();
+            calBookTime.MinDate = DateTime.Now.Date;
         }
 
         private void CreateBooking_Load() {
             escapeRooms = ERCtr.GetAllForOwner();
-            cobNavnER.Items.Clear();
+            cobNameER.Items.Clear();
 
             foreach (EscapeRoom er in escapeRooms) {
-                cobNavnER.Items.Add(er.Name);
+                cobNameER.Items.Add(er.Name);
             }
         }
 
-        private void txbAmountOfPeople_KeyPress(object sender, KeyPressEventArgs e) {
-            try {
-                int.Parse(txbAmountOfPeople.Text);
-            }
-            catch (FormatException FE) {
-                Console.WriteLine(FE);
-                Console.ReadLine();
-                txbAmountOfPeople.ResetText();
-                lblErrorAOP.Visible = true;
-            }
-        }
 
-        private void cobNavnER_SelectedIndexChanged(object sender, EventArgs e) {
+
+        private void cobNameER_SelectedIndexChanged(object sender, EventArgs e) {
             bool found = false;
             int i = 0;
             EsR = new EscapeRoom();
+            cobNameER.BackColor = Color.White;
+            cobNameER.ForeColor = Color.Black;
 
             while (i < escapeRooms.Count && !found) {
-                if (escapeRooms.ElementAt(i).Name.Equals(cobNavnER.SelectedItem)) {
+                if (escapeRooms.ElementAt(i).Name.Equals(cobNameER.SelectedItem)) {
                     EsR = escapeRooms.ElementAt(i);
                     found = true;
                 }
@@ -91,24 +84,57 @@ namespace MAPMAClient.GUI {
             string date = Convert.ToString(DateForBooking.ToShortDateString());
             lblBookDateRead.Text = date;
 
-            cmbFreeTimes.Items.Clear();
+            Freetimes();
+        }
+
+        private void Freetimes() {
+            cobFreeTimes.Items.Clear();
             freeTimes = ERCtr.FreeTimes(EsR.EscapeRoomID, DateForBooking);
             foreach (TimeSpan ts in freeTimes) {
-                cmbFreeTimes.Items.Add(ts);
+                cobFreeTimes.Items.Add(ts);
             }
+
         }
 
         private void btnFinish_Click(object sender, EventArgs e) {
             //Skal laves om når der kommer et login på clienten indtil da en stub.
-            
-            Employee emp;
-            emp = EmpCtr.Get(1);
-            BookCtr.Create(emp, Cus, EsR, TimeForBooking, AmountOfPeople, DateForBooking);
+            if (cobNameER.Text.Equals("")) {
+                cobNameER.BackColor = Color.Red;
+                cobNameER.ForeColor = Color.White;
+            }
+            else if (txbUserName.Text.Equals("")) {
+                txbUserName.BackColor = Color.Red;
+            }
+            else if (txbAmountOfPeople.Text.Equals("") || int.Parse(txbAmountOfPeople.Text) < 1) {
+                txbAmountOfPeople.BackColor = Color.Red;
+            }
+            else if (cobFreeTimes.Text.Equals("")) {
+                cobFreeTimes.BackColor = Color.Red;
+                cobFreeTimes.ForeColor = Color.White;
+            }
+
+            else
+            {
+                Employee emp;
+                emp = EmpCtr.Get(1);
+               int c = BookCtr.Create(emp, Cus, EsR, TimeForBooking, AmountOfPeople, DateForBooking);
+                if(c == 0) {             
+
+                    cobFreeTimes.SelectedItem = null;
+                    Freetimes();
+                    lblErrorTime.Show();
 
 
-            MainMenu mm = new MainMenu();
-            mm.Show();
-            this.Hide();
+
+                }
+                else
+                {
+
+                    MainMenu mm = new MainMenu();
+                        mm.Show();
+                        this.Hide();
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {
@@ -117,12 +143,14 @@ namespace MAPMAClient.GUI {
             mm.Show();
         }
 
-        private void cmbFreeTimes_SelectedIndexChanged(object sender, EventArgs e) {
+        private void cobFreeTimes_SelectedIndexChanged(object sender, EventArgs e) {
             bool found = false;
             int i = 0;
-
+            cobFreeTimes.BackColor = Color.White;
+            cobFreeTimes.ForeColor = Color.Black;
+            lblErrorTime.Hide();
             while (i < freeTimes.Count && !found) {
-                if (freeTimes.ElementAt(i).Equals(cmbFreeTimes.SelectedItem)) {
+                if (freeTimes.ElementAt(i).Equals(cobFreeTimes.SelectedItem)) {
                     TimeForBooking = freeTimes.ElementAt(i);
                     found = true;
                 }
@@ -138,11 +166,49 @@ namespace MAPMAClient.GUI {
             lblLastNameRead.Text = Cus.LastName;
             lblPhoneRead.Text = Cus.Phone;
             lblBookCustomerNameRead.Text = Cus.FirstName + Cus.LastName;
+            txbUserName.BackColor = Color.White;
         }
 
-        private void txbAmountOfPeople_Leave(object sender, EventArgs e) {
-            AmountOfPeople = int.Parse(txbAmountOfPeople.Text);
-            lblErrorAOP.Visible = false;
+        private void txbAmountOfPeople_Leave ( object sender, EventArgs e )
+        {
+            try { 
+            if (txbAmountOfPeople.Text.Equals(""))
+            {
+                txbAmountOfPeople.BackColor = Color.Red;
+            }
+            else
+            {
+                txbAmountOfPeople.BackColor = Color.White;
+                AmountOfPeople = int.Parse(txbAmountOfPeople.Text);
+                lblErrorAOP.Visible = false;
+            }                
+            }
+            catch {
+                txbAmountOfPeople.Text  =  "";
+                txbAmountOfPeople.BackColor = Color.Red;
+            }
+        }
+
+        private void txbAmountOfPeople_TextChanged ( object sender, EventArgs e )
+        {
+            try {
+                if (txbAmountOfPeople.Text.Equals("")) {
+                }
+                else {
+
+                    int.Parse(txbAmountOfPeople.Text);
+                    lblErrorAOP.Visible = false;
+                }
+            }
+            catch (FormatException FE) {
+                txbAmountOfPeople.Text = "";
+                lblErrorAOP.Visible = true;
+            }
+        }
+
+        private void txbUserName_TextChanged ( object sender, EventArgs e )
+        {
+            txbUserName.BackColor = Color.White;
         }
     }
 }

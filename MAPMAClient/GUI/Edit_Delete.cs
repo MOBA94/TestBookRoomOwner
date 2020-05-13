@@ -26,6 +26,7 @@ namespace MAPMAClient.GUI
             book = booking;
             updatetBook = book;
             FillLabels(book);
+            mcUpdateBooking.MinDate = DateTime.Now.Date;
         }
 
         private void btnDelete_Click ( object sender, EventArgs e )
@@ -73,7 +74,7 @@ namespace MAPMAClient.GUI
             lblBookingTimeDelete.Text = bt;
             string dt = Convert.ToString(book.Date);
             lblDateDelete.Text = dt;
-            lblEmployeeNameDelete.Text = book.Emp.FirstName + book.Emp.LastName;
+            lblEmployeeNameDelete.Text = book.Emp.FirstName + " " + book.Emp.LastName;
             lblEscaperoomDelete.Text = book.Er.Name;
             lblFirstNameDelete.Text = book.Cus.FirstName;
             lblLastNameDelete.Text = book.Cus.LastName;
@@ -91,10 +92,16 @@ namespace MAPMAClient.GUI
             }
             else {
                 BookingCtr bc = new BookingCtr();
-                bc.Update(updatetBook.Cus, updatetBook.Er, updatetBook.Date, updatetBook.Emp, updatetBook.AmountOfPeople, updatetBook.BookingTime, updatetBook.Id);
-                ReadBooking rb = new ReadBooking();
-                rb.Show();
-                this.Close();
+                if (updatetBook.AmountOfPeople > 0) {                    
+                    bc.Update(updatetBook.Cus, updatetBook.Er, updatetBook.Date, updatetBook.Emp, updatetBook.AmountOfPeople, updatetBook.BookingTime, updatetBook.Id);
+                    ReadBooking rb = new ReadBooking();
+                    rb.Show();
+                    this.Close();
+                }
+                else {
+                    lblErrorAmountOfPeople.Text = "må ikke være 0";
+                    lblErrorAmountOfPeople.Show();
+                }
             }
         }
 
@@ -105,9 +112,9 @@ namespace MAPMAClient.GUI
             cbEmployee.Items.Clear();
 
             foreach (Employee emp in employees) {
-                cbEmployee.Items.Add(emp.FirstName + emp.LastName);
+                cbEmployee.Items.Add(emp.FirstName + " " + emp.LastName);
             }
-            cbEmployee.SelectedItem = book.Emp.FirstName + book.Emp.LastName;
+            cbEmployee.SelectedItem = book.Emp.FirstName + " " + book.Emp.LastName;
         }
 
         private void LoadCBEscapeRoom() {
@@ -184,7 +191,7 @@ namespace MAPMAClient.GUI
             int i = 0;
 
             while (i < employees.Count && !found) {
-                string name = employees.ElementAt(i).FirstName + employees.ElementAt(i).LastName;
+                string name = employees.ElementAt(i).FirstName + " " + employees.ElementAt(i).LastName;
                 if (name.Equals(cbEmployee.SelectedItem)) {
                     updatetBook.Emp = employees.ElementAt(i);
                     found = true;
@@ -194,19 +201,33 @@ namespace MAPMAClient.GUI
                 }
             }
         }
-
-        private void tbAmountOfPeople_Leave ( object sender, EventArgs e )
-        {
-            updatetBook.AmountOfPeople = int.Parse(tbAmountOfPeople.Text);
-        }
         
         private void tbAmountOfPeople_TextChanged ( object sender, EventArgs e )
         {
             try {
-                int.Parse(tbAmountOfPeople.Text);
+                updatetBook.AmountOfPeople = int.Parse(tbAmountOfPeople.Text);
+                lblErrorAmountOfPeople.Hide();
             }
             catch (FormatException FE) {
                 tbAmountOfPeople.Text = "";
+                lblErrorAmountOfPeople.Text = "Skal være et tal";
+                lblErrorAmountOfPeople.Show();
+            }
+        }
+
+        private void cbBookingTime_SelectedIndexChanged ( object sender, EventArgs e )
+        {
+            bool found = false;
+            int i = 0;
+
+            while (i < bookingTimes.Count && !found) {
+                if (bookingTimes.ElementAt(i).Equals(cbBookingTime.SelectedItem)) {
+                    updatetBook.BookingTime = bookingTimes.ElementAt(i);
+                    found = true;
+                }
+                else {
+                    i++;
+                }
             }
         }
     }

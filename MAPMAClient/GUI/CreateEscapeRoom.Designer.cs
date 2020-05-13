@@ -37,9 +37,15 @@
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblErrorImage = new System.Windows.Forms.Label();
+            this.lblErrorEmployee = new System.Windows.Forms.Label();
+            this.lblErrorPrice = new System.Windows.Forms.Label();
+            this.lblErrorCleanTime = new System.Windows.Forms.Label();
+            this.lblErrorMaxClearTime = new System.Windows.Forms.Label();
+            this.lblErrorDesciption = new System.Windows.Forms.Label();
+            this.lblErrorName = new System.Windows.Forms.Label();
             this.btnFindPicture = new System.Windows.Forms.Button();
-            this.pbEscaperoom = new System.Windows.Forms.PictureBox();            
-            this.lblEscapeRoomID = new System.Windows.Forms.Label();
+            this.pbEscaperoom = new System.Windows.Forms.PictureBox();
             this.btnDeleteEscapeRoom = new System.Windows.Forms.Button();
             this.btnCreateEscapeRoom = new System.Windows.Forms.Button();
             this.txbDescription = new System.Windows.Forms.RichTextBox();
@@ -49,17 +55,8 @@
             this.txtMaxClearTime = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cleanTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.escapeRoomIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maxClearTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.escapeRoomBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.escapeRoomBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnDoneCreateEscapeRoom = new System.Windows.Forms.Button();
             this.btnBackCreateEscapeRoom = new System.Windows.Forms.Button();
             this.escapeRoomServicesClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkListBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -77,7 +74,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblName.Location = new System.Drawing.Point(6, 62);
+            this.lblName.Location = new System.Drawing.Point(6, 19);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(39, 13);
             this.lblName.TabIndex = 1;
@@ -87,7 +84,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(6, 103);
+            this.lblDescription.Location = new System.Drawing.Point(6, 60);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(67, 13);
             this.lblDescription.TabIndex = 2;
@@ -96,7 +93,7 @@
             // lblMaxClearTime
             // 
             this.lblMaxClearTime.AutoSize = true;
-            this.lblMaxClearTime.Location = new System.Drawing.Point(6, 196);
+            this.lblMaxClearTime.Location = new System.Drawing.Point(6, 153);
             this.lblMaxClearTime.Name = "lblMaxClearTime";
             this.lblMaxClearTime.Size = new System.Drawing.Size(118, 13);
             this.lblMaxClearTime.TabIndex = 3;
@@ -105,7 +102,7 @@
             // lblCleanTime
             // 
             this.lblCleanTime.AutoSize = true;
-            this.lblCleanTime.Location = new System.Drawing.Point(6, 236);
+            this.lblCleanTime.Location = new System.Drawing.Point(6, 193);
             this.lblCleanTime.Name = "lblCleanTime";
             this.lblCleanTime.Size = new System.Drawing.Size(76, 13);
             this.lblCleanTime.TabIndex = 4;
@@ -114,7 +111,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(6, 280);
+            this.lblPrice.Location = new System.Drawing.Point(6, 237);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(30, 13);
             this.lblPrice.TabIndex = 5;
@@ -123,7 +120,7 @@
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Location = new System.Drawing.Point(6, 322);
+            this.lblEmployeeID.Location = new System.Drawing.Point(6, 279);
             this.lblEmployeeID.Name = "lblEmployeeID";
             this.lblEmployeeID.Size = new System.Drawing.Size(112, 13);
             this.lblEmployeeID.TabIndex = 6;
@@ -131,7 +128,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(127, 59);
+            this.txtName.Location = new System.Drawing.Point(127, 16);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(208, 20);
             this.txtName.TabIndex = 8;
@@ -139,9 +136,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblErrorImage);
+            this.groupBox1.Controls.Add(this.lblErrorEmployee);
+            this.groupBox1.Controls.Add(this.lblErrorPrice);
+            this.groupBox1.Controls.Add(this.lblErrorCleanTime);
+            this.groupBox1.Controls.Add(this.lblErrorMaxClearTime);
+            this.groupBox1.Controls.Add(this.lblErrorDesciption);
+            this.groupBox1.Controls.Add(this.lblErrorName);
             this.groupBox1.Controls.Add(this.btnFindPicture);
             this.groupBox1.Controls.Add(this.pbEscaperoom);
-            this.groupBox1.Controls.Add(this.lblEscapeRoomID);
             this.groupBox1.Controls.Add(this.btnDeleteEscapeRoom);
             this.groupBox1.Controls.Add(this.btnCreateEscapeRoom);
             this.groupBox1.Controls.Add(this.txbDescription);
@@ -158,14 +161,90 @@
             this.groupBox1.Controls.Add(this.lblPrice);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 601);
+            this.groupBox1.Size = new System.Drawing.Size(360, 566);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            // 
+            // lblErrorImage
+            // 
+            this.lblErrorImage.AutoSize = true;
+            this.lblErrorImage.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorImage.Location = new System.Drawing.Point(225, 349);
+            this.lblErrorImage.Name = "lblErrorImage";
+            this.lblErrorImage.Size = new System.Drawing.Size(71, 13);
+            this.lblErrorImage.TabIndex = 26;
+            this.lblErrorImage.Text = "Mangler input";
+            this.lblErrorImage.Visible = false;
+            // 
+            // lblErrorEmployee
+            // 
+            this.lblErrorEmployee.AutoSize = true;
+            this.lblErrorEmployee.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorEmployee.Location = new System.Drawing.Point(133, 299);
+            this.lblErrorEmployee.Name = "lblErrorEmployee";
+            this.lblErrorEmployee.Size = new System.Drawing.Size(71, 13);
+            this.lblErrorEmployee.TabIndex = 25;
+            this.lblErrorEmployee.Text = "Mangler input";
+            this.lblErrorEmployee.Visible = false;
+            // 
+            // lblErrorPrice
+            // 
+            this.lblErrorPrice.AutoSize = true;
+            this.lblErrorPrice.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorPrice.Location = new System.Drawing.Point(133, 260);
+            this.lblErrorPrice.Name = "lblErrorPrice";
+            this.lblErrorPrice.Size = new System.Drawing.Size(71, 13);
+            this.lblErrorPrice.TabIndex = 24;
+            this.lblErrorPrice.Text = "Mangler input";
+            this.lblErrorPrice.Visible = false;
+            // 
+            // lblErrorCleanTime
+            // 
+            this.lblErrorCleanTime.AutoSize = true;
+            this.lblErrorCleanTime.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCleanTime.Location = new System.Drawing.Point(133, 218);
+            this.lblErrorCleanTime.Name = "lblErrorCleanTime";
+            this.lblErrorCleanTime.Size = new System.Drawing.Size(71, 13);
+            this.lblErrorCleanTime.TabIndex = 23;
+            this.lblErrorCleanTime.Text = "Mangler input";
+            this.lblErrorCleanTime.Visible = false;
+            // 
+            // lblErrorMaxClearTime
+            // 
+            this.lblErrorMaxClearTime.AutoSize = true;
+            this.lblErrorMaxClearTime.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorMaxClearTime.Location = new System.Drawing.Point(133, 174);
+            this.lblErrorMaxClearTime.Name = "lblErrorMaxClearTime";
+            this.lblErrorMaxClearTime.Size = new System.Drawing.Size(71, 13);
+            this.lblErrorMaxClearTime.TabIndex = 22;
+            this.lblErrorMaxClearTime.Text = "Mangler input";
+            this.lblErrorMaxClearTime.Visible = false;
+            // 
+            // lblErrorDesciption
+            // 
+            this.lblErrorDesciption.AutoSize = true;
+            this.lblErrorDesciption.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorDesciption.Location = new System.Drawing.Point(133, 134);
+            this.lblErrorDesciption.Name = "lblErrorDesciption";
+            this.lblErrorDesciption.Size = new System.Drawing.Size(71, 13);
+            this.lblErrorDesciption.TabIndex = 21;
+            this.lblErrorDesciption.Text = "Mangler input";
+            this.lblErrorDesciption.Visible = false;
+            // 
+            // lblErrorName
+            // 
+            this.lblErrorName.AutoSize = true;
+            this.lblErrorName.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorName.Location = new System.Drawing.Point(133, 39);
+            this.lblErrorName.Name = "lblErrorName";
+            this.lblErrorName.Size = new System.Drawing.Size(71, 13);
+            this.lblErrorName.TabIndex = 20;
+            this.lblErrorName.Text = "Mangler input";
+            this.lblErrorName.Visible = false;
             // 
             // btnFindPicture
             // 
-            this.btnFindPicture.Location = new System.Drawing.Point(228, 366);
+            this.btnFindPicture.Location = new System.Drawing.Point(228, 323);
             this.btnFindPicture.Name = "btnFindPicture";
             this.btnFindPicture.Size = new System.Drawing.Size(107, 23);
             this.btnFindPicture.TabIndex = 19;
@@ -175,43 +254,16 @@
             // 
             // pbEscaperoom
             // 
-            this.pbEscaperoom.Location = new System.Drawing.Point(6, 366);
+            this.pbEscaperoom.Location = new System.Drawing.Point(6, 323);
             this.pbEscaperoom.Name = "pbEscaperoom";
             this.pbEscaperoom.Size = new System.Drawing.Size(200, 200);
             this.pbEscaperoom.TabIndex = 18;
             this.pbEscaperoom.TabStop = false;
-            // 
-            // lblShowEscapeRoomID
-            // 
-            this.btnFindPicture.Location = new System.Drawing.Point(228, 366);
-            this.btnFindPicture.Name = "btnFindPicture";
-            this.btnFindPicture.Size = new System.Drawing.Size(107, 23);
-            this.btnFindPicture.TabIndex = 19;
-            this.btnFindPicture.Text = "Find billede";
-            this.btnFindPicture.UseVisualStyleBackColor = true;
-            this.btnFindPicture.Click += new System.EventHandler(this.btnFindPicture_Click);
-            // 
-            // pbEscaperoom
-            // 
-            this.pbEscaperoom.Location = new System.Drawing.Point(6, 366);
-            this.pbEscaperoom.Name = "pbEscaperoom";
-            this.pbEscaperoom.Size = new System.Drawing.Size(200, 200);
-            this.pbEscaperoom.TabIndex = 18;
-            this.pbEscaperoom.TabStop = false;
-            // 
-            // lblEscapeRoomID
-            // 
-            this.lblEscapeRoomID.AutoSize = true;
-            this.lblEscapeRoomID.Location = new System.Drawing.Point(6, 19);
-            this.lblEscapeRoomID.Name = "lblEscapeRoomID";
-            this.lblEscapeRoomID.Size = new System.Drawing.Size(88, 13);
-            this.lblEscapeRoomID.TabIndex = 16;
-            this.lblEscapeRoomID.Text = "EscapeRoomID :";
             // 
             // btnDeleteEscapeRoom
             // 
             this.btnDeleteEscapeRoom.BackColor = System.Drawing.Color.IndianRed;
-            this.btnDeleteEscapeRoom.Location = new System.Drawing.Point(127, 572);
+            this.btnDeleteEscapeRoom.Location = new System.Drawing.Point(127, 529);
             this.btnDeleteEscapeRoom.Name = "btnDeleteEscapeRoom";
             this.btnDeleteEscapeRoom.Size = new System.Drawing.Size(95, 23);
             this.btnDeleteEscapeRoom.TabIndex = 1;
@@ -222,7 +274,7 @@
             // btnCreateEscapeRoom
             // 
             this.btnCreateEscapeRoom.BackColor = System.Drawing.Color.LawnGreen;
-            this.btnCreateEscapeRoom.Location = new System.Drawing.Point(228, 572);
+            this.btnCreateEscapeRoom.Location = new System.Drawing.Point(228, 529);
             this.btnCreateEscapeRoom.Name = "btnCreateEscapeRoom";
             this.btnCreateEscapeRoom.Size = new System.Drawing.Size(107, 23);
             this.btnCreateEscapeRoom.TabIndex = 15;
@@ -232,7 +284,7 @@
             // 
             // txbDescription
             // 
-            this.txbDescription.Location = new System.Drawing.Point(127, 103);
+            this.txbDescription.Location = new System.Drawing.Point(127, 60);
             this.txbDescription.Name = "txbDescription";
             this.txbDescription.Size = new System.Drawing.Size(208, 78);
             this.txbDescription.TabIndex = 14;
@@ -240,31 +292,35 @@
             // 
             // txtEmployeeID
             // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(127, 319);
+            this.txtEmployeeID.Location = new System.Drawing.Point(127, 276);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(208, 20);
             this.txtEmployeeID.TabIndex = 13;
+            this.txtEmployeeID.TextChanged += new System.EventHandler(this.txtEmployeeID_TextChanged);
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(127, 277);
+            this.txtPrice.Location = new System.Drawing.Point(127, 234);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(208, 20);
             this.txtPrice.TabIndex = 12;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // txtCleanTime
             // 
-            this.txtCleanTime.Location = new System.Drawing.Point(127, 233);
+            this.txtCleanTime.Location = new System.Drawing.Point(127, 190);
             this.txtCleanTime.Name = "txtCleanTime";
             this.txtCleanTime.Size = new System.Drawing.Size(208, 20);
             this.txtCleanTime.TabIndex = 11;
+            this.txtCleanTime.TextChanged += new System.EventHandler(this.txtCleanTime_TextChanged);
             // 
             // txtMaxClearTime
             // 
-            this.txtMaxClearTime.Location = new System.Drawing.Point(127, 193);
+            this.txtMaxClearTime.Location = new System.Drawing.Point(127, 150);
             this.txtMaxClearTime.Name = "txtMaxClearTime";
             this.txtMaxClearTime.Size = new System.Drawing.Size(208, 20);
             this.txtMaxClearTime.TabIndex = 10;
+            this.txtMaxClearTime.TextChanged += new System.EventHandler(this.txtMaxClearTime_TextChanged);
             // 
             // groupBox2
             // 
@@ -274,24 +330,13 @@
             this.groupBox2.Size = new System.Drawing.Size(773, 566);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cleanTimeDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.empDataGridViewTextBoxColumn,
-            this.escapeRoomIDDataGridViewTextBoxColumn,
-            this.maxClearTimeDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.ratingDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.escapeRoomBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -299,64 +344,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(758, 541);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // cleanTimeDataGridViewTextBoxColumn
-            // 
-            this.cleanTimeDataGridViewTextBoxColumn.DataPropertyName = "cleanTime";
-            this.cleanTimeDataGridViewTextBoxColumn.HeaderText = "cleanTime";
-            this.cleanTimeDataGridViewTextBoxColumn.Name = "cleanTimeDataGridViewTextBoxColumn";
-            this.cleanTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // empDataGridViewTextBoxColumn
-            // 
-            this.empDataGridViewTextBoxColumn.DataPropertyName = "emp";
-            this.empDataGridViewTextBoxColumn.HeaderText = "emp";
-            this.empDataGridViewTextBoxColumn.Name = "empDataGridViewTextBoxColumn";
-            this.empDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // escapeRoomIDDataGridViewTextBoxColumn
-            // 
-            this.escapeRoomIDDataGridViewTextBoxColumn.DataPropertyName = "escapeRoomID";
-            this.escapeRoomIDDataGridViewTextBoxColumn.HeaderText = "escapeRoomID";
-            this.escapeRoomIDDataGridViewTextBoxColumn.Name = "escapeRoomIDDataGridViewTextBoxColumn";
-            this.escapeRoomIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // maxClearTimeDataGridViewTextBoxColumn
-            // 
-            this.maxClearTimeDataGridViewTextBoxColumn.DataPropertyName = "maxClearTime";
-            this.maxClearTimeDataGridViewTextBoxColumn.HeaderText = "maxClearTime";
-            this.maxClearTimeDataGridViewTextBoxColumn.Name = "maxClearTimeDataGridViewTextBoxColumn";
-            this.maxClearTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ratingDataGridViewTextBoxColumn
-            // 
-            this.ratingDataGridViewTextBoxColumn.DataPropertyName = "rating";
-            this.ratingDataGridViewTextBoxColumn.HeaderText = "rating";
-            this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
-            this.ratingDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // escapeRoomBindingSource1
             // 
@@ -366,21 +354,10 @@
             // 
             this.escapeRoomBindingSource.DataSource = typeof(MAPMAClient.EscRef.EscapeRoom);
             // 
-            // btnDoneCreateEscapeRoom
-            // 
-            this.btnDoneCreateEscapeRoom.BackColor = System.Drawing.Color.LawnGreen;
-            this.btnDoneCreateEscapeRoom.Location = new System.Drawing.Point(1073, 584);
-            this.btnDoneCreateEscapeRoom.Name = "btnDoneCreateEscapeRoom";
-            this.btnDoneCreateEscapeRoom.Size = new System.Drawing.Size(75, 23);
-            this.btnDoneCreateEscapeRoom.TabIndex = 11;
-            this.btnDoneCreateEscapeRoom.Text = "Færdig";
-            this.btnDoneCreateEscapeRoom.UseVisualStyleBackColor = false;
-            this.btnDoneCreateEscapeRoom.Click += new System.EventHandler(this.btnDoneCreateEscapeRoom_Click);
-            // 
             // btnBackCreateEscapeRoom
             // 
-            this.btnBackCreateEscapeRoom.BackColor = System.Drawing.Color.IndianRed;
-            this.btnBackCreateEscapeRoom.Location = new System.Drawing.Point(970, 584);
+            this.btnBackCreateEscapeRoom.BackColor = System.Drawing.Color.Gray;
+            this.btnBackCreateEscapeRoom.Location = new System.Drawing.Point(1082, 584);
             this.btnBackCreateEscapeRoom.Name = "btnBackCreateEscapeRoom";
             this.btnBackCreateEscapeRoom.Size = new System.Drawing.Size(75, 23);
             this.btnBackCreateEscapeRoom.TabIndex = 12;
@@ -401,13 +378,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1165, 653);
+            this.ClientSize = new System.Drawing.Size(1165, 616);
             this.Controls.Add(this.btnBackCreateEscapeRoom);
-            this.Controls.Add(this.btnDoneCreateEscapeRoom);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "CreateEscapeRoom";
-            this.Text = "Form2";
+            this.Text = "Opret Escaperoom";
             this.Load += new System.EventHandler(this.CreateEscapeRoom_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -440,22 +416,19 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource escapeRoomBindingSource;
-        private System.Windows.Forms.Button btnDoneCreateEscapeRoom;
         private System.Windows.Forms.Button btnBackCreateEscapeRoom;
         private System.Windows.Forms.BindingSource escapeRoomBindingSource1;
         private System.Windows.Forms.Button btnDeleteEscapeRoom;
-        private System.Windows.Forms.Label lblEscapeRoomID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cleanTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn escapeRoomIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maxClearTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ratingDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource escapeRoomServicesClientBindingSource;
         private System.Windows.Forms.BindingSource checkListBindingSource;
         private System.Windows.Forms.Button btnFindPicture;
         private System.Windows.Forms.PictureBox pbEscaperoom;
+        private System.Windows.Forms.Label lblErrorEmployee;
+        private System.Windows.Forms.Label lblErrorPrice;
+        private System.Windows.Forms.Label lblErrorCleanTime;
+        private System.Windows.Forms.Label lblErrorMaxClearTime;
+        private System.Windows.Forms.Label lblErrorDesciption;
+        private System.Windows.Forms.Label lblErrorName;
+        private System.Windows.Forms.Label lblErrorImage;
     }
 }
