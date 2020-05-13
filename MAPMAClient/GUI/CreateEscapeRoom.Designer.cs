@@ -38,8 +38,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFindPicture = new System.Windows.Forms.Button();
-            this.pbEscaperoom = new System.Windows.Forms.PictureBox();
-            this.lblShowEscapeRoomID = new System.Windows.Forms.Label();
+            this.pbEscaperoom = new System.Windows.Forms.PictureBox();            
             this.lblEscapeRoomID = new System.Windows.Forms.Label();
             this.btnDeleteEscapeRoom = new System.Windows.Forms.Button();
             this.btnCreateEscapeRoom = new System.Windows.Forms.Button();
