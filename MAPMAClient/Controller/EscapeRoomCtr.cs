@@ -32,11 +32,23 @@ namespace MAPMAClient.Controller {
             return ERS.GetAllForOwner();
         }
 
+        byte[] ConvertImgToBinary ( Image img )
+        {
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+
+        }
+
 
         public void CreateEscapeRoom(string name, string description, decimal maxClearTime, decimal cleanTime, decimal price, decimal rating, int empId, byte[] img) {
             if(img == null) {
                 string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                byte[] Dreail = Encoding.ASCII.GetBytes(path + "\\Pictures\\MAPMA_PIC.jpg");
+                Bitmap bm = new Bitmap(path + "\\Pictures\\MAPMA_PIC.jpg");
+                byte[] Dreail = ConvertImgToBinary(bm);
 
                 img = Dreail;
             }
