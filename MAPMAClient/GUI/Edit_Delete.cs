@@ -29,6 +29,11 @@ namespace MAPMAClient.GUI
             mcUpdateBooking.MinDate = DateTime.Now.Date;
         }
 
+        /// <summary>
+        /// The Delete botton, deletes the booking then closes and shows ReadBooking
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click ( object sender, EventArgs e )
         {
             if (lblAmountOfPeopleDelete.Visible == false) {
@@ -43,6 +48,11 @@ namespace MAPMAClient.GUI
             }
         }
 
+        /// <summary>
+        /// Closes Edit_Delete and shows ReadBooking
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click ( object sender, EventArgs e )
         {
             ReadBooking rb = new ReadBooking();
@@ -51,6 +61,9 @@ namespace MAPMAClient.GUI
             
         }
 
+        /// <summary>
+        /// Shows and hide labels and calls FillLabels(book);
+        /// </summary>
         private void DeleteFirstClick() {
             lblAmountOfPeopleDelete.Visible = true;
             lblBookingTimeDelete.Visible = true;

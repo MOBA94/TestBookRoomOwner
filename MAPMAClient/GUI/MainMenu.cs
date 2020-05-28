@@ -24,6 +24,9 @@ namespace MAPMAClient.GUI {
             LoadDataGridView();
         }
 
+        /// <summary>
+        /// Fills the dataGridView with data
+        /// </summary>
         private void LoadDataGridView() {
             dt = new DataTable();
             bs = new BindingSource();

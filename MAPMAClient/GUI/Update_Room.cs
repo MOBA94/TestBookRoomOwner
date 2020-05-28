@@ -42,6 +42,11 @@ namespace MAPMAClient.GUI {
             cobEmployeeName.SelectedItem = ER.Emp.FirstName + " " + ER.Emp.LastName;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="byteArrayIn"></param>
+        /// <returns></returns>
         private Image ByteArrayToImage ( byte[] byteArrayIn )
         {
             using (MemoryStream ms = new MemoryStream(byteArrayIn))
@@ -52,6 +57,11 @@ namespace MAPMAClient.GUI {
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns></returns>
         byte[] ConvertImgToBinary(Image img) {
 
             using (MemoryStream ms = new MemoryStream()) {
