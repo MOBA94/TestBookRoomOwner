@@ -9,6 +9,7 @@ namespace TestBookRoomOwner
     public class TestUpdateBooking
     {
         [TestMethod]
+
         public void TestMethod1 ( )
         {
             //Arrange

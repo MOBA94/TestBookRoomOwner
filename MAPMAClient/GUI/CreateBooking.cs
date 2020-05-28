@@ -47,7 +47,11 @@ namespace MAPMAClient.GUI {
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cobNameER_SelectedIndexChanged(object sender, EventArgs e) {
             bool found = false;
             int i = 0;
@@ -68,6 +72,9 @@ namespace MAPMAClient.GUI {
             calBookTime.Enabled = true;
         }
 
+        /// <summary>
+        /// Changes the labels so it has the info for the selected escaperoom
+        /// </summary>
         private void changeEscapeRoomLabels() {
             string price = Convert.ToString(EsR.Price);
             lblPriceRead.Text = price;
@@ -87,6 +94,9 @@ namespace MAPMAClient.GUI {
             Freetimes();
         }
 
+        /// <summary>
+        /// Check the ecaperoom on the selected date and adds the avaliable times
+        /// </summary>
         private void Freetimes() {
             cobFreeTimes.Items.Clear();
             freeTimes = ERCtr.FreeTimes(EsR.EscapeRoomID, DateForBooking);
@@ -137,6 +147,11 @@ namespace MAPMAClient.GUI {
             }
         }
 
+        /// <summary>
+        /// Hides the CreateBooking form and opens a new MainMenu(); (mm)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e) {
             this.Hide();
             MainMenu mm = new MainMenu();

@@ -9,10 +9,18 @@ using MAPMAClient.EmpRef;
 namespace MAPMAClient.ServiceLayer {
     class EmpServices {
 
+        /// <summary>
+        /// Empty constructor for EmpSercives
+        /// </summary>
         public EmpServices() {
         
         }
 
+        /// <summary>
+        /// Search the database for one Employee, through the WCF
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>One Employee (Emp)</returns>
         public MAPMAClient.Model.Employee Get(int id) {
             IEmplyeeServices Service = new EmplyeeServicesClient();
             try {
@@ -32,6 +40,10 @@ namespace MAPMAClient.ServiceLayer {
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<MAPMAClient.Model.Employee> GetAll() {
             IEmplyeeServices Service = new EmplyeeServicesClient();
 

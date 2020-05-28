@@ -8,10 +8,18 @@ using MAPMAClient.CusRef;
 namespace MAPMAClient.ServiceLayer {
     class CusServices {
 
+        /// <summary>
+        /// Empty constuctor for CusService
+        /// </summary>
         public CusServices() {
         
         }
 
+        /// <summary>
+        /// Search the database for a Customer, through the WCF
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns> a Customer (Cus) </returns>
         public MAPMAClient.Model.Customer Get(string username) {
             ICustomerServices Service = new CustomerServicesClient();
 
@@ -32,6 +40,11 @@ namespace MAPMAClient.ServiceLayer {
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
         private Model.Customer GetCustmerClientSide(CusRef.Customer customer) {
             MAPMAClient.Model.Customer cus;
 

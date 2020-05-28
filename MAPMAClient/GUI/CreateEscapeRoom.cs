@@ -19,6 +19,9 @@ namespace MAPMAClient.GUI
         private List<MAPMAClient.Model.EscapeRoom> escapeRooms;
         private MAPMAClient.Model.EscapeRoom er;
 
+        /// <summary>
+        /// Creates a new escaperoom and updates the list
+        /// </summary>
         public CreateEscapeRoom ( )
         {
             InitializeComponent();
@@ -26,11 +29,21 @@ namespace MAPMAClient.GUI
 
         }
 
+        /// <summary>
+        /// Updates the list of escaperooms
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateEscapeRoom_Load ( object sender, EventArgs e )
         {
             UpdateEscapeRoomList();
         }
 
+        /// <summary>
+        /// Converts the image to binary
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns> ms.ToArray(); </returns>
         byte[] ConvertImgToBinary (Image img )
         {
 
@@ -42,6 +55,11 @@ namespace MAPMAClient.GUI
 
         }
 
+        /// <summary>
+        /// Checks for empty textfields and if none, then it calls "CreateEscapeRoom", "EmptyText" and "UpdateEscapeRoomList"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreateEscapeRoom_Click(object sender, EventArgs e) {
             EscapeRoomCtr esC = new EscapeRoomCtr();
             if (txtName.Text.Trim().Equals("")) 
@@ -91,6 +109,10 @@ namespace MAPMAClient.GUI
                     }
         }
 
+
+        /// <summary>
+        /// Sets the error labels to false and sets textfields to empty
+        /// </summary>
         private void EmptyText()
         {
             lblErrorName.Visible = false;
@@ -111,6 +133,9 @@ namespace MAPMAClient.GUI
             txbDescription.Text = "";
         }
 
+        /// <summary>
+        /// Updates the dataGridView so new escaperooms will be insertet
+        /// </summary>
         private void UpdateEscapeRoomList ( )
         {
             EscapeRoomCtr esc = new EscapeRoomCtr();
@@ -158,19 +183,33 @@ namespace MAPMAClient.GUI
             }
         }
 
-
+        /// <summary>
+        /// Hides CreateEscapeRoom form and shows a new "MainMenu();" (mm)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBackCreateEscapeRoom_Click(object sender, EventArgs e) {
             MainMenu mm = new MainMenu();
             mm.Show();
             this.Hide();
         }
 
+        /// <summary>
+        /// Hides CreateEscapeRoom form and shows a new "MainMenu();" (mm), but used for the Done botton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDoneCreateEscapeRoom_Click(object sender, EventArgs e) {
             MainMenu mm = new MainMenu();
             mm.Show();
             this.Hide();
         }
 
+        /// <summary>
+        /// The botton click on find picture, opens a dialog where you can find local pictures
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFindPicture_Click ( object sender, EventArgs e )
         {
             string fileName;
@@ -184,6 +223,11 @@ namespace MAPMAClient.GUI
             }
         }
 
+        /// <summary>
+        /// Delete botton for escaperoom, shows a message box with a yes/no, last it calls "UpdateEscapeRoomList()"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteEscapeRoom_Click(object sender, EventArgs e)
         {
             EscapeRoomCtr erctr = new EscapeRoomCtr();
@@ -204,6 +248,11 @@ namespace MAPMAClient.GUI
             er = escapeRooms.ElementAt(index);
         }
 
+        /// <summary>
+        /// Checks textbox for MaxClearTime, if empty it gives a error message
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtMaxClearTime_TextChanged ( object sender, EventArgs e )
         {
             try
@@ -224,6 +273,11 @@ namespace MAPMAClient.GUI
             }
         }
 
+        /// <summary>
+        /// Checks textbox for CleanTime, if empty it gives a error message
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtCleanTime_TextChanged ( object sender, EventArgs e )
         {
             try
@@ -244,6 +298,11 @@ namespace MAPMAClient.GUI
             }
         }
 
+        /// <summary>
+        /// Checks textbox for Price, if empty it gives a error message
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtPrice_TextChanged ( object sender, EventArgs e )
         {
             try
@@ -264,6 +323,11 @@ namespace MAPMAClient.GUI
             }
         }
 
+        /// <summary>
+        /// Checks textbox for EmployeeID, if empty it gives a error message
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtEmployeeID_TextChanged ( object sender, EventArgs e )
         {
             try
