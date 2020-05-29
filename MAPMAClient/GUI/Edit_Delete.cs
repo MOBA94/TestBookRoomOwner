@@ -12,6 +12,15 @@ using MAPMAClient.Controller;
 
 namespace MAPMAClient.GUI
 {
+    /// <summary>
+    /// <author>
+    /// Mick O. B. Andersen
+    /// Anders S. Brygger
+    /// Peter S. Clausen
+    /// Anders B. Larsen
+    /// Mads G. Ranzau
+    /// </author>
+    /// </summary>
     public partial class Edit_Delete : Form
     {
         private Booking book;
@@ -20,6 +29,10 @@ namespace MAPMAClient.GUI
         private List<EscapeRoom> escapeRooms;
         private List<TimeSpan> bookingTimes;
 
+        /// <summary>
+        /// Opens Edit_Delete runs FillLabels(book) with the choosen booking
+        /// </summary>
+        /// <param name="booking"></param>
         public Edit_Delete (Booking booking)
         {
             InitializeComponent();
@@ -30,7 +43,7 @@ namespace MAPMAClient.GUI
         }
 
         /// <summary>
-        /// The Delete botton, deletes the booking then closes and shows ReadBooking
+        /// The Delete botton, deletes the booking then closes and shows ReadBooking, if lblAmountOFPeopleDelete.Visible == false then it runs DeleteFirstClick()
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -62,7 +75,7 @@ namespace MAPMAClient.GUI
         }
 
         /// <summary>
-        /// Shows and hide labels and calls FillLabels(book);
+        /// Shows deletelabels and hides updateboxes and calls FillLabels(book);
         /// </summary>
         private void DeleteFirstClick() {
             lblAmountOfPeopleDelete.Visible = true;
@@ -80,6 +93,10 @@ namespace MAPMAClient.GUI
 
         }
 
+        /// <summary>
+        /// Takes input from the booking and fills the labels
+        /// </summary>
+        /// <param name="book"></param>
         private void FillLabels(Booking book) {
             string aop = Convert.ToString(book.AmountOfPeople);
             lblAmountOfPeopleDelete.Text = aop;
@@ -96,6 +113,13 @@ namespace MAPMAClient.GUI
             lblUsernameDelete.Text = book.Cus.Username;
         }
 
+        /// <summary>
+        /// If tbAmountOfPeople.Visible is false then it runs UpdateFirstClick(), LoadCBEmployee and LoadCBEscapeRoom()
+        /// Then it checks if AmountOfPeople is larger than 0 the methode Update runs and it shows ReadBooking and closes itself
+        /// If AmountOfPeople is not larger than 0 it shows errorelabel and sets the message in the label
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUpdate_Click ( object sender, EventArgs e )
         {
             if (tbAmountOfPeople.Visible == false) {
@@ -118,6 +142,9 @@ namespace MAPMAClient.GUI
             }
         }
 
+        /// <summary>
+        /// Fills combobox with Employees
+        /// </summary>
         private void LoadCBEmployee() {
             EmployeeCtr empct = new EmployeeCtr();
             employees = new List<Employee>();
@@ -130,6 +157,9 @@ namespace MAPMAClient.GUI
             cbEmployee.SelectedItem = book.Emp.FirstName + " " + book.Emp.LastName;
         }
 
+        /// <summary>
+        /// Fills combobox with Ecaperooms
+        /// </summary>
         private void LoadCBEscapeRoom() {
             EscapeRoomCtr erCtr = new EscapeRoomCtr();
             escapeRooms = new List<EscapeRoom>();
@@ -142,6 +172,9 @@ namespace MAPMAClient.GUI
             cbEscaperoom.SelectedItem = book.Er.Name;
         }
 
+        /// <summary>
+        /// Fills combobox with avalible times
+        /// </summary>
         private void LoadCBBookingTime()
         {
             EscapeRoomCtr erCtr = new EscapeRoomCtr();
@@ -155,6 +188,9 @@ namespace MAPMAClient.GUI
             cbBookingTime.ResetText();
         }
 
+        /// <summary>
+        /// Hides labels and shows combo and text-boxes, then runs FillTBUpdate()
+        /// </summary>
         private void UpdateFirstClick()
         {
             lblAmountOfPeopleDelete.Visible = false;
@@ -170,17 +206,30 @@ namespace MAPMAClient.GUI
             FillTBUpdate();
         }
 
+        /// <summary>
+        /// Sets amount of people and booking date
+        /// </summary>
         private void FillTBUpdate() {
             tbAmountOfPeople.Text = Convert.ToString(book.AmountOfPeople);
             mcUpdateBooking.SelectionStart = book.Date;
         }
 
+        /// <summary>
+        /// Updates booking times and the new date is set as the choosen date
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mcUpdateBooking_DateChanged ( object sender, DateRangeEventArgs e )
         {
             book.Date = mcUpdateBooking.SelectionRange.Start;
             LoadCBBookingTime();
         }
 
+        /// <summary>
+        /// Sets the info from the choosen escaperoom
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbEscaperoom_SelectedIndexChanged ( object sender, EventArgs e )
         {
             bool found = false;
@@ -198,6 +247,11 @@ namespace MAPMAClient.GUI
             LoadCBBookingTime();
         }
 
+        /// <summary>
+        /// Sets the info from the choosen escaperoom
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbEmployee_SelectedIndexChanged ( object sender, EventArgs e )
         {
             bool found = false;
@@ -214,7 +268,12 @@ namespace MAPMAClient.GUI
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Checks tbAmountOfPeople for valid data, if the data is invalid its shows the error message
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tbAmountOfPeople_TextChanged ( object sender, EventArgs e )
         {
             try {
@@ -228,6 +287,11 @@ namespace MAPMAClient.GUI
             }
         }
 
+        /// <summary>
+        /// Sets the info from the choosen bookingTime
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbBookingTime_SelectedIndexChanged ( object sender, EventArgs e )
         {
             bool found = false;

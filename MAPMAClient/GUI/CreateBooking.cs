@@ -11,6 +11,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MAPMAClient.GUI {
+    /// <summary>
+    /// <author>
+    /// Mick O. B. Andersen
+    /// Anders S. Brygger
+    /// Peter S. Clausen
+    /// Anders B. Larsen
+    /// Mads G. Ranzau
+    /// </author>
+    /// </summary>
     public partial class CreateBooking : Form {
 
         private int AmountOfPeople;
@@ -25,7 +34,9 @@ namespace MAPMAClient.GUI {
         private DateTime DateForBooking;
         private List<TimeSpan> freeTimes;
 
-
+        /// <summary>
+        /// Opens "CreateBooking" and initialize the fields
+        /// </summary>
         public CreateBooking() {
             InitializeComponent();
             Cusctr = new CustomerCtr();
@@ -37,6 +48,9 @@ namespace MAPMAClient.GUI {
             calBookTime.MinDate = DateTime.Now.Date;
         }
 
+        /// <summary>
+        /// Gets all the escaperooms from the database and places them in the combo box
+        /// </summary>
         private void CreateBooking_Load() {
             escapeRooms = ERCtr.GetAllForOwner();
             cobNameER.Items.Clear();
@@ -48,7 +62,7 @@ namespace MAPMAClient.GUI {
 
 
         /// <summary>
-        /// 
+        /// When an escaperoom is choosen it gets set up in the field EsR, updates labels and calender is enabled 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -86,6 +100,11 @@ namespace MAPMAClient.GUI {
 
         }
 
+        /// <summary>
+        /// Sets selected times in the field and label, then it runs the methode FreeTimes();
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void calBookTime_DateChanged(object sender, DateRangeEventArgs e) {
             DateForBooking = calBookTime.SelectionRange.Start;
             string date = Convert.ToString(DateForBooking.ToShortDateString());
@@ -95,7 +114,7 @@ namespace MAPMAClient.GUI {
         }
 
         /// <summary>
-        /// Check the ecaperoom on the selected date and adds the avaliable times
+        /// Check the avaliable time on the selected date and escaperoom, then adds the avaliable times
         /// </summary>
         private void Freetimes() {
             cobFreeTimes.Items.Clear();
@@ -106,6 +125,12 @@ namespace MAPMAClient.GUI {
 
         }
 
+        /// <summary>
+        /// Checks all the textboxes and gets an employee, then it runs BookCtr.Create (c) and if it returns 0 it runs Freetimes() to update the list and gives an error message
+        /// If not then it hides and opens the MainMenu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFinish_Click(object sender, EventArgs e) {
             //Skal laves om når der kommer et login på clienten indtil da en stub.
             if (cobNameER.Text.Equals("")) {
@@ -158,6 +183,11 @@ namespace MAPMAClient.GUI {
             mm.Show();
         }
 
+        /// <summary>
+        /// When a Freetime is selected from the combo box, it gets set into the field TimeForBooking
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cobFreeTimes_SelectedIndexChanged(object sender, EventArgs e) {
             bool found = false;
             int i = 0;
@@ -175,6 +205,11 @@ namespace MAPMAClient.GUI {
             }
         }
 
+        /// <summary>
+        /// An event for when a key is stroke, then it runs the get methode and sets it to customer and sets all the labels
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbName_KeyDown(object sender, EventArgs e) {
             Cus = Cusctr.Get(txbUserName.Text);
             lblFirstNameRead.Text = Cus.FirstName;
@@ -184,6 +219,12 @@ namespace MAPMAClient.GUI {
             txbUserName.BackColor = Color.White;
         }
 
+        /// <summary>
+        /// If the txbAmountOFPeople is left without an input it set backgroundcolor to red and sets it to white again when there is valid input
+        /// Its all in a try catch, to check that only numbers are in, else its sets to red and sets the textbox to empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbAmountOfPeople_Leave ( object sender, EventArgs e )
         {
             try { 
@@ -204,6 +245,11 @@ namespace MAPMAClient.GUI {
             }
         }
 
+        /// <summary>
+        /// Checks if the input is numbers in txbAmountOfPeople
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbAmountOfPeople_TextChanged ( object sender, EventArgs e )
         {
             try {
@@ -221,6 +267,11 @@ namespace MAPMAClient.GUI {
             }
         }
 
+        /// <summary>
+        /// Sets the background to white when there is input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbUserName_TextChanged ( object sender, EventArgs e )
         {
             txbUserName.BackColor = Color.White;

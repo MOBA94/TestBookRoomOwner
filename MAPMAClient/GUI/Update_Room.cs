@@ -13,6 +13,15 @@ using System.IO;
 using System.Windows.Media.Imaging;
 
 namespace MAPMAClient.GUI {
+    /// <summary>
+    /// <author>
+    /// Mick O. B. Andersen
+    /// Anders S. Brygger
+    /// Peter S. Clausen
+    /// Anders B. Larsen
+    /// Mads G. Ranzau
+    /// </author>
+    /// </summary>
     public partial class Update_Room : Form {
 
         private EmployeeCtr EmpCtr;
@@ -21,6 +30,10 @@ namespace MAPMAClient.GUI {
         private Employee Emp;
         private List<Employee> employees;
 
+        /// <summary>
+        /// Opens Update_Room and runs FillTextBoxEscapeRoom(ER), FillLabelsEmployee(ER.Emp) and cobEmployeeLoad()
+        /// </summary>
+        /// <param name="esr"></param>
         public Update_Room(EscapeRoom esr) {
             InitializeComponent();
             EmpCtr = new EmployeeCtr();
@@ -31,6 +44,9 @@ namespace MAPMAClient.GUI {
             cobEmployeeLoad();
         }
 
+        /// <summary>
+        /// Calls EmpCtr.GetAll and sets all the Employees in the combobox
+        /// </summary>
         private void cobEmployeeLoad() {
             employees = new List<Employee>();
             employees = EmpCtr.GetAll();
@@ -43,10 +59,10 @@ namespace MAPMAClient.GUI {
         }
 
         /// <summary>
-        /// 
+        /// Converts bytes to image 
         /// </summary>
         /// <param name="byteArrayIn"></param>
-        /// <returns></returns>
+        /// <returns> Imager </returns>
         private Image ByteArrayToImage ( byte[] byteArrayIn )
         {
             using (MemoryStream ms = new MemoryStream(byteArrayIn))
@@ -58,10 +74,10 @@ namespace MAPMAClient.GUI {
         }
 
         /// <summary>
-        /// 
+        /// Converts the image to binary
         /// </summary>
         /// <param name="img"></param>
-        /// <returns></returns>
+        /// <returns> ms.ToArray() </returns>
         byte[] ConvertImgToBinary(Image img) {
 
             using (MemoryStream ms = new MemoryStream()) {
@@ -71,6 +87,10 @@ namespace MAPMAClient.GUI {
 
         }
 
+        /// <summary>
+        /// Fills all the textboxes for escaperoom, with the escaperoom it has
+        /// </summary>
+        /// <param name="esr"></param>
         private void FillTextBoxEscapeRoom(EscapeRoom esr) {
             string cleanTime = Convert.ToString(esr.CleanTime);
             txbCleanTime.Text = cleanTime;
@@ -83,6 +103,10 @@ namespace MAPMAClient.GUI {
             pbEscapeRoom.Image = ByteArrayToImage(esr.Image);
         }
 
+        /// <summary>
+        /// Fills all the labels with the employee info 
+        /// </summary>
+        /// <param name="emp"></param>
         private void FillLabelsEmployee(Employee emp) {
             lblFillEmpAddress.Text = emp.Address;
             lblFillEmpMail.Text = emp.Mail;
@@ -91,6 +115,11 @@ namespace MAPMAClient.GUI {
             lblFillEmpZipcode.Text = zipcode;
         }
 
+        /// <summary>
+        /// Finds the employee there is choosen in the combobox and rund FillLabelsEmploye(Emp)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cobEmployeeName_SelectedIndexChanged(object sender, EventArgs e) {
             bool found = false;
             int i = 0;
@@ -109,12 +138,23 @@ namespace MAPMAClient.GUI {
             FillLabelsEmployee(Emp);
         }
 
+        /// <summary>
+        /// Shows CreateEscapeRoom and hides itself
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e) {
             this.Hide();
             CreateEscapeRoom cer = new CreateEscapeRoom();
             cer.Show(); 
         }
 
+        /// <summary>
+        /// Checks all the textboxes for valid data then runs UpdateEscapeRoom, shows CreateEscapeRoom and hides itself
+        /// it has error messages is the data is invalid 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUpdateRoom_Click ( object sender, EventArgs e ) {
 
             if (txbName.Text.Equals("")) {
@@ -167,6 +207,11 @@ namespace MAPMAClient.GUI {
             }
         }
 
+        /// <summary>
+        /// Checks if there are only numbers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbPrice_TextChanged(object sender, EventArgs e) {
             try {
                 decimal.Parse(txbPrice.Text);
@@ -177,6 +222,11 @@ namespace MAPMAClient.GUI {
             }
         }
 
+        /// <summary>
+        /// Checks if there are only numbers, if not then show error label
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbMaxClearTime_TextChanged(object sender, EventArgs e) {
             try {
                 decimal.Parse(txbMaxClearTime.Text);
@@ -187,6 +237,11 @@ namespace MAPMAClient.GUI {
             }
         }
 
+        /// <summary>
+        /// Checks if there is only numbers, if not then show error label
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbCleanTime_TextChanged(object sender, EventArgs e) {
             try {
                 decimal.Parse(txbCleanTime.Text);
@@ -197,6 +252,11 @@ namespace MAPMAClient.GUI {
             }
         }
 
+        /// <summary>
+        /// Runs ErCtr.Delete with the choosen escaperooms id
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int id = ER.EscapeRoomID;
@@ -205,6 +265,11 @@ namespace MAPMAClient.GUI {
             
         }
 
+        /// <summary>
+        /// The botton click on find picture, opens a dialog where you can find local pictures, then it set it on the escaperoom
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFindPicture_Click ( object sender, EventArgs e )
         {
             string fileName;

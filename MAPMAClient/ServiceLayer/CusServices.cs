@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 using MAPMAClient.CusRef;
 
 namespace MAPMAClient.ServiceLayer {
+    /// <summary>
+    /// <author>
+    /// Mick O. B. Andersen
+    /// Anders S. Brygger
+    /// Peter S. Clausen
+    /// Anders B. Larsen
+    /// Mads G. Ranzau
+    /// </author>
+    /// </summary>
     class CusServices {
 
         /// <summary>
@@ -41,10 +50,10 @@ namespace MAPMAClient.ServiceLayer {
         }
 
         /// <summary>
-        /// 
+        /// Converts a Customer to MAPMAClient.Model.Customer
         /// </summary>
         /// <param name="customer"></param>
-        /// <returns></returns>
+        /// <returns> MAPMAClient.Model.Customer </returns>
         private Model.Customer GetCustmerClientSide(CusRef.Customer customer) {
             MAPMAClient.Model.Customer cus;
 

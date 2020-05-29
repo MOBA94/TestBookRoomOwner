@@ -10,6 +10,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MAPMAClient.GUI {
+    /// <summary>
+    /// <author>
+    /// Mick O. B. Andersen
+    /// Anders S. Brygger
+    /// Peter S. Clausen
+    /// Anders B. Larsen
+    /// Mads G. Ranzau
+    /// </author>
+    /// </summary>
     public partial class MainMenu : Form {
 
         private BookingCtr bc;
@@ -17,6 +26,9 @@ namespace MAPMAClient.GUI {
         private DataTable dt;
         private BindingSource bs;
 
+        /// <summary>
+        /// Opens MainMenu and runs LoadDataGridView()
+        /// </summary>
         public MainMenu() {
             InitializeComponent();
             bc = new BookingCtr();
@@ -25,7 +37,7 @@ namespace MAPMAClient.GUI {
         }
 
         /// <summary>
-        /// Fills the dataGridView with data
+        /// Makes the colums then calls FillDataSource
         /// </summary>
         private void LoadDataGridView() {
             dt = new DataTable();
@@ -45,6 +57,9 @@ namespace MAPMAClient.GUI {
 
         }
 
+        /// <summary>
+        /// Finds all the bookings from all the escaperooms and adds them to datasource
+        /// </summary>
         private void FillDataSource() {
             List<Model.EscapeRoom> escapeRooms;
             List<int> escapeRoomId = new List<int>();
@@ -64,6 +79,11 @@ namespace MAPMAClient.GUI {
             
         }
 
+        /// <summary>
+        /// Shows CreateBooking and hides itself
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMMCreateBooking_Click(object sender, EventArgs e) {
             CreateBooking cb = new CreateBooking();                      
             cb.Show();
@@ -77,6 +97,11 @@ namespace MAPMAClient.GUI {
             this.Hide();
         }
 
+        /// <summary>
+        /// Shows ReadBooking and hides itself
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReadBookings_Click ( object sender, EventArgs e )
         {
             ReadBooking rb = new ReadBooking();
@@ -84,11 +109,21 @@ namespace MAPMAClient.GUI {
             this.Hide();
         }
 
+        /// <summary>
+        /// Search function on escaperoom
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbSearch_TextChanged ( object sender, EventArgs e )
         {
             bs.Filter = string.Format("Escaperoom LIKE '%{0}%'", txbSearch.Text);
         }
 
+        /// <summary>
+        /// When the searchfield is clicked it checks if the field is equels("søg") if it is it runs ResetText()
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbSearch_MouseClick ( object sender, MouseEventArgs e )
         {
             if (txbSearch.Text.Equals("søg")){

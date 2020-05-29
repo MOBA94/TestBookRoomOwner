@@ -7,6 +7,15 @@ using MAPMAClient.EscRef;
 using ServiceLayer = MAPMAClient.EscRef;
 
 namespace MAPMAClient.ServiceLayer {
+    /// <summary>
+    /// <author>
+    /// Mick O. B. Andersen
+    /// Anders S. Brygger
+    /// Peter S. Clausen
+    /// Anders B. Larsen
+    /// Mads G. Ranzau
+    /// </author>
+    /// </summary>
     public class EscapeRoomServices {
 
         /// <summary>
@@ -17,7 +26,7 @@ namespace MAPMAClient.ServiceLayer {
         }
 
         /// <summary>
-        /// Makes a list with all the Escaperooms in the database
+        /// Gets a list with all the Escaperooms in the database
         /// </summary>
         /// <returns>A list of all the escaperooms</returns>
         public List<MAPMAClient.Model.EscapeRoom> GetAllForOwner() {
@@ -96,7 +105,7 @@ namespace MAPMAClient.ServiceLayer {
         }
 
         /// <summary>
-        /// Converts the escaperooms from the database into MAPMAClient.Model.EscapeRoom
+        /// Converts the escaperooms from the WCF into MAPMAClient.Model.EscapeRoom
         /// </summary>
         /// <param name="escapeRoom"></param>
         /// <returns>MAPMAClient.Model.EscapeRoom</returns>
@@ -123,7 +132,7 @@ namespace MAPMAClient.ServiceLayer {
         /// </summary>
         /// <param name="ER_ID"></param>
         /// <param name="Bdate"></param>
-        /// <returns>Te FreeTimes on the specific date</returns>
+        /// <returns>The FreeTimes on the specific date</returns>
         public List<TimeSpan> FreeTimes(int ER_ID, DateTime Bdate) {
             IEscapeRoom_Services Service = new EscapeRoom_ServicesClient();
 
@@ -131,7 +140,7 @@ namespace MAPMAClient.ServiceLayer {
         }
 
         /// <summary>
-        /// Converts the escaperooms from the database into a list of MAPMAClient.Model.EscapeRoom
+        /// Converts the escaperooms from the WCF into a list of MAPMAClient.Model.EscapeRoom
         /// </summary>
         /// <param name="escapeRooms"></param>
         /// <returns>A list of MAPMAClient.Model.EscapeRoom</returns>

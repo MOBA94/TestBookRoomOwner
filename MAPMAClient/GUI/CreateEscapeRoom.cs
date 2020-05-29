@@ -14,13 +14,22 @@ using MAPMAClient.EscRef;
 
 namespace MAPMAClient.GUI
 {
+    /// <summary>
+    /// <author>
+    /// Mick O. B. Andersen
+    /// Anders S. Brygger
+    /// Peter S. Clausen
+    /// Anders B. Larsen
+    /// Mads G. Ranzau
+    /// </author>
+    /// </summary>
     public partial class CreateEscapeRoom : Form
     {
         private List<MAPMAClient.Model.EscapeRoom> escapeRooms;
         private MAPMAClient.Model.EscapeRoom er;
 
         /// <summary>
-        /// Creates a new escaperoom and updates the list
+        /// Opens CreateEscapeRoom and runs the methode UpdateEscaoeRoomList();
         /// </summary>
         public CreateEscapeRoom ( )
         {
@@ -30,7 +39,7 @@ namespace MAPMAClient.GUI
         }
 
         /// <summary>
-        /// Updates the list of escaperooms
+        /// Runs the UpdateEscapeRoomList()
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -159,6 +168,11 @@ namespace MAPMAClient.GUI
             dataGridView1.Columns["id"].Visible = false;
         }
 
+        /// <summary>
+        /// Finds the doubleclicked escaperoom and sends it over to Update_Room and hides itself 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
             int index = e.RowIndex;
             int id = (int)dataGridView1[5, index].Value;
@@ -206,7 +220,7 @@ namespace MAPMAClient.GUI
         }
 
         /// <summary>
-        /// The botton click on find picture, opens a dialog where you can find local pictures
+        /// The botton click on find picture, opens a dialog where you can find local pictures, then it set it on the escaperoom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -224,7 +238,7 @@ namespace MAPMAClient.GUI
         }
 
         /// <summary>
-        /// Delete botton for escaperoom, shows a message box with a yes/no, last it calls "UpdateEscapeRoomList()"
+        /// Delete botton for escaperoom, shows a message box with a yes/no, if yes then calls erctr.Delete, last it calls "UpdateEscapeRoomList()"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -242,6 +256,11 @@ namespace MAPMAClient.GUI
 
         }
 
+        /// <summary>
+        /// Finds the clicked escaperoom
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -249,7 +268,7 @@ namespace MAPMAClient.GUI
         }
 
         /// <summary>
-        /// Checks textbox for MaxClearTime, if empty it gives a error message
+        /// Checks textbox for valid input for MaxClearTime, if empty it gives a error message
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -274,7 +293,7 @@ namespace MAPMAClient.GUI
         }
 
         /// <summary>
-        /// Checks textbox for CleanTime, if empty it gives a error message
+        /// Checks textbox for valid input for CleanTime, if empty it gives a error message
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -299,7 +318,7 @@ namespace MAPMAClient.GUI
         }
 
         /// <summary>
-        /// Checks textbox for Price, if empty it gives a error message
+        /// Checks textbox for valid input for Price, if empty it gives a error message
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -324,7 +343,7 @@ namespace MAPMAClient.GUI
         }
 
         /// <summary>
-        /// Checks textbox for EmployeeID, if empty it gives a error message
+        /// Checks textbox for valid input for EmployeeID, if empty it gives a error message
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

@@ -6,18 +6,39 @@ using System.Threading.Tasks;
 using MAPMAClient.BookRef;
 
 namespace MAPMAClient.ServiceLayer {
+    /// <summary>
+    /// <author>
+    /// Mick O. B. Andersen
+    /// Anders S. Brygger
+    /// Peter S. Clausen
+    /// Anders B. Larsen
+    /// Mads G. Ranzau
+    /// </author>
+    /// </summary>
     class BookServices {
 
+        /// <summary>
+        /// Empty constructor for BookServices()
+        /// </summary>
         public BookServices() {
         
         }
 
+        /// <summary>
+        /// Calls the WCF, so the method Create runs in the host and a booking is createt and saved in the database
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
         public int Create(MAPMAClient.Model.Booking book) {
             IBookingServices Service = new BookingServicesClient();
 
            return Service.Create(book.Emp.EmployeeID, book.Cus.Username, book.Er.EscapeRoomID, book.BookingTime, book.AmountOfPeople, book.Date);
         }
 
+        /// <summary>
+        /// Calls the WCF, so the method Delete runs in the host and the choosen booking is deletet
+        /// </summary>
+        /// <param name="book"></param>
         public void Delete(MAPMAClient.Model.Booking book) {
             IBookingServices Service = new BookingServicesClient();
 
@@ -25,6 +46,13 @@ namespace MAPMAClient.ServiceLayer {
             Service.Delete(book.Emp.EmployeeID, book.Cus.Username, book.Er.EscapeRoomID, book.BookingTime, book.AmountOfPeople, book.Date);
         }
 
+        /// <summary>
+        /// Search the database for one booking
+        /// </summary>
+        /// <param name="cus"></param>
+        /// <param name="esr"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public MAPMAClient.Model.Booking Get(MAPMAClient.Model.Customer cus, MAPMAClient.Model.EscapeRoom esr, DateTime date) {
             IBookingServices Service = new BookingServicesClient();
             try {
@@ -44,12 +72,20 @@ namespace MAPMAClient.ServiceLayer {
 
         }
 
+        /// <summary>
+        /// Calls the WCF, so the method Update runs in the host and the choosen booking is updatet
+        /// </summary>
+        /// <param name="book"></param>
         public void Update (MAPMAClient.Model.Booking book) {
             IBookingServices Service = new BookingServicesClient();
 
             Service.Update(book.Emp.EmployeeID, book.Cus.Username, book.Er.EscapeRoomID, book.BookingTime, book.AmountOfPeople, book.Date, book.Id);
         }
 
+        /// <summary>
+        /// Gets a list with all the bookings in the database
+        /// </summary>
+        /// <returns></returns>
         public List<Model.Booking> GetAll() {
             IBookingServices Service = new BookingServicesClient();
 
@@ -65,6 +101,11 @@ namespace MAPMAClient.ServiceLayer {
 
         }
 
+        /// <summary>
+        /// Gets all the bookings for one escaperoom in the database
+        /// </summary>
+        /// <param name="EscId"></param>
+        /// <returns></returns>
         public List<Model.Booking> GetAllOneRoom(int EscId) {
             IBookingServices Service = new BookingServicesClient();
 
@@ -79,6 +120,11 @@ namespace MAPMAClient.ServiceLayer {
             }
         }
 
+        /// <summary>
+        /// Converts all the bookings in the list to MAPMAClient.Model.Booking
+        /// </summary>
+        /// <param name="bookings"></param>
+        /// <returns> a list of MAPMAClient.Model.Booking </returns>
         private List<Model.Booking> GetClientSideBooking ( List<BookRef.Booking> bookings )
         {
             List<Model.Booking> foundbooks = new List<Model.Booking>();
@@ -90,6 +136,11 @@ namespace MAPMAClient.ServiceLayer {
             return foundbooks;
         }
 
+        /// <summary>
+        /// Converts one booking into MAPMAClient.Model.Booking
+        /// </summary>
+        /// <param name="booking"></param>
+        /// <returns> MAPMAClient.Model.Booking</returns>
         private Model.Booking GetClientsideBooking(BookRef.Booking booking) {
             MAPMAClient.Model.Booking book;
             MAPMAClient.Model.Customer cus;

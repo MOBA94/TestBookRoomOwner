@@ -11,7 +11,16 @@ using System.Windows.Forms;
 
 namespace MAPMAClient.GUI
 {
-    
+    /// <summary>
+    /// <author>
+    /// Mick O. B. Andersen
+    /// Anders S. Brygger
+    /// Peter S. Clausen
+    /// Anders B. Larsen
+    /// Mads G. Ranzau
+    /// </author>
+    /// </summary>
+
     public partial class ReadBooking : Form
     {
 
@@ -19,13 +28,18 @@ namespace MAPMAClient.GUI
         private BindingSource bs;
         private List<MAPMAClient.Model.Booking> bookings;
 
+        /// <summary>
+        /// Opens ReadBooking and runs UpdateBookingList()
+        /// </summary>
         public ReadBooking ( )
         {
             InitializeComponent();
             UpdateBookingList();
         }
 
-
+        /// <summary>
+        /// Adds the columns and sets in the bookings
+        /// </summary>
         private void UpdateBookingList ( )
         {
             BookingCtr book = new BookingCtr();
@@ -56,12 +70,21 @@ namespace MAPMAClient.GUI
 
         }
 
-
+        /// <summary>
+        /// Search function for an username
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbSerchReadBooking_TextChanged ( object sender, EventArgs e )
         {
             bs.Filter = string.Format("Brugernavn LIKE '%{0}%'", txbSerchReadBooking.Text);
         }
 
+        /// <summary>
+        /// Shows MainMenu (mm) and closes itself
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCloseReadBooking_Click ( object sender, EventArgs e )
         {
             MainMenu mm = new MainMenu();
@@ -69,7 +92,11 @@ namespace MAPMAClient.GUI
             this.Close();
         }
 
-
+        /// <summary>
+        /// Opens Edit_Delete with the doubleclicked booking and hides itself
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvAllBookings_CellDoubleClick ( object sender, DataGridViewCellEventArgs e )
         {
             int index = e.RowIndex;

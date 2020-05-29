@@ -7,6 +7,15 @@ using System.Threading.Tasks;
 using MAPMAClient.EmpRef;
 
 namespace MAPMAClient.ServiceLayer {
+    /// <summary>
+    /// <author>
+    /// Mick O. B. Andersen
+    /// Anders S. Brygger
+    /// Peter S. Clausen
+    /// Anders B. Larsen
+    /// Mads G. Ranzau
+    /// </author>
+    /// </summary>
     class EmpServices {
 
         /// <summary>
@@ -41,9 +50,9 @@ namespace MAPMAClient.ServiceLayer {
         }
 
         /// <summary>
-        /// 
+        /// Gets all the Employees from the database
         /// </summary>
-        /// <returns></returns>
+        /// <returns> A list of the Employees </returns>
         public List<MAPMAClient.Model.Employee> GetAll() {
             IEmplyeeServices Service = new EmplyeeServicesClient();
 
@@ -51,6 +60,11 @@ namespace MAPMAClient.ServiceLayer {
             return GetClientsideEmployees(employees);
         }
 
+        /// <summary>
+        /// Converts the list of Employees to MAPMAClient.Model.Employee
+        /// </summary>
+        /// <param name="employees"></param>
+        /// <returns> a list of MAPMAClient.Model.Employee</returns>
         private List<Model.Employee> GetClientsideEmployees(IEnumerable<EmpRef.Employee> employees) {
             List<Model.Employee> foundEmp = new List<Model.Employee>();
             Model.Employee emp;
@@ -72,6 +86,11 @@ namespace MAPMAClient.ServiceLayer {
             return foundEmp;
         }
 
+        /// <summary>
+        /// Converts one Employee to MAPMA.Model.Employee
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <returns>MAPMA.Model.Employee</returns>
         private Model.Employee GetEmployeeClientSide(EmpRef.Employee employee) {
             MAPMAClient.Model.Employee emp;
 
