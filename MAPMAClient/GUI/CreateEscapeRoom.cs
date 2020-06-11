@@ -231,10 +231,25 @@ namespace MAPMAClient.GUI
             {
                 if(ofd.ShowDialog() == DialogResult.OK)
                 {
-                    fileName = ofd.FileName;
+                    fileName = ofd.FileName;                   
                     pbEscaperoom.Image = Image.FromFile(fileName);
+                    pbEscaperoom.Image = Resize(pbEscaperoom.Image, 200, 200);
                 }
             }
+        }
+
+        Image Resize(Image image, int w, int h) {
+
+            w = 200;
+            h = 200;
+            Bitmap bmp = new Bitmap(w, h);
+            Graphics graphic = Graphics.FromImage(bmp);
+            graphic.DrawImage(image, 0, 0, w, h);
+            graphic.Dispose();
+
+            return bmp;
+        
+        
         }
 
         /// <summary>
